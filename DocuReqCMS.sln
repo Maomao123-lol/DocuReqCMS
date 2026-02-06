@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36915.13 d17.14
+VisualStudioVersion = 17.14.36915.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuReqCMS", "DocuReqCMS\DocuReqCMS.csproj", "{0A86FC74-2715-401B-8A41-A124175155A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuFlow-Reg", "..\DocuFlow\DocuFlow-Reg\DocuFlow-Reg.csproj", "{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0A86FC74-2715-401B-8A41-A124175155A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A86FC74-2715-401B-8A41-A124175155A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A86FC74-2715-401B-8A41-A124175155A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
