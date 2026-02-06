@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -9,7 +10,7 @@ namespace DocuReqCMS
     public partial class ChangePasswordForm : Form
     {
         private int userId;
-        string connStr = "server=localhost;database=cms_db;uid=root;pwd=;";
+        string connStr = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
 
         public ChangePasswordForm(int userId)
         {

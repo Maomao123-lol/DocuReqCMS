@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
 
@@ -7,7 +8,7 @@ namespace DocuReqCMS
 {
     public partial class activityLogs : Form
     {
-        string connStr = "server=localhost;database=cms_db;uid=root;pwd=takoyaki;";
+        string connStr = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
 
         public activityLogs()
         {
