@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace DocuReqCMS
@@ -7,7 +8,7 @@ namespace DocuReqCMS
     public partial class RegistrarDashboard : Form
     {
         private int userId;
-        string connStr = "server=localhost;database=cms_db;uid=root;pwd=;";
+        string connStr = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
 
         public RegistrarDashboard(int userId)
         {

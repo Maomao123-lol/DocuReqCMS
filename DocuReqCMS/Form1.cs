@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 using System.Windows.Forms;
 using UCCRegistrarCMS;
 
@@ -7,7 +8,7 @@ namespace DocuReqCMS
 {
     public partial class Form1 : Form
     {
-        string connStr = "server=localhost;database=cms_db;uid=root;pwd=;";
+        string connStr = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
         private int currentUserId;
         private Form activeForm = null;
 

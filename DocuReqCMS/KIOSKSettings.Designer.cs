@@ -32,8 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnChangeFont = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.colorWheel2 = new Cyotek.Windows.Forms.ColorWheel();
             this.colorEditor2 = new Cyotek.Windows.Forms.ColorEditor();
@@ -80,7 +83,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddDocument = new System.Windows.Forms.Button();
             this.panelAccentColor = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnBrowseAd = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.WelcomePreview = new System.Windows.Forms.PictureBox();
@@ -89,39 +103,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panelDocuments.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panelAccentColor.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WelcomePreview)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
@@ -204,6 +204,16 @@
             this.panel9.Size = new System.Drawing.Size(1029, 544);
             this.panel9.TabIndex = 2;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(459, 359);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 23);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "Preview";
+            // 
             // btnChangeFont
             // 
             this.btnChangeFont.Location = new System.Drawing.Point(21, 434);
@@ -220,6 +230,28 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(200, 100);
             this.panel10.TabIndex = 39;
+            // 
+            // panel15
+            // 
+            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel15.Controls.Add(this.label12);
+            this.panel15.Location = new System.Drawing.Point(18, 11);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(165, 78);
+            this.panel15.TabIndex = 43;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(19, 20);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 40);
+            this.label12.TabIndex = 42;
+            this.label12.Text = "Aa";
             // 
             // panel12
             // 
@@ -722,6 +754,7 @@
             // 
             // panelAccentColor
             // 
+            this.panelAccentColor.AutoScroll = true;
             this.panelAccentColor.AutoScrollMargin = new System.Drawing.Size(5, 5);
             this.panelAccentColor.AutoScrollMinSize = new System.Drawing.Size(5, 5);
             this.panelAccentColor.BackColor = System.Drawing.Color.White;
@@ -733,6 +766,107 @@
             this.panelAccentColor.Size = new System.Drawing.Size(1041, 545);
             this.panelAccentColor.TabIndex = 11;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel14);
+            this.panel2.Controls.Add(this.panel8);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(373, 71);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(673, 453);
+            this.panel2.TabIndex = 3;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.textBox1);
+            this.panel14.Controls.Add(this.label9);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(0, 191);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(673, 140);
+            this.panel14.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(12, 41);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(333, 30);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 23);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "KIOSK Title";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label8);
+            this.panel8.Controls.Add(this.label6);
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Controls.Add(this.button2);
+            this.panel8.Controls.Add(this.pictureBox1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(673, 191);
+            this.panel8.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(8, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(128, 23);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "KIOSK BANNER";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "KIOSK Logo";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(146, 98);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 23);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Image File Path";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.button2.Location = new System.Drawing.Point(149, 133);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 33);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Browse Photo";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 80);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.AutoScroll = true;
@@ -742,8 +876,18 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 71);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(368, 474);
+            this.panel4.Size = new System.Drawing.Size(368, 453);
             this.panel4.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(28, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(185, 23);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "KIOSK Welcome Image";
             // 
             // btnBrowseAd
             // 
@@ -781,7 +925,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1041, 71);
+            this.panel3.Size = new System.Drawing.Size(1046, 71);
             this.panel3.TabIndex = 1;
             // 
             // button1
@@ -790,7 +934,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::DocuReqCMS.Properties.Resources.down_arrow;
-            this.button1.Location = new System.Drawing.Point(976, 0);
+            this.button1.Location = new System.Drawing.Point(981, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 69);
             this.button1.TabIndex = 1;
@@ -821,149 +965,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "KIOSK Settings";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 23);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "KIOSK Welcome Image";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 52);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 23);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "KIOSK Logo";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 80);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.button2.Location = new System.Drawing.Point(149, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 33);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Browse Photo";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(146, 98);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 23);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Image File Path";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel14);
-            this.panel2.Controls.Add(this.panel8);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(368, 71);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(673, 474);
-            this.panel2.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 11);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 23);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "KIOSK BANNER";
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.label8);
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.button2);
-            this.panel8.Controls.Add(this.pictureBox1);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(673, 191);
-            this.panel8.TabIndex = 9;
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.textBox1);
-            this.panel14.Controls.Add(this.label9);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(0, 191);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(673, 140);
-            this.panel14.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 23);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "KIOSK Title";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(333, 30);
-            this.textBox1.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(459, 359);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 23);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "Preview";
-            // 
-            // panel15
-            // 
-            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel15.Controls.Add(this.label12);
-            this.panel15.Location = new System.Drawing.Point(18, 11);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(165, 78);
-            this.panel15.TabIndex = 43;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(19, 20);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 40);
-            this.label12.TabIndex = 42;
-            this.label12.Text = "Aa";
-            // 
             // KIOSKSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -980,6 +981,8 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
@@ -987,20 +990,18 @@
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panelAccentColor.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WelcomePreview)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }

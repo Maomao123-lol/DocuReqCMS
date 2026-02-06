@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace DocuReqCMS
 
     public class KioskSettingsManager
     {
-        private string connectionString = "Server=localhost;Database=cms_db;Uid=root;Pwd=takoyaki;";
+        private string connectionString = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
 
         // Save ad image path to database
         public bool SaveAdImagePath(string imagePath)
