@@ -6,11 +6,7 @@ namespace DocuReqCMS
 {
     public static class ActivityLogger
     {
-<<<<<<< HEAD
         private static string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
-=======
-        private static string connStr = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
->>>>>>> a2f477006904e0adfc46ccb87d5f85ddf7d3be24
 
         public static void Log(
             int? userId,

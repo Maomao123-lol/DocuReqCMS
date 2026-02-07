@@ -10,11 +10,7 @@ namespace DocuReqCMS
 {
     public partial class UserPage : Form
     {
-<<<<<<< HEAD
         private string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
-=======
-        private string connStr = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
->>>>>>> a2f477006904e0adfc46ccb87d5f85ddf7d3be24
 
         // Admin info passed from dashboard
         private int adminUserId;

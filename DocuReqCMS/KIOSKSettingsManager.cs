@@ -14,11 +14,7 @@ namespace DocuReqCMS
 
     public class KioskSettingsManager
     {
-<<<<<<< HEAD
         private string connectionString = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
-=======
-        private string connectionString = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
->>>>>>> a2f477006904e0adfc46ccb87d5f85ddf7d3be24
 
         // Save ad image path to database
         public bool SaveAdImagePath(string imagePath)
