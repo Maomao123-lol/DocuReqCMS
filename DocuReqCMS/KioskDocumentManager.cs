@@ -1,15 +1,16 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 
 namespace DocuReqCMS
 {
     public class KioskDocumentManager
     {
-        private string connectionString = "Server=localhost;Database=kioskdocuments;Uid=root;Pwd=takoyaki;";
+        private string connectionString = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
         public bool AddDocument(KioskDocument doc)
         {

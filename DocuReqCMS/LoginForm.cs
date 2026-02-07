@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 using System.Drawing;
 using System.Security.Cryptography;
 using System.Text;
@@ -10,7 +11,7 @@ namespace DocuReqCMS
     public partial class LoginForm : Form
     {
         bool isPasswordVisible = false;
-        string connStr = "Server=localhost;Database=cms_db;Uid=root;Pwd=takoyaki;";
+        string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
         public LoginForm()
         {

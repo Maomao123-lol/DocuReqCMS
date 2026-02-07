@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
@@ -9,7 +10,7 @@ namespace DocuReqCMS
 {
     public partial class UserPage : Form
     {
-        private string connStr = "server=localhost;database=cms_db;uid=root;pwd=takoyaki;";
+        private string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
         // Admin info passed from dashboard
         private int adminUserId;

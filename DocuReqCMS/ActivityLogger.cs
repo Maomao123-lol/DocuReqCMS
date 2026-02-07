@@ -1,12 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 
 namespace DocuReqCMS
 {
     public static class ActivityLogger
     {
-        private static string connStr =
-            "server=localhost;database=cms_db;uid=root;pwd=takoyaki;";
+        private static string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
         public static void Log(
             int? userId,
