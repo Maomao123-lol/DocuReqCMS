@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<connectionStrings>
+		<add name="MyDb"
+			 connectionString="Server=HOST;
+                           Port=PORT;
+                           Database=DB;
+                           Uid=USER;
+                           Pwd=PASSWORD;
+                           SslMode=Required;" />
+	</connectionStrings>
+</configuration>
