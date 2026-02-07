@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36915.13
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11415.280 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuReqCMS", "DocuReqCMS\DocuReqCMS.csproj", "{0A86FC74-2715-401B-8A41-A124175155A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourApp.DataAccess", "YourApp.DataAccess\YourApp.DataAccess.csproj", "{68860A93-00E9-4191-9940-55E87DE097E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuFlow-Reg", "..\yomsk18\DocuFlow-Reg\DocuFlow-Reg.csproj", "{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{68860A93-00E9-4191-9940-55E87DE097E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68860A93-00E9-4191-9940-55E87DE097E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68860A93-00E9-4191-9940-55E87DE097E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
