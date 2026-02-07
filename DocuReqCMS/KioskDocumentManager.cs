@@ -10,8 +10,12 @@ namespace DocuReqCMS
 {
     public class KioskDocumentManager
     {
+<<<<<<< HEAD
         private string connectionString = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
+=======
+        private string connectionString = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
+>>>>>>> a2f477006904e0adfc46ccb87d5f85ddf7d3be24
         public bool AddDocument(KioskDocument doc)
         {
             try

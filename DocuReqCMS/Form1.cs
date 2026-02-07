@@ -8,7 +8,11 @@ namespace DocuReqCMS
 {
     public partial class Form1 : Form
     {
+<<<<<<< HEAD
         string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
+=======
+        string connStr = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
+>>>>>>> a2f477006904e0adfc46ccb87d5f85ddf7d3be24
         private int currentUserId;
         private Form activeForm = null;
 

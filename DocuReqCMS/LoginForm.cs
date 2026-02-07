@@ -11,7 +11,11 @@ namespace DocuReqCMS
     public partial class LoginForm : Form
     {
         bool isPasswordVisible = false;
+<<<<<<< HEAD
         string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
+=======
+        string connStr = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
+>>>>>>> a2f477006904e0adfc46ccb87d5f85ddf7d3be24
 
         public LoginForm()
         {
