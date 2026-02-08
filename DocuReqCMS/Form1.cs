@@ -67,11 +67,13 @@ namespace DocuReqCMS
 
         private void SubBttnQueue_Click(object sender, EventArgs e)
         {
+            openChildForm(new queueSettings());
             hideSubMenu();
         }
 
-        private void btnServiceConfiguration_Click(object sender, EventArgs e)
+        private void SubBttnRegistrar_Click(object sender, EventArgs e)
         {
+            openChildForm(new RegistrarSettings());
             hideSubMenu();
         }
 

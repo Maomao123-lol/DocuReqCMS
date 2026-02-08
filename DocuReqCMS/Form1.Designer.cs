@@ -33,7 +33,6 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnActivityLogs = new System.Windows.Forms.Button();
-            this.btnServiceConfiguration = new System.Windows.Forms.Button();
             this.SubPanelKQS = new System.Windows.Forms.Panel();
             this.SubBttnQueue = new System.Windows.Forms.Button();
             this.SubBttnKIOSK = new System.Windows.Forms.Button();
@@ -41,9 +40,10 @@
             this.btnUserManagement = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.Admin = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.SubBttnRegistrar = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.SubPanelKQS.SuspendLayout();
             this.Admin.SuspendLayout();
@@ -56,7 +56,6 @@
             this.PanelMenu.Controls.Add(this.btnLogout);
             this.PanelMenu.Controls.Add(this.btnReports);
             this.PanelMenu.Controls.Add(this.btnActivityLogs);
-            this.PanelMenu.Controls.Add(this.btnServiceConfiguration);
             this.PanelMenu.Controls.Add(this.SubPanelKQS);
             this.PanelMenu.Controls.Add(this.btnKQ);
             this.PanelMenu.Controls.Add(this.btnUserManagement);
@@ -80,7 +79,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 660);
+            this.btnLogout.Location = new System.Drawing.Point(0, 643);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -103,7 +102,7 @@
             this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
             this.btnReports.Image = global::DocuReqCMS.Properties.Resources.report;
             this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.Location = new System.Drawing.Point(0, 586);
+            this.btnReports.Location = new System.Drawing.Point(0, 569);
             this.btnReports.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReports.Name = "btnReports";
             this.btnReports.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -126,7 +125,7 @@
             this.btnActivityLogs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
             this.btnActivityLogs.Image = global::DocuReqCMS.Properties.Resources.file;
             this.btnActivityLogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivityLogs.Location = new System.Drawing.Point(0, 512);
+            this.btnActivityLogs.Location = new System.Drawing.Point(0, 495);
             this.btnActivityLogs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActivityLogs.Name = "btnActivityLogs";
             this.btnActivityLogs.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -137,38 +136,17 @@
             this.btnActivityLogs.UseVisualStyleBackColor = false;
             this.btnActivityLogs.Click += new System.EventHandler(this.btnActivityLogs_Click);
             // 
-            // btnServiceConfiguration
-            // 
-            this.btnServiceConfiguration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnServiceConfiguration.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnServiceConfiguration.FlatAppearance.BorderSize = 0;
-            this.btnServiceConfiguration.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.btnServiceConfiguration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.btnServiceConfiguration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServiceConfiguration.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.btnServiceConfiguration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
-            this.btnServiceConfiguration.Image = global::DocuReqCMS.Properties.Resources.services;
-            this.btnServiceConfiguration.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServiceConfiguration.Location = new System.Drawing.Point(0, 438);
-            this.btnServiceConfiguration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnServiceConfiguration.Name = "btnServiceConfiguration";
-            this.btnServiceConfiguration.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnServiceConfiguration.Size = new System.Drawing.Size(281, 74);
-            this.btnServiceConfiguration.TabIndex = 6;
-            this.btnServiceConfiguration.Text = "         Service Configuration";
-            this.btnServiceConfiguration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServiceConfiguration.UseVisualStyleBackColor = false;
-            // 
             // SubPanelKQS
             // 
             this.SubPanelKQS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SubPanelKQS.Controls.Add(this.SubBttnRegistrar);
             this.SubPanelKQS.Controls.Add(this.SubBttnQueue);
             this.SubPanelKQS.Controls.Add(this.SubBttnKIOSK);
             this.SubPanelKQS.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubPanelKQS.Location = new System.Drawing.Point(0, 327);
             this.SubPanelKQS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubPanelKQS.Name = "SubPanelKQS";
-            this.SubPanelKQS.Size = new System.Drawing.Size(281, 111);
+            this.SubPanelKQS.Size = new System.Drawing.Size(281, 168);
             this.SubPanelKQS.TabIndex = 5;
             // 
             // SubBttnQueue
@@ -229,7 +207,7 @@
             this.btnKQ.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.btnKQ.Size = new System.Drawing.Size(281, 74);
             this.btnKQ.TabIndex = 4;
-            this.btnKQ.Text = "         KIOSK and Queue Settings";
+            this.btnKQ.Text = "         KIOSK, Queue Monitor,\r\n         and Registrar Settings";
             this.btnKQ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKQ.UseVisualStyleBackColor = false;
             this.btnKQ.Click += new System.EventHandler(this.btnKQ_Click);
@@ -290,16 +268,15 @@
             this.Admin.Size = new System.Drawing.Size(281, 105);
             this.Admin.TabIndex = 0;
             // 
-            // panelChildForm
+            // label2
             // 
-            this.panelChildForm.AutoScroll = true;
-            this.panelChildForm.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(281, 0);
-            this.panelChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1187, 794);
-            this.panelChildForm.TabIndex = 2;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(30, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Super Admin";
             // 
             // label1
             // 
@@ -311,15 +288,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Reynaldo Abrigo";
             // 
-            // label2
+            // panelChildForm
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Super Admin";
+            this.panelChildForm.AutoScroll = true;
+            this.panelChildForm.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(281, 0);
+            this.panelChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1187, 794);
+            this.panelChildForm.TabIndex = 2;
+            // 
+            // SubBttnRegistrar
+            // 
+            this.SubBttnRegistrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubBttnRegistrar.FlatAppearance.BorderSize = 0;
+            this.SubBttnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
+            this.SubBttnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
+            this.SubBttnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SubBttnRegistrar.Font = new System.Drawing.Font("Segoe UI", 8.5F);
+            this.SubBttnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
+            this.SubBttnRegistrar.Location = new System.Drawing.Point(0, 110);
+            this.SubBttnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SubBttnRegistrar.Name = "SubBttnRegistrar";
+            this.SubBttnRegistrar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.SubBttnRegistrar.Size = new System.Drawing.Size(281, 55);
+            this.SubBttnRegistrar.TabIndex = 2;
+            this.SubBttnRegistrar.Text = "   Registrar";
+            this.SubBttnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SubBttnRegistrar.UseVisualStyleBackColor = true;
+            this.SubBttnRegistrar.Click += new System.EventHandler(this.SubBttnRegistrar_Click);
             // 
             // Form1
             // 
@@ -349,7 +347,6 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnActivityLogs;
-        private System.Windows.Forms.Button btnServiceConfiguration;
         private System.Windows.Forms.Panel SubPanelKQS;
         private System.Windows.Forms.Button SubBttnQueue;
         private System.Windows.Forms.Button SubBttnKIOSK;
@@ -358,6 +355,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button SubBttnRegistrar;
     }
 }
 

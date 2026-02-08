@@ -1,6 +1,6 @@
 ﻿namespace DocuReqCMS
 {
-    partial class queueSettings
+    partial class RegistrarSettings
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.colorGrid2 = new Cyotek.Windows.Forms.ColorGrid();
@@ -42,6 +41,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -60,18 +60,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(50);
             this.panel1.Size = new System.Drawing.Size(1187, 794);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(382, 45);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Queue Monitor Settings";
+            this.panel1.TabIndex = 1;
             // 
             // panel7
             // 
@@ -193,6 +182,17 @@
             this.panel13.Size = new System.Drawing.Size(1041, 71);
             this.panel13.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 45);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Registrar Settings";
+            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -207,14 +207,14 @@
             this.label5.Text = "      Color and Text Font";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // queueSettings
+            // RegistrarSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 794);
             this.Controls.Add(this.panel1);
-            this.Name = "queueSettings";
-            this.Text = "queueSettings";
+            this.Name = "RegistrarSettings";
+            this.Text = "RegistrarSettings";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -231,7 +231,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
         private Cyotek.Windows.Forms.ColorGrid colorGrid2;
@@ -245,5 +244,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
     }
 }
