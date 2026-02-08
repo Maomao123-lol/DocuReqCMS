@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="clearancefsstudent1-150721141604-lva1-app6891-thumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clearancefsstudent1-150721141604-lva1-app6891-thumbnail.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="down_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\down-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,7 +160,7 @@
   <data name="google-docs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\google-docs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clearancefsstudent1-150721141604-lva1-app6891-thumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clearancefsstudent1-150721141604-lva1-app6891-thumbnail.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ucc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ucc1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

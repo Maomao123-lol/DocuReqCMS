@@ -217,6 +217,7 @@
     <EmbeddedResource Include="UserPage.resx">
       <DependentUpon>UserPage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="App.config.example" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -228,9 +229,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings.png" />
@@ -279,6 +277,12 @@
       <Project>{68860a93-00e9-4191-9940-55e87de097e0}</Project>
       <Name>YourApp.DataAccess</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ucc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

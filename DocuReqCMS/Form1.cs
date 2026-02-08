@@ -48,7 +48,7 @@ namespace DocuReqCMS
             hideSubMenu();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnKQ_Click(object sender, EventArgs e)
         {
             showSubMenu(SubPanelKQS);
         }
@@ -70,7 +70,7 @@ namespace DocuReqCMS
             hideSubMenu();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnServiceConfiguration_Click(object sender, EventArgs e)
         {
             hideSubMenu();
         }
@@ -81,8 +81,9 @@ namespace DocuReqCMS
             hideSubMenu();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnReports_Click(object sender, EventArgs e)
         {
+            openChildForm(new Reports());
             hideSubMenu();
         }
 

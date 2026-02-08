@@ -45,7 +45,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(800, 450);
+            this.panelMain.Size = new System.Drawing.Size(865, 495);
             this.panelMain.TabIndex = 0;
             // 
             // btnResetPassword
@@ -53,7 +53,7 @@
             this.btnResetPassword.BackColor = System.Drawing.Color.IndianRed;
             this.btnResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetPassword.ForeColor = System.Drawing.Color.White;
-            this.btnResetPassword.Location = new System.Drawing.Point(28, 409);
+            this.btnResetPassword.Location = new System.Drawing.Point(57, 448);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(160, 32);
             this.btnResetPassword.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.colStatus,
             this.colLastLogin,
             this.colLastLogout});
-            this.dataGridViewUsers.Location = new System.Drawing.Point(28, 125);
+            this.dataGridViewUsers.Location = new System.Drawing.Point(57, 164);
             this.dataGridViewUsers.MultiSelect = false;
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.ReadOnly = true;
@@ -139,7 +139,7 @@
             this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUser.ForeColor = System.Drawing.Color.White;
-            this.btnAddUser.Location = new System.Drawing.Point(260, 83);
+            this.btnAddUser.Location = new System.Drawing.Point(289, 122);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(140, 26);
             this.btnAddUser.TabIndex = 2;
@@ -149,7 +149,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(28, 87);
+            this.txtUsername.Location = new System.Drawing.Point(57, 126);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(220, 22);
             this.txtUsername.TabIndex = 3;
@@ -158,7 +158,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblUsername.Location = new System.Drawing.Point(27, 59);
+            this.lblUsername.Location = new System.Drawing.Point(56, 98);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(138, 20);
             this.lblUsername.TabIndex = 4;
@@ -168,7 +168,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(24, 18);
+            this.lblTitle.Location = new System.Drawing.Point(50, 50);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(276, 41);
             this.lblTitle.TabIndex = 5;
@@ -176,7 +176,7 @@
             // 
             // UserPage
             // 
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(865, 495);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserPage";
