@@ -280,6 +280,11 @@ namespace UCCRegistrarCMS
             }
         }
 
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void btnChangeFont_Click(object sender, EventArgs e)
         //{
         //    using (FontDialog fontDialog = new FontDialog())

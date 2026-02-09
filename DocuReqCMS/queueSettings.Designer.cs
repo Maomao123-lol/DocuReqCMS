@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.colorGrid2 = new Cyotek.Windows.Forms.ColorGrid();
@@ -43,6 +42,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -62,19 +62,9 @@
             this.panel1.Size = new System.Drawing.Size(1187, 794);
             this.panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(382, 45);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Queue Monitor Settings";
-            // 
             // panel7
             // 
+            this.panel7.AutoScroll = true;
             this.panel7.AutoScrollMargin = new System.Drawing.Size(5, 5);
             this.panel7.AutoScrollMinSize = new System.Drawing.Size(5, 5);
             this.panel7.BackColor = System.Drawing.Color.White;
@@ -206,6 +196,17 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "      Color and Text Font";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(382, 45);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Queue Monitor Settings";
             // 
             // queueSettings
             // 
