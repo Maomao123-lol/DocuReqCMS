@@ -177,5 +177,10 @@ namespace DocuReqCMS
         {
             WelcomeAd.Image = newImage;
         }
+
+        private void flowPanelKiosk_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

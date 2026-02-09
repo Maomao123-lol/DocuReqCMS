@@ -59,6 +59,7 @@
             this.flowPanelKiosk.Name = "flowPanelKiosk";
             this.flowPanelKiosk.Size = new System.Drawing.Size(986, 553);
             this.flowPanelKiosk.TabIndex = 2;
+            this.flowPanelKiosk.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanelKiosk_Paint);
             // 
             // label2
             // 
@@ -66,7 +67,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(269, 675);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 52);
+            this.label2.Size = new System.Drawing.Size(138, 51);
             this.label2.TabIndex = 3;
             this.label2.Text = "label2";
             // 
