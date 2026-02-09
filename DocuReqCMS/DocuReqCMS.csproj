@@ -217,6 +217,7 @@
     <EmbeddedResource Include="UserPage.resx">
       <DependentUpon>UserPage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config.example" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -272,6 +273,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clearancefsstudent1-150721141604-lva1-app6891-thumbnail.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YourApp.DataAccess\YourApp.DataAccess.csproj">
+      <Project>{68860a93-00e9-4191-9940-55e87de097e0}</Project>
+      <Name>YourApp.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
