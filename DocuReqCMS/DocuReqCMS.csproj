@@ -188,6 +188,36 @@
     <Compile Include="TestingForm.Designer.cs">
       <DependentUpon>TestingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\ActivityLogsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ActivityLogsUC.Designer.cs">
+      <DependentUpon>ActivityLogsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\KIOSKSettingsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\KIOSKSettingsUC.Designer.cs">
+      <DependentUpon>KIOSKSettingsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\QueueSettingsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\QueueSettingsUC.Designer.cs">
+      <DependentUpon>QueueSettingsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\registrarSettingsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\registrarSettingsUC.Designer.cs">
+      <DependentUpon>registrarSettingsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ReportsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ReportsUC.Designer.cs">
+      <DependentUpon>ReportsUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +330,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

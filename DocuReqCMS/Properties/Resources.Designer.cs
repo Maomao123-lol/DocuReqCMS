@@ -93,6 +93,26 @@ namespace DocuReqCMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dashboard32 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dashboard64 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap down_arrow {
             get {
                 object obj = ResourceManager.GetObject("down_arrow", resourceCulture);
