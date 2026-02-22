@@ -1,13 +1,15 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DocuReqCMS.User_Controls;
+using MySql.Data.MySqlClient;
 using System;
 using System.Configuration;
+using System.Drawing;
 using System.Windows.Forms;
-using UCCRegistrarCMS;
 
 namespace DocuReqCMS
 {
     public partial class Form1 : Form
     {
+        private Guna.UI2.WinForms.Guna2Button currentButton;
         string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
         private int currentUserId;
         private Form activeForm = null;
@@ -15,78 +17,67 @@ namespace DocuReqCMS
         public Form1(int userId)
         {
             InitializeComponent();
-            customizeDesign();
             currentUserId = userId;
         }
-
-        private void customizeDesign()
+        private void ActivateButton(Guna.UI2.WinForms.Guna2Button button)
         {
-            SubPanelKQS.Visible = false;
-        }
-
-        private void hideSubMenu()
-        {
-            if (SubPanelKQS.Visible)
-                SubPanelKQS.Visible = false;
-        }
-
-        private void showSubMenu(Panel subMenu)
-        {
-            if (!subMenu.Visible)
+            if (currentButton != null)
             {
-                hideSubMenu();
-                subMenu.Visible = true;
+                currentButton.FillColor = Color.Transparent;
+                currentButton.ForeColor = Color.Black;
             }
-            else
-            {
-                subMenu.Visible = false;
-            }
+
+            currentButton = button;
+            currentButton.FillColor = Color.White;
+            currentButton.ForeColor = Color.FromArgb(91, 208, 102);
         }
 
         private void bttnKQSettings_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
+            ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
         private void btnKQ_Click(object sender, EventArgs e)
         {
-            showSubMenu(SubPanelKQS);
+            ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
             openChildForm(new UserPage());
-            hideSubMenu();
+            ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
         private void SubBttnKIOSK_Click(object sender, EventArgs e)
         {
-            openChildForm(new KIOSKSettings());
-            hideSubMenu();
+            KIOSKSettingsUC kioskUC = new KIOSKSettingsUC();
+            kioskUC.LoadDocuments(connStr);
+            openChildControl(kioskUC);
+            ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
         private void SubBttnQueue_Click(object sender, EventArgs e)
         {
             openChildForm(new queueSettings());
-            hideSubMenu();
+            ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
         private void SubBttnRegistrar_Click(object sender, EventArgs e)
         {
             openChildForm(new RegistrarSettings());
-            hideSubMenu();
+            ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
         private void btnActivityLogs_Click(object sender, EventArgs e)
         {
             openChildForm(new activityLogs());
-            hideSubMenu();
+            ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
             openChildForm(new Reports());
-            hideSubMenu();
+            ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
         private void openChildForm(Form childForm)
@@ -102,6 +93,15 @@ namespace DocuReqCMS
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void openChildControl(UserControl childControl)
+        {
+            panelChildForm.Controls.Clear();
+
+            childControl.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childControl);
+            childControl.BringToFront();
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -157,6 +157,26 @@ namespace DocuReqCMS
                     $"{username} has logged out and is now offline"
                 );
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel14_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
