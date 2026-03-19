@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace DocuReqCMS.KIOSKSETTINGS
 {
-    public partial class DocumentItemsUC : UserControl
+    public partial class DocumentItemsUC : Form
     {
         private readonly string _connStr;
         public DocumentItemsUC(string connStr)

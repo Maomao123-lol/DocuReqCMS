@@ -61,7 +61,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.guna2Panel1.Size = new System.Drawing.Size(1099, 102);
+            this.guna2Panel1.Size = new System.Drawing.Size(1590, 102);
             this.guna2Panel1.TabIndex = 1;
             // 
             // guna2HtmlLabel2
@@ -101,7 +101,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 102);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1099, 60);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1590, 60);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // btnService
@@ -143,17 +143,18 @@
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 162);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1099, 577);
+            this.guna2Panel3.Size = new System.Drawing.Size(1590, 833);
             this.guna2Panel3.TabIndex = 5;
             // 
             // KIOSKSettingsUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1590, 995);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2Panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KIOSKSettingsUC";
-            this.Size = new System.Drawing.Size(1099, 739);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

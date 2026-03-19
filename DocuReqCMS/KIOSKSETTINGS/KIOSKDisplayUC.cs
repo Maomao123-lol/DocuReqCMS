@@ -1,52 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DocuReqCMS.KIOSKSETTINGS
 {
-    public partial class KIOSKDisplayUC : UserControl
+    public partial class KIOSKDisplayUC :Form
     {
         public KIOSKDisplayUC(string connStr)
         {
             InitializeComponent();
             WireColorButtons();
-            guna2Button43.Click += BtnCustomColor_Click;   // Custom Color
-            guna2Button44.Click += BtnFont_Click;           // Font (left panel)
-            guna2Button45.Click += BtnWelcomeImage_Click;   // Welcome Image browse
-            guna2Button46.Click += BtnKioskLogo_Click;      // KIOSK Logo browse
-            guna2Button47.Click += BtnKioskTitleFont_Click; // View Font (KIOSK Title)
-            guna2TextBox3.TextChanged += (s, e) => guna2HtmlLabel8.Text = guna2TextBox3.Text; // KIOSK Title → label8
+            guna2Button43.Click += BtnCustomColor_Click;
+            guna2Button44.Click += BtnFont_Click;
+            guna2Button45.Click += BtnWelcomeImage_Click;
+            guna2Button46.Click += BtnKioskLogo_Click;
+            guna2Button47.Click += BtnKioskTitleFont_Click;
+            guna2TextBox2.TextChanged += (s, e) =>
+                lblKIOSKTitlePreview.Text = guna2TextBox2.Text;
         }
 
         private void WireColorButtons()
         {
-            // Wire all 42 color buttons with one loop
             for (int i = 1; i <= 42; i++)
             {
-                var btn = (Guna.UI2.WinForms.Guna2Button)flowLayoutPanel1.Controls
-                          .OfType<Guna.UI2.WinForms.Guna2Button>()
+                var btn = flowLayoutPanel1.Controls
+                          .OfType<Button>()
                           .FirstOrDefault(b => b.Name == $"guna2Button{i}");
                 if (btn == null) continue;
-
-                btn.Click += (s, e) =>
-                {
-                    var clickedBtn = (Guna.UI2.WinForms.Guna2Button)s;
-                    ApplyAccentColor(clickedBtn.FillColor);
-                };
+                btn.Click += (s, e) => ApplyAccentColor(((Button)s).BackColor);
             }
         }
 
         private void ApplyAccentColor(Color color)
         {
-            guna2Button48.FillColor = color;
-            guna2Button48.ForeColor = color; // active indicator matches
+            btnPreview.BackColor = color;
+            guna2Panel3.BackColor = color;
         }
 
         private void BtnCustomColor_Click(object sender, EventArgs e)
@@ -58,7 +48,7 @@ namespace DocuReqCMS.KIOSKSETTINGS
         private void BtnFont_Click(object sender, EventArgs e)
         {
             if (fontDialog1.ShowDialog() == DialogResult.OK)
-                guna2HtmlLabel7.Font = fontDialog1.Font;
+                lblPreview.Font = fontDialog1.Font;
         }
 
         private void BtnWelcomeImage_Click(object sender, EventArgs e)
@@ -70,8 +60,8 @@ namespace DocuReqCMS.KIOSKSETTINGS
                 {
                     guna2TextBox1.Text = ofd.FileName;
                     byte[] bytes = File.ReadAllBytes(ofd.FileName);
-                    guna2PictureBox1.Image = Image.FromStream(new MemoryStream(bytes));
-                    guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    picWelcomePreview.Image = Image.FromStream(new MemoryStream(bytes));
+                    picWelcomePreview.SizeMode = PictureBoxSizeMode.Zoom;
                 }
             }
         }
@@ -83,10 +73,10 @@ namespace DocuReqCMS.KIOSKSETTINGS
                 ofd.Filter = "Images|*.jpg;*.jpeg;*.png;*.bmp";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    guna2TextBox2.Text = ofd.FileName;
+                    guna2TextBox3.Text = ofd.FileName;
                     byte[] bytes = File.ReadAllBytes(ofd.FileName);
-                    guna2PictureBox2.Image = Image.FromStream(new MemoryStream(bytes)); // ← your logo picturebox
-                    guna2PictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    picLogoPreview.Image = Image.FromStream(new MemoryStream(bytes));
+                    picLogoPreview.SizeMode = PictureBoxSizeMode.Zoom;
                 }
             }
         }
@@ -94,7 +84,27 @@ namespace DocuReqCMS.KIOSKSETTINGS
         private void BtnKioskTitleFont_Click(object sender, EventArgs e)
         {
             if (fontDialog1.ShowDialog() == DialogResult.OK)
-                guna2HtmlLabel8.Font = fontDialog1.Font; // ← reflects font on title label
+                lblKIOSKTitlePreview.Font = fontDialog1.Font;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void picLogoPreview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button44_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

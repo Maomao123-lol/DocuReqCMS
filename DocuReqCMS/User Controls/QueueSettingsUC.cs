@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DocuReqCMS.User_Controls
 {
-    public partial class QueueSettingsUC : UserControl
+    public partial class QueueSettingsUC : Form
     {
         public QueueSettingsUC()
         {

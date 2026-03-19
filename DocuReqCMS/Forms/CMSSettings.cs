@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DocuReqCMS.User_Controls
+namespace DocuReqCMS.Forms
 {
-    public partial class ActivityLogsUC : UserControl
+    public partial class CMSSettings : Form
     {
-        public ActivityLogsUC()
+        public CMSSettings()
         {
             InitializeComponent();
         }

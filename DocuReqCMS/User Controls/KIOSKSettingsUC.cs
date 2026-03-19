@@ -1,20 +1,14 @@
-﻿using DocuReqCMS.Cards;
-using DocuReqCMS.KIOSKSETTINGS;
-using MySql.Data.MySqlClient;
+﻿using DocuReqCMS.KIOSKSETTINGS;
 using System;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace DocuReqCMS.User_Controls
 {
-    public partial class KIOSKSettingsUC : UserControl
+    public partial class KIOSKSettingsUC : Form
     {
         private string _connStr;
-        private UserControl _activeChild;
-        private DocumentItemsUC _documentItemsUC;
-        private ServicesCardsUC _servicesCardsUC;
-        private KIOSKDisplayUC _kioskDisplayUC;
+        private Form _activeChildForm;
         private Guna.UI2.WinForms.Guna2Button _activeButton;
 
         public KIOSKSettingsUC()
@@ -25,31 +19,27 @@ namespace DocuReqCMS.User_Controls
         public void LoadDocuments(string connStr)
         {
             _connStr = connStr;
-            _documentItemsUC = new DocumentItemsUC(_connStr);
-            _servicesCardsUC = new ServicesCardsUC(_connStr);
-            _kioskDisplayUC = new KIOSKDisplayUC(_connStr);
 
-            btnDocument.Click += (s, e) => LoadChild(_documentItemsUC);
-            btnService.Click += (s, e) => LoadChild(_servicesCardsUC);
-            btnDisplay.Click += (s, e) => LoadChild(_kioskDisplayUC);
+            btnDocument.Click += (s, e) => { OpenChild(new DocumentItemsUC(_connStr)); SetActiveButton(btnDocument); };
+            btnService.Click += (s, e) => { OpenChild(new ServicesCardsUC(_connStr)); SetActiveButton(btnService); };
+            btnDisplay.Click += (s, e) => { OpenChild(new KIOSKDisplayUC(_connStr)); SetActiveButton(btnDisplay); };
 
-            LoadChild(_documentItemsUC);
+            OpenChild(new DocumentItemsUC(_connStr));
             SetActiveButton(btnDocument);
         }
 
-        private void LoadChild(UserControl child)
+        private void OpenChild(Form form)
         {
-            if (_activeChild != null)
-                _activeChild.Visible = false; // hide instead of dispose
+            if (_activeChildForm != null)
+                _activeChildForm.Close();
 
-            _activeChild = child;
-            _activeChild.Dock = DockStyle.Fill;
-
-            if (!guna2Panel3.Controls.Contains(_activeChild))
-                guna2Panel3.Controls.Add(_activeChild);
-
-            _activeChild.Visible = true;
-            _activeChild.BringToFront();
+            _activeChildForm = form;
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            guna2Panel3.Controls.Add(form);
+            form.BringToFront();
+            form.Show();
         }
 
         private void SetActiveButton(Guna.UI2.WinForms.Guna2Button button)

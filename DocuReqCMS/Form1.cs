@@ -19,6 +19,7 @@ namespace DocuReqCMS
             InitializeComponent();
             currentUserId = userId;
         }
+
         private void ActivateButton(Guna.UI2.WinForms.Guna2Button button)
         {
             if (currentButton != null)
@@ -26,7 +27,6 @@ namespace DocuReqCMS
                 currentButton.FillColor = Color.Transparent;
                 currentButton.ForeColor = Color.Black;
             }
-
             currentButton = button;
             currentButton.FillColor = Color.White;
             currentButton.ForeColor = Color.FromArgb(91, 208, 102);
@@ -50,9 +50,9 @@ namespace DocuReqCMS
 
         private void SubBttnKIOSK_Click(object sender, EventArgs e)
         {
-            KIOSKSettingsUC kioskUC = new KIOSKSettingsUC();
-            kioskUC.LoadDocuments(connStr);
-            openChildControl(kioskUC);
+            KIOSKSettingsUC kioskForm = new KIOSKSettingsUC();
+            kioskForm.LoadDocuments(connStr);
+            openChildForm(kioskForm);
             ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
@@ -80,6 +80,11 @@ namespace DocuReqCMS
             ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
 
+        //private void btnCMS_Click(object sender, EventArgs e)
+        //{
+        //    openChildForm(new CMSSettings());
+        //}
+
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -95,14 +100,6 @@ namespace DocuReqCMS
             childForm.Show();
         }
 
-        private void openChildControl(UserControl childControl)
-        {
-            panelChildForm.Controls.Clear();
-
-            childControl.Dock = DockStyle.Fill;
-            panelChildForm.Controls.Add(childControl);
-            childControl.BringToFront();
-        }
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -120,22 +117,20 @@ namespace DocuReqCMS
                 this.Close();
             }
         }
+
         private void UpdateLogoutStatus()
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
 
-                // 1️⃣ Update user status
                 string updateQuery = @"UPDATE users 
                                SET last_logout = NOW(), status = 'OFFLINE' 
                                WHERE user_id = @id";
-
                 MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn);
                 updateCmd.Parameters.AddWithValue("@id", currentUserId);
                 updateCmd.ExecuteNonQuery();
 
-                // 2️⃣ Get user info for logging
                 string infoQuery = "SELECT username, role FROM users WHERE user_id=@id";
                 MySqlCommand infoCmd = new MySqlCommand(infoQuery, conn);
                 infoCmd.Parameters.AddWithValue("@id", currentUserId);
@@ -150,33 +145,17 @@ namespace DocuReqCMS
                 }
                 reader.Close();
 
-                // 3️⃣ Log activity using ActivityLogger
                 ActivityLogger.Log(
-                    currentUserId,                    // int? userId
-                    role,                             // role string
+                    currentUserId,
+                    role,
                     $"{username} has logged out and is now offline"
                 );
             }
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel14_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void guna2Button1_Click(object sender, EventArgs e) { }
+        private void guna2Panel14_Paint(object sender, PaintEventArgs e) { }
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e) { }
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e) { }
     }
 }

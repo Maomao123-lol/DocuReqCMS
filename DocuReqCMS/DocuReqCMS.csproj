@@ -153,6 +153,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CMSSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CMSSettings.Designer.cs">
+      <DependentUpon>CMSSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="KIOSK and Queue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,19 +175,19 @@
     <Compile Include="KioskDocumentManager.cs" />
     <Compile Include="KIOSKSettingsManager.cs" />
     <Compile Include="KIOSKSETTINGS\DocumentItemsUC.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="KIOSKSETTINGS\DocumentItemsUC.Designer.cs">
       <DependentUpon>DocumentItemsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="KIOSKSETTINGS\KIOSKDisplayUC.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="KIOSKSETTINGS\KIOSKDisplayUC.Designer.cs">
       <DependentUpon>KIOSKDisplayUC.cs</DependentUpon>
     </Compile>
     <Compile Include="KIOSKSETTINGS\ServicesCardsUC.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="KIOSKSETTINGS\ServicesCardsUC.Designer.cs">
       <DependentUpon>ServicesCardsUC.cs</DependentUpon>
@@ -218,35 +224,23 @@
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ActivityLogsUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\ActivityLogsUC.Designer.cs">
-      <DependentUpon>ActivityLogsUC.cs</DependentUpon>
-    </Compile>
     <Compile Include="User Controls\KIOSKSettingsUC.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="User Controls\KIOSKSettingsUC.Designer.cs">
       <DependentUpon>KIOSKSettingsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\QueueSettingsUC.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="User Controls\QueueSettingsUC.Designer.cs">
       <DependentUpon>QueueSettingsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\registrarSettingsUC.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="User Controls\registrarSettingsUC.Designer.cs">
       <DependentUpon>registrarSettingsUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Controls\ReportsUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\ReportsUC.Designer.cs">
-      <DependentUpon>ReportsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UserPage.cs">
       <SubType>Form</SubType>
@@ -274,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CMSSettings.resx">
+      <DependentUpon>CMSSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIOSKSETTINGS\DocumentItemsUC.resx">
       <DependentUpon>DocumentItemsUC.cs</DependentUpon>
@@ -308,9 +305,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\KIOSKSettingsUC.resx">
       <DependentUpon>KIOSKSettingsUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ReportsUC.resx">
-      <DependentUpon>ReportsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPage.resx">
       <DependentUpon>UserPage.cs</DependentUpon>
@@ -379,9 +373,7 @@
   <ItemGroup>
     <None Include="Resources\ucc1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\dashboard %281%291.png" />
   </ItemGroup>

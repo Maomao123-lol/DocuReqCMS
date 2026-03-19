@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace DocuReqCMS.KIOSKSETTINGS
 {
-    public partial class ServicesCardsUC : UserControl
+    public partial class ServicesCardsUC : Form
     {
         private readonly string _connStr;
 

@@ -40,7 +40,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(870, 472);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1590, 763);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnServiceCard
@@ -65,19 +65,20 @@
             // 
             this.guna2Panel2.Controls.Add(this.btnServiceCard);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 472);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 763);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(870, 70);
+            this.guna2Panel2.Size = new System.Drawing.Size(1590, 70);
             this.guna2Panel2.TabIndex = 3;
             // 
             // ServicesCardsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1590, 833);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2Panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ServicesCardsUC";
-            this.Size = new System.Drawing.Size(870, 542);
             this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 

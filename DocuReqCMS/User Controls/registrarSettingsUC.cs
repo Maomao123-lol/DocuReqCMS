@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DocuReqCMS.User_Controls
 {
-    public partial class registrarSettingsUC : UserControl
+    public partial class registrarSettingsUC : Form
     {
         public registrarSettingsUC()
         {
