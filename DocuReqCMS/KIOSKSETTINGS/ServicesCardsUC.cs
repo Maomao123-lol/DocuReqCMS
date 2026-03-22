@@ -85,7 +85,7 @@ namespace DocuReqCMS.KIOSKSETTINGS
 
         private void RefreshCardSizes()
         {
-            int cardWidth = (flowLayoutPanel1.ClientSize.Width / 4) - 30;
+            int cardWidth = (flowLayoutPanel1.ClientSize.Width / 5) - 30;
             foreach (Control ctrl in flowLayoutPanel1.Controls)
             {
                 if (ctrl is previewServiceCards card)

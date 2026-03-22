@@ -14,12 +14,18 @@ namespace DocuReqCMS.Cards
         private bool _isActive = true;
 
         public Action OnStatusChanged { get; set; }
+        public Action OnCardClicked { get; set; }
 
         public previewDocsCards()
         {
             InitializeComponent();
             guna2Button1.Click += BtnDisable_Click;
             guna2Button2.Click += BtnRemove_Click;
+
+            guna2Panel1.Click += (s, e) => OnCardClicked?.Invoke();
+            picItem.Click += (s, e) => OnCardClicked?.Invoke();
+            lblName.Click += (s, e) => OnCardClicked?.Invoke();
+            guna2HtmlLabel2.Click += (s, e) => OnCardClicked?.Invoke();
         }
 
         #region Properties
@@ -40,11 +46,11 @@ namespace DocuReqCMS.Cards
             }
         }
 
-        public string Price
-        {
-            get => lblPrice.Text;
-            set => lblPrice.Text = value;
-        }
+        //public string Price
+        //{
+        //    get => lblPrice.Text;
+        //    set => lblPrice.Text = value;
+        //}
 
         public Image ItemImage
         {
@@ -85,7 +91,7 @@ namespace DocuReqCMS.Cards
         {
             this.BackColor = _isActive ? Color.White : Color.FromArgb(240, 240, 240);
             lblName.ForeColor = _isActive ? Color.Black : Color.Gray;
-            lblPrice.ForeColor = _isActive ? Color.Black : Color.Gray;
+            //lblPrice.ForeColor = _isActive ? Color.Black : Color.Gray;
             picItem.Enabled = _isActive;
         }
 
@@ -198,5 +204,25 @@ namespace DocuReqCMS.Cards
         }
 
         #endregion
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void picItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

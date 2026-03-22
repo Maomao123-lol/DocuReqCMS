@@ -30,20 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblService = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
             this.btnDisable = new Guna.UI2.WinForms.Guna2Button();
             this.picImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lblService = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.panel1);
             this.guna2Panel1.Controls.Add(this.btnRemove);
             this.guna2Panel1.Controls.Add(this.btnDisable);
-            this.guna2Panel1.Controls.Add(this.lblService);
             this.guna2Panel1.Controls.Add(this.picImage);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -51,18 +53,6 @@
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(15);
             this.guna2Panel1.Size = new System.Drawing.Size(297, 299);
             this.guna2Panel1.TabIndex = 0;
-            // 
-            // lblService
-            // 
-            this.lblService.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblService.BackColor = System.Drawing.Color.Transparent;
-            this.lblService.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblService.Location = new System.Drawing.Point(105, 172);
-            this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(84, 37);
-            this.lblService.TabIndex = 1;
-            this.lblService.Text = "Service";
-            this.lblService.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRemove
             // 
@@ -106,7 +96,7 @@
             this.picImage.ImageRotate = 0F;
             this.picImage.Location = new System.Drawing.Point(15, 15);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(267, 150);
+            this.picImage.Size = new System.Drawing.Size(267, 159);
             this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picImage.TabIndex = 0;
             this.picImage.TabStop = false;
@@ -114,6 +104,26 @@
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
+            // 
+            // lblService
+            // 
+            this.lblService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblService.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.lblService.Location = new System.Drawing.Point(0, 0);
+            this.lblService.Name = "lblService";
+            this.lblService.Size = new System.Drawing.Size(267, 62);
+            this.lblService.TabIndex = 9;
+            this.lblService.Text = "Service";
+            this.lblService.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblService);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(15, 174);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(267, 62);
+            this.panel1.TabIndex = 10;
             // 
             // previewServiceCards
             // 
@@ -123,8 +133,8 @@
             this.Name = "previewServiceCards";
             this.Size = new System.Drawing.Size(297, 299);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -132,10 +142,11 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblService;
         private Guna.UI2.WinForms.Guna2PictureBox picImage;
         private Guna.UI2.WinForms.Guna2Button btnRemove;
         private Guna.UI2.WinForms.Guna2Button btnDisable;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Label lblService;
+        private System.Windows.Forms.Panel panel1;
     }
 }

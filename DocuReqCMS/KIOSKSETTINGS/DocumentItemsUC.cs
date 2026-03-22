@@ -41,7 +41,7 @@ namespace DocuReqCMS.KIOSKSETTINGS
                 using (MySqlConnection conn = new MySqlConnection(_connStr))
                 {
                     conn.Open();
-                    string query = @"SELECT id, document_name, price, image_path, is_active 
+                    string query = @"SELECT id, document_name, description, price, image_path, requirements, is_active 
                                      FROM cms_db.kiosk_documents 
                                      WHERE is_deleted = 0 OR is_deleted IS NULL";
 
@@ -67,31 +67,42 @@ namespace DocuReqCMS.KIOSKSETTINGS
 
         private previewDocsCards CreateDocumentCard(MySqlDataReader reader)
         {
+            int id = Convert.ToInt32(reader["id"]);
+            string name = reader["document_name"].ToString();
+            string price = reader["price"].ToString();
+            string imagePath = reader["image_path"].ToString();
+            string description = reader["description"].ToString();
+            string requirements = reader["requirements"].ToString();
+            bool isActive = Convert.ToInt32(reader["is_active"]) == 1;
+
             var card = new previewDocsCards
             {
-                DocumentId = Convert.ToInt32(reader["id"]),
-                Size = new Size((flowLayoutPanel1.ClientSize.Width / 4) - 30, 380),
+                DocumentId = id,
+                Size = new Size((flowLayoutPanel1.ClientSize.Width / 4) - 30, 330),
                 Margin = new Padding(10),
-                ItemName = reader["document_name"].ToString(),
-                Price = "PHP " + reader["price"].ToString(),
-                IsActive = Convert.ToInt32(reader["is_active"]) == 1
+                ItemName = name,
+                IsActive = isActive
             };
 
             card.OnStatusChanged = () => LoadDocumentItems();
 
-            string imagePath = reader["image_path"].ToString();
+            // Wire card click to open DocsInfo
+            card.OnCardClicked = () =>
+            {
+                var info = new DocsInfo(id, name, description, price, imagePath, requirements);
+                info.StartPosition = FormStartPosition.CenterParent;
+                info.Size = new Size(450, 650);
+                info.ShowDialog(this);
+            };
+
             if (File.Exists(imagePath))
             {
                 try
                 {
-                    // Load into MemoryStream to avoid file lock
                     byte[] imageBytes = File.ReadAllBytes(imagePath);
                     card.ItemImage = Image.FromStream(new MemoryStream(imageBytes));
                 }
-                catch
-                {
-                    // Image load failed, card shows without image
-                }
+                catch { }
             }
 
             return card;
@@ -99,7 +110,7 @@ namespace DocuReqCMS.KIOSKSETTINGS
 
         private void RefreshCardSizes()
         {
-            int cardWith = (flowLayoutPanel1.ClientSize.Width / 4) - 30;
+            int cardWith = (flowLayoutPanel1.ClientSize.Width / 5) - 35;
             foreach (Control ctrl in flowLayoutPanel1.Controls)
             {
                 if (ctrl is previewDocsCards card)

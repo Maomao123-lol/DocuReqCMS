@@ -3,6 +3,7 @@ using System;
 using System.Configuration;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DocuReqCMS.Cards
@@ -52,22 +53,25 @@ namespace DocuReqCMS.Cards
         {
             if (!ValidateInputs(out decimal price)) return;
 
+            string requirements = GetSelectedRequirements();
+
             try
             {
                 using (var conn = new MySqlConnection(_connStr))
                 {
                     conn.Open();
                     string query = @"
-                        INSERT INTO cms_db.kiosk_documents 
-                            (document_name, price, image_path, is_active, is_deleted) 
-                        VALUES 
-                            (@name, @price, @imagePath, 1, 0)";
+                INSERT INTO cms_db.kiosk_documents 
+                    (document_name, price, image_path, requirements, is_active, is_deleted) 
+                VALUES 
+                    (@name, @price, @imagePath, @requirements, 1, 0)";
 
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", txtDocumentName.Text.Trim());
                         cmd.Parameters.AddWithValue("@price", price);
                         cmd.Parameters.AddWithValue("@imagePath", _selectedImagePath);
+                        cmd.Parameters.AddWithValue("@requirements", requirements);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -83,6 +87,19 @@ namespace DocuReqCMS.Cards
                 MessageBox.Show($"Error saving document: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private string GetSelectedRequirements()
+        {
+            var checked_items = new System.Collections.Generic.List<string>();
+
+            foreach (CheckBox cb in panel1.Controls.OfType<CheckBox>())
+            {
+                if (cb.Checked)
+                    checked_items.Add(cb.Text.Trim());
+            }
+
+            return string.Join(",", checked_items);
         }
 
         private bool ValidateInputs(out decimal price)
@@ -124,6 +141,21 @@ namespace DocuReqCMS.Cards
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void bttnCancel_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttnAdd_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
