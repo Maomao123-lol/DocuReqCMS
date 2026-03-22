@@ -7,28 +7,22 @@ using MySql.Data.MySqlClient;
 
 namespace KIOSK.Request
 {
-    public partial class studentNumber : Form
+    public partial class feeStudentNumber : Form
     {
         private readonly Form1 _mainParent;
         private readonly requestForm _requestParent;
         private KIOSK.keyboardUI _keyboard;
-        private readonly string _documentName;
-        private readonly string _requirements;
+        private readonly string _feeName;
         private string _connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
-        public studentNumber(requestForm requestParent, Form1 mainParent, string documentName, string requirements)
+        public feeStudentNumber(requestForm requestParent, Form1 mainParent, string feeName)
         {
             InitializeComponent();
             _requestParent = requestParent;
             _mainParent = mainParent;
-            _documentName = documentName;
-            _requirements = requirements;
+            _feeName = feeName;
 
-            label4.Text = documentName;
-            label2.Text = string.IsNullOrWhiteSpace(requirements)
-                ? "No requirements."
-                : string.Join("\n", requirements.Split(',')
-                    .Select(r => "• " + r.Trim()));
+            label1.Text = feeName;
 
             LoadKeyboard();
             button2.Click += (s, e) => _mainParent.LoadChild(new requestForm(_mainParent));
@@ -53,7 +47,7 @@ namespace KIOSK.Request
             {
                 string queueNo = GetNextQueueNo();
                 SaveToDatabase(queueNo, input);
-                ReceiptHelper.Print(queueNo, "REQUEST DOCUMENT");
+                ReceiptHelper.Print(queueNo, "PAY FEE");
                 _mainParent.LoadChild(new thankPage(_mainParent));
             }
             catch (Exception ex)
@@ -69,12 +63,12 @@ namespace KIOSK.Request
             {
                 conn.Open();
                 string query = @"SELECT COUNT(*) FROM cms_db.queue_tickets 
-                                 WHERE queue_no LIKE 'R%' 
+                                 WHERE queue_no LIKE 'F%' 
                                  AND DATE(created_at) = CURDATE()";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return $"R{(count + 1):D3}";
+                    return $"F{(count + 1):D3}";
                 }
             }
         }
@@ -90,9 +84,9 @@ namespace KIOSK.Request
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@queueNo", queueNo);
-                    cmd.Parameters.AddWithValue("@serviceType", "REQUEST DOCUMENT");
+                    cmd.Parameters.AddWithValue("@serviceType", "PAY FEE");
                     cmd.Parameters.AddWithValue("@studentNo", studentNo);
-                    cmd.Parameters.AddWithValue("@type", _documentName);
+                    cmd.Parameters.AddWithValue("@type", _feeName);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -110,7 +104,5 @@ namespace KIOSK.Request
             _keyboard.SetTarget(textBox1);
             panel4.Controls.Add(_keyboard);
         }
-
-        private void label1_Click(object sender, EventArgs e) { }
     }
 }

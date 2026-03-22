@@ -65,7 +65,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "DOCUMENT NAME";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
             // 
             // guna2Elipse2
             // 

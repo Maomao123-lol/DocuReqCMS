@@ -58,7 +58,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(250, 250);
             this.label1.TabIndex = 1;
-            this.label1.Text = "DOCUMENT NAME";
+            this.label1.Text = "FEE PAY\r\nNAME";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Elipse1

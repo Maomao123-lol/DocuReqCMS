@@ -20,10 +20,5 @@ namespace KIOSK.Request
             get => label1.Text;
             set => label1.Text = value;
         }
-
-        private void label1_MouseHover(object sender, EventArgs e)
-        {
-            panel1.BackColor = Color.FromArgb(91, 208, 102);
-        }
     }
 }

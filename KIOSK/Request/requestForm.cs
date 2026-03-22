@@ -17,13 +17,10 @@ namespace KIOSK.Request
         {
             InitializeComponent();
             _parent = parent;
-
             btnDocument.Click += (s, e) => LoadDocumentCards();
-            btnService.Click += (s, e) => { };
-            btnPayFee.Click += (s, e) => { };
+            btnPayFee.Click += (s, e) => LoadFeeCards();
             button4.Click += (s, e) => _parent.LoadChild(new preChoice(_parent));
-
-            this.Load += (s, e) => btnDocument.PerformClick(); // ← move here
+            this.Load += (s, e) => btnDocument.PerformClick();
         }
 
         private void LoadDocumentCards()
@@ -70,6 +67,52 @@ namespace KIOSK.Request
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading documents: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadFeeCards()
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            try
+            {
+                using (var conn = new MySqlConnection(_connStr))
+                {
+                    conn.Open();
+                    string query = @"SELECT id, name 
+                             FROM cms_db.kiosk_services 
+                             WHERE is_active = 1 
+                             AND (is_deleted = 0 OR is_deleted IS NULL)";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = Convert.ToInt32(reader["id"]);
+                            string name = reader["name"].ToString();
+
+                            var card = new feeCards
+                            {
+                                FeeName = name,
+                                Size = new Size(210, 210),
+                                Margin = new Padding(10)
+                            };
+
+                            card.OnCardClicked = () =>
+                            {
+                                _parent.LoadChild(new feeStudentNumber(this, _parent, name));
+                            };
+
+                            flowLayoutPanel1.Controls.Add(card);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading services: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
