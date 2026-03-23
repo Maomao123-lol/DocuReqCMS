@@ -28,307 +28,607 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PanelMenu = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btnActivityLogs = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.SubPanelKQS = new System.Windows.Forms.Panel();
-            this.SubBttnQueue = new System.Windows.Forms.Button();
-            this.SubBttnKIOSK = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnUserManagement = new System.Windows.Forms.Button();
-            this.btnDashboard = new System.Windows.Forms.Button();
-            this.Admin = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.PanelMenu.SuspendLayout();
-            this.SubPanelKQS.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.TopPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.sidePanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
+            this.SubBttnQueue = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
+            this.SubBttnKIOSK = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnActivityLogs = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnReports = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnUserManagement = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelChildForm = new Guna.UI2.WinForms.Guna2Panel();
+            this.sidePanelParent = new Guna.UI2.WinForms.Guna2Panel();
+            this.spacerPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.TopPanel.SuspendLayout();
+            this.sidePanel.SuspendLayout();
+            this.guna2Panel6.SuspendLayout();
+            this.guna2Panel5.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
+            this.sidePanelParent.SuspendLayout();
+            this.spacerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PanelMenu
+            // guna2BorderlessForm1
             // 
-            this.PanelMenu.AutoScroll = true;
-            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(255)))), ((int)(((byte)(207)))));
-            this.PanelMenu.Controls.Add(this.btnLogout);
-            this.PanelMenu.Controls.Add(this.button7);
-            this.PanelMenu.Controls.Add(this.btnActivityLogs);
-            this.PanelMenu.Controls.Add(this.button3);
-            this.PanelMenu.Controls.Add(this.SubPanelKQS);
-            this.PanelMenu.Controls.Add(this.button2);
-            this.PanelMenu.Controls.Add(this.btnUserManagement);
-            this.PanelMenu.Controls.Add(this.btnDashboard);
-            this.PanelMenu.Controls.Add(this.Admin);
-            this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelMenu.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(211, 645);
-            this.PanelMenu.TabIndex = 0;
+            this.guna2BorderlessForm1.BorderRadius = 12;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // btnLogout
+            // guna2DragControl1
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 531);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(211, 60);
-            this.btnLogout.TabIndex = 9;
-            this.btnLogout.Text = "         Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.TopPanel;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // button7
+            // TopPanel
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
-            this.button7.Image = global::DocuReqCMS.Properties.Resources.report;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 471);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(211, 60);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "         Reports";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.TopPanel.BackColor = System.Drawing.Color.Transparent;
+            this.TopPanel.Controls.Add(this.guna2ControlBox1);
+            this.TopPanel.Controls.Add(this.guna2ControlBox2);
+            this.TopPanel.Controls.Add(this.guna2ControlBox3);
+            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
+            this.TopPanel.Location = new System.Drawing.Point(312, 0);
+            this.TopPanel.Name = "TopPanel";
+            this.TopPanel.Size = new System.Drawing.Size(1590, 38);
+            this.TopPanel.TabIndex = 3;
             // 
-            // btnActivityLogs
+            // guna2ControlBox1
             // 
-            this.btnActivityLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnActivityLogs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnActivityLogs.FlatAppearance.BorderSize = 0;
-            this.btnActivityLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.btnActivityLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.btnActivityLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActivityLogs.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.btnActivityLogs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
-            this.btnActivityLogs.Image = global::DocuReqCMS.Properties.Resources.file;
-            this.btnActivityLogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivityLogs.Location = new System.Drawing.Point(0, 411);
-            this.btnActivityLogs.Margin = new System.Windows.Forms.Padding(2);
-            this.btnActivityLogs.Name = "btnActivityLogs";
-            this.btnActivityLogs.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnActivityLogs.Size = new System.Drawing.Size(211, 60);
-            this.btnActivityLogs.TabIndex = 7;
-            this.btnActivityLogs.Text = "         Activity Logs";
-            this.btnActivityLogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivityLogs.UseVisualStyleBackColor = false;
-            this.btnActivityLogs.Click += new System.EventHandler(this.btnActivityLogs_Click);
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1540, 6);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(38, 26);
+            this.guna2ControlBox1.TabIndex = 0;
             // 
-            // button3
+            // guna2ControlBox2
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
-            this.button3.Image = global::DocuReqCMS.Properties.Resources.services;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 351);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(211, 60);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "         Service Configuration";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(1496, 6);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.Size = new System.Drawing.Size(38, 26);
+            this.guna2ControlBox2.TabIndex = 1;
             // 
-            // SubPanelKQS
+            // guna2ControlBox3
             // 
-            this.SubPanelKQS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.SubPanelKQS.Controls.Add(this.SubBttnQueue);
-            this.SubPanelKQS.Controls.Add(this.SubBttnKIOSK);
-            this.SubPanelKQS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelKQS.Location = new System.Drawing.Point(0, 261);
-            this.SubPanelKQS.Margin = new System.Windows.Forms.Padding(2);
-            this.SubPanelKQS.Name = "SubPanelKQS";
-            this.SubPanelKQS.Size = new System.Drawing.Size(211, 90);
-            this.SubPanelKQS.TabIndex = 5;
+            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox3.Location = new System.Drawing.Point(1452, 6);
+            this.guna2ControlBox3.Name = "guna2ControlBox3";
+            this.guna2ControlBox3.Size = new System.Drawing.Size(38, 26);
+            this.guna2ControlBox3.TabIndex = 2;
+            // 
+            // sidePanel
+            // 
+            this.sidePanel.BackColor = System.Drawing.Color.Transparent;
+            this.sidePanel.BorderRadius = 10;
+            this.sidePanel.Controls.Add(this.guna2Panel6);
+            this.sidePanel.Controls.Add(this.btnLogout);
+            this.sidePanel.Controls.Add(this.guna2Panel8);
+            this.sidePanel.CustomizableEdges.BottomLeft = false;
+            this.sidePanel.CustomizableEdges.BottomRight = false;
+            this.sidePanel.CustomizableEdges.TopLeft = false;
+            this.sidePanel.CustomizableEdges.TopRight = false;
+            this.sidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sidePanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
+            this.sidePanel.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel.Name = "sidePanel";
+            this.sidePanel.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.sidePanel.Size = new System.Drawing.Size(312, 1033);
+            this.sidePanel.TabIndex = 1;
+            this.sidePanel.UseTransparentBackground = true;
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.Controls.Add(this.guna2Panel15);
+            this.guna2Panel6.Controls.Add(this.SubBttnQueue);
+            this.guna2Panel6.Controls.Add(this.guna2Panel11);
+            this.guna2Panel6.Controls.Add(this.SubBttnKIOSK);
+            this.guna2Panel6.Controls.Add(this.guna2Panel10);
+            this.guna2Panel6.Controls.Add(this.guna2Panel5);
+            this.guna2Panel6.Controls.Add(this.guna2Panel1);
+            this.guna2Panel6.Controls.Add(this.btnActivityLogs);
+            this.guna2Panel6.Controls.Add(this.guna2Panel3);
+            this.guna2Panel6.Controls.Add(this.btnReports);
+            this.guna2Panel6.Controls.Add(this.guna2Panel4);
+            this.guna2Panel6.Controls.Add(this.btnUserManagement);
+            this.guna2Panel6.Controls.Add(this.guna2Panel7);
+            this.guna2Panel6.Controls.Add(this.btnDashboard);
+            this.guna2Panel6.Controls.Add(this.guna2Panel13);
+            this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel6.Location = new System.Drawing.Point(0, 130);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.guna2Panel6.Size = new System.Drawing.Size(312, 482);
+            this.guna2Panel6.TabIndex = 0;
+            // 
+            // guna2Panel15
+            // 
+            this.guna2Panel15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel15.Location = new System.Drawing.Point(10, 451);
+            this.guna2Panel15.Name = "guna2Panel15";
+            this.guna2Panel15.Size = new System.Drawing.Size(292, 15);
+            this.guna2Panel15.TabIndex = 17;
             // 
             // SubBttnQueue
             // 
+            this.SubBttnQueue.Animated = true;
+            this.SubBttnQueue.BackColor = System.Drawing.Color.Transparent;
+            this.SubBttnQueue.BorderRadius = 20;
+            this.SubBttnQueue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SubBttnQueue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SubBttnQueue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SubBttnQueue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.SubBttnQueue.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubBttnQueue.FlatAppearance.BorderSize = 0;
-            this.SubBttnQueue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.SubBttnQueue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.SubBttnQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SubBttnQueue.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.SubBttnQueue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
-            this.SubBttnQueue.Location = new System.Drawing.Point(0, 45);
-            this.SubBttnQueue.Margin = new System.Windows.Forms.Padding(2);
+            this.SubBttnQueue.FillColor = System.Drawing.Color.Transparent;
+            this.SubBttnQueue.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubBttnQueue.ForeColor = System.Drawing.Color.Black;
+            this.SubBttnQueue.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.SubBttnQueue.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.SubBttnQueue.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
+            this.SubBttnQueue.ImageSize = new System.Drawing.Size(24, 24);
+            this.SubBttnQueue.Location = new System.Drawing.Point(10, 401);
+            this.SubBttnQueue.Margin = new System.Windows.Forms.Padding(10);
             this.SubBttnQueue.Name = "SubBttnQueue";
-            this.SubBttnQueue.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.SubBttnQueue.Size = new System.Drawing.Size(211, 45);
-            this.SubBttnQueue.TabIndex = 1;
-            this.SubBttnQueue.Text = "   Queue Monitor";
-            this.SubBttnQueue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SubBttnQueue.UseVisualStyleBackColor = true;
+            this.SubBttnQueue.Padding = new System.Windows.Forms.Padding(5);
+            this.SubBttnQueue.Size = new System.Drawing.Size(292, 50);
+            this.SubBttnQueue.TabIndex = 14;
+            this.SubBttnQueue.Text = "Queue Monitor";
+            this.SubBttnQueue.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SubBttnQueue.TextFormatNoPrefix = true;
+            this.SubBttnQueue.UseTransparentBackground = true;
             this.SubBttnQueue.Click += new System.EventHandler(this.SubBttnQueue_Click);
+            // 
+            // guna2Panel11
+            // 
+            this.guna2Panel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel11.Location = new System.Drawing.Point(10, 386);
+            this.guna2Panel11.Name = "guna2Panel11";
+            this.guna2Panel11.Size = new System.Drawing.Size(292, 15);
+            this.guna2Panel11.TabIndex = 15;
             // 
             // SubBttnKIOSK
             // 
+            this.SubBttnKIOSK.Animated = true;
+            this.SubBttnKIOSK.BackColor = System.Drawing.Color.Transparent;
+            this.SubBttnKIOSK.BorderRadius = 20;
+            this.SubBttnKIOSK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SubBttnKIOSK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SubBttnKIOSK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SubBttnKIOSK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.SubBttnKIOSK.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubBttnKIOSK.FlatAppearance.BorderSize = 0;
-            this.SubBttnKIOSK.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.SubBttnKIOSK.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.SubBttnKIOSK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SubBttnKIOSK.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.SubBttnKIOSK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
-            this.SubBttnKIOSK.Location = new System.Drawing.Point(0, 0);
-            this.SubBttnKIOSK.Margin = new System.Windows.Forms.Padding(2);
+            this.SubBttnKIOSK.FillColor = System.Drawing.Color.Transparent;
+            this.SubBttnKIOSK.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubBttnKIOSK.ForeColor = System.Drawing.Color.Black;
+            this.SubBttnKIOSK.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.SubBttnKIOSK.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.SubBttnKIOSK.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
+            this.SubBttnKIOSK.ImageSize = new System.Drawing.Size(24, 24);
+            this.SubBttnKIOSK.Location = new System.Drawing.Point(10, 336);
+            this.SubBttnKIOSK.Margin = new System.Windows.Forms.Padding(10);
             this.SubBttnKIOSK.Name = "SubBttnKIOSK";
-            this.SubBttnKIOSK.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.SubBttnKIOSK.Size = new System.Drawing.Size(211, 45);
-            this.SubBttnKIOSK.TabIndex = 0;
-            this.SubBttnKIOSK.Text = "   KIOSK";
-            this.SubBttnKIOSK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SubBttnKIOSK.UseVisualStyleBackColor = true;
+            this.SubBttnKIOSK.Padding = new System.Windows.Forms.Padding(5);
+            this.SubBttnKIOSK.Size = new System.Drawing.Size(292, 50);
+            this.SubBttnKIOSK.TabIndex = 12;
+            this.SubBttnKIOSK.Text = "KIOSK";
+            this.SubBttnKIOSK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SubBttnKIOSK.TextFormatNoPrefix = true;
+            this.SubBttnKIOSK.UseTransparentBackground = true;
             this.SubBttnKIOSK.Click += new System.EventHandler(this.SubBttnKIOSK_Click);
             // 
-            // button2
+            // guna2Panel10
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
-            this.button2.Image = global::DocuReqCMS.Properties.Resources.settings;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 201);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(211, 60);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "         KIOSK and Queue Settings";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.guna2Panel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel10.Location = new System.Drawing.Point(10, 321);
+            this.guna2Panel10.Name = "guna2Panel10";
+            this.guna2Panel10.Size = new System.Drawing.Size(292, 15);
+            this.guna2Panel10.TabIndex = 13;
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel5.Controls.Add(this.label3);
+            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel5.Location = new System.Drawing.Point(10, 275);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(292, 46);
+            this.guna2Panel5.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label3.Image = global::DocuReqCMS.Properties.Resources.settings;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(6, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "       Settings";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(10, 260);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(292, 15);
+            this.guna2Panel1.TabIndex = 13;
+            // 
+            // btnActivityLogs
+            // 
+            this.btnActivityLogs.Animated = true;
+            this.btnActivityLogs.BackColor = System.Drawing.Color.Transparent;
+            this.btnActivityLogs.BorderRadius = 20;
+            this.btnActivityLogs.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnActivityLogs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnActivityLogs.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnActivityLogs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnActivityLogs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnActivityLogs.FillColor = System.Drawing.Color.Transparent;
+            this.btnActivityLogs.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivityLogs.ForeColor = System.Drawing.Color.Black;
+            this.btnActivityLogs.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnActivityLogs.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnActivityLogs.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
+            this.btnActivityLogs.Image = global::DocuReqCMS.Properties.Resources.file;
+            this.btnActivityLogs.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnActivityLogs.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnActivityLogs.Location = new System.Drawing.Point(10, 210);
+            this.btnActivityLogs.Margin = new System.Windows.Forms.Padding(10);
+            this.btnActivityLogs.Name = "btnActivityLogs";
+            this.btnActivityLogs.Padding = new System.Windows.Forms.Padding(5);
+            this.btnActivityLogs.Size = new System.Drawing.Size(292, 50);
+            this.btnActivityLogs.TabIndex = 12;
+            this.btnActivityLogs.Text = "Activity Logs";
+            this.btnActivityLogs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnActivityLogs.TextFormatNoPrefix = true;
+            this.btnActivityLogs.UseTransparentBackground = true;
+            this.btnActivityLogs.Click += new System.EventHandler(this.btnActivityLogs_Click);
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel3.Location = new System.Drawing.Point(10, 195);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(292, 15);
+            this.guna2Panel3.TabIndex = 19;
+            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
+            // 
+            // btnReports
+            // 
+            this.btnReports.Animated = true;
+            this.btnReports.BackColor = System.Drawing.Color.Transparent;
+            this.btnReports.BorderRadius = 20;
+            this.btnReports.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReports.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReports.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReports.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReports.FillColor = System.Drawing.Color.Transparent;
+            this.btnReports.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.ForeColor = System.Drawing.Color.Black;
+            this.btnReports.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReports.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReports.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
+            this.btnReports.Image = global::DocuReqCMS.Properties.Resources.report;
+            this.btnReports.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReports.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnReports.Location = new System.Drawing.Point(10, 145);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(10);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Padding = new System.Windows.Forms.Padding(5);
+            this.btnReports.Size = new System.Drawing.Size(292, 50);
+            this.btnReports.TabIndex = 14;
+            this.btnReports.Text = "Reports";
+            this.btnReports.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReports.TextFormatNoPrefix = true;
+            this.btnReports.UseTransparentBackground = true;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel4.Location = new System.Drawing.Point(10, 130);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(292, 15);
+            this.guna2Panel4.TabIndex = 6;
             // 
             // btnUserManagement
             // 
-            this.btnUserManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnUserManagement.Animated = true;
+            this.btnUserManagement.BackColor = System.Drawing.Color.Transparent;
+            this.btnUserManagement.BorderRadius = 20;
+            this.btnUserManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUserManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUserManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUserManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnUserManagement.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUserManagement.FlatAppearance.BorderSize = 0;
-            this.btnUserManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.btnUserManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.btnUserManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserManagement.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.btnUserManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
+            this.btnUserManagement.FillColor = System.Drawing.Color.Transparent;
+            this.btnUserManagement.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserManagement.ForeColor = System.Drawing.Color.Black;
+            this.btnUserManagement.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnUserManagement.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUserManagement.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
             this.btnUserManagement.Image = global::DocuReqCMS.Properties.Resources.management;
-            this.btnUserManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserManagement.Location = new System.Drawing.Point(0, 141);
-            this.btnUserManagement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUserManagement.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnUserManagement.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnUserManagement.Location = new System.Drawing.Point(10, 80);
+            this.btnUserManagement.Margin = new System.Windows.Forms.Padding(10);
             this.btnUserManagement.Name = "btnUserManagement";
-            this.btnUserManagement.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnUserManagement.Size = new System.Drawing.Size(211, 60);
-            this.btnUserManagement.TabIndex = 3;
-            this.btnUserManagement.Text = "         User Management";
-            this.btnUserManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserManagement.UseVisualStyleBackColor = false;
+            this.btnUserManagement.Padding = new System.Windows.Forms.Padding(5);
+            this.btnUserManagement.Size = new System.Drawing.Size(292, 50);
+            this.btnUserManagement.TabIndex = 7;
+            this.btnUserManagement.Text = "User Management";
+            this.btnUserManagement.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnUserManagement.TextFormatNoPrefix = true;
+            this.btnUserManagement.UseTransparentBackground = true;
             this.btnUserManagement.Click += new System.EventHandler(this.btnUserManagement_Click);
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel7.Location = new System.Drawing.Point(10, 65);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(292, 15);
+            this.guna2Panel7.TabIndex = 4;
             // 
             // btnDashboard
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDashboard.Animated = true;
+            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.BorderRadius = 20;
+            this.btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(61)))), ((int)(((byte)(26)))));
+            this.btnDashboard.FillColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.Black;
+            this.btnDashboard.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDashboard.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
             this.btnDashboard.Image = global::DocuReqCMS.Properties.Resources.dashboard__1_;
-            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 81);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDashboard.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnDashboard.Location = new System.Drawing.Point(10, 15);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(10);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(211, 60);
-            this.btnDashboard.TabIndex = 1;
-            this.btnDashboard.Text = "         Dashboard";
-            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.bttnKQSettings_Click);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(5);
+            this.btnDashboard.Size = new System.Drawing.Size(292, 50);
+            this.btnDashboard.TabIndex = 5;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDashboard.TextFormatNoPrefix = true;
+            this.btnDashboard.UseTransparentBackground = true;
             // 
-            // Admin
+            // guna2Panel13
             // 
-            this.Admin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Admin.Location = new System.Drawing.Point(0, 0);
-            this.Admin.Margin = new System.Windows.Forms.Padding(2);
-            this.Admin.Name = "Admin";
-            this.Admin.Size = new System.Drawing.Size(211, 81);
-            this.Admin.TabIndex = 0;
+            this.guna2Panel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel13.Location = new System.Drawing.Point(10, 0);
+            this.guna2Panel13.Name = "guna2Panel13";
+            this.guna2Panel13.Size = new System.Drawing.Size(292, 15);
+            this.guna2Panel13.TabIndex = 15;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Animated = true;
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BorderRadius = 5;
+            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FillColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.Black;
+            this.btnLogout.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLogout.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
+            this.btnLogout.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnLogout.Location = new System.Drawing.Point(0, 976);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(5);
+            this.btnLogout.Size = new System.Drawing.Size(312, 42);
+            this.btnLogout.TabIndex = 16;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.TextFormatNoPrefix = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel8.Controls.Add(this.label2);
+            this.guna2Panel8.Controls.Add(this.label1);
+            this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel8.Location = new System.Drawing.Point(0, 15);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(312, 115);
+            this.guna2Panel8.TabIndex = 3;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::DocuReqCMS.Properties.Resources.user__1_;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(15, 19);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 6;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(110, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Super Admin";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(108, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Reynaldo Abrigo";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.panelChildForm);
+            this.guna2Panel2.Controls.Add(this.TopPanel);
+            this.guna2Panel2.Controls.Add(this.sidePanelParent);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1902, 1033);
+            this.guna2Panel2.TabIndex = 4;
             // 
             // panelChildForm
             // 
-            this.panelChildForm.AutoScroll = true;
-            this.panelChildForm.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(211, 0);
-            this.panelChildForm.Margin = new System.Windows.Forms.Padding(2);
+            this.panelChildForm.Location = new System.Drawing.Point(312, 38);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(890, 645);
-            this.panelChildForm.TabIndex = 2;
+            this.panelChildForm.Size = new System.Drawing.Size(1590, 995);
+            this.panelChildForm.TabIndex = 4;
+            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
+            // 
+            // sidePanelParent
+            // 
+            this.sidePanelParent.BackColor = System.Drawing.Color.Transparent;
+            this.sidePanelParent.Controls.Add(this.spacerPanel);
+            this.sidePanelParent.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidePanelParent.FillColor = System.Drawing.Color.Transparent;
+            this.sidePanelParent.Location = new System.Drawing.Point(0, 0);
+            this.sidePanelParent.Name = "sidePanelParent";
+            this.sidePanelParent.Size = new System.Drawing.Size(312, 1033);
+            this.sidePanelParent.TabIndex = 3;
+            this.sidePanelParent.UseTransparentBackground = true;
+            // 
+            // spacerPanel
+            // 
+            this.spacerPanel.BorderRadius = 30;
+            this.spacerPanel.Controls.Add(this.sidePanel);
+            this.spacerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spacerPanel.Location = new System.Drawing.Point(0, 0);
+            this.spacerPanel.Name = "spacerPanel";
+            this.spacerPanel.Size = new System.Drawing.Size(312, 1033);
+            this.spacerPanel.TabIndex = 0;
+            this.spacerPanel.UseTransparentBackground = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(1101, 645);
-            this.Controls.Add(this.panelChildForm);
-            this.Controls.Add(this.PanelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.guna2Panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.PanelMenu.ResumeLayout(false);
-            this.SubPanelKQS.ResumeLayout(false);
+            this.Text = "Registrar Content Management System";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.TopPanel.ResumeLayout(false);
+            this.sidePanel.ResumeLayout(false);
+            this.guna2Panel6.ResumeLayout(false);
+            this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel5.PerformLayout();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.sidePanelParent.ResumeLayout(false);
+            this.spacerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel PanelMenu;
-        private System.Windows.Forms.Panel Admin;
-        private System.Windows.Forms.Button btnUserManagement;
-        private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button btnActivityLogs;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel SubPanelKQS;
-        private System.Windows.Forms.Button SubBttnQueue;
-        private System.Windows.Forms.Button SubBttnKIOSK;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Button btnLogout;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
+        private Guna.UI2.WinForms.Guna2Panel sidePanel;
+        private Guna.UI2.WinForms.Guna2Button btnDashboard;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2Panel TopPanel;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel panelChildForm;
+        private Guna.UI2.WinForms.Guna2Panel sidePanelParent;
+        private Guna.UI2.WinForms.Guna2Button btnUserManagement;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2Button btnActivityLogs;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
+        private Guna.UI2.WinForms.Guna2Button SubBttnQueue;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
+        private Guna.UI2.WinForms.Guna2Button SubBttnKIOSK;
+        private Guna.UI2.WinForms.Guna2Button btnLogout;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
+        private Guna.UI2.WinForms.Guna2Button btnReports;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
+        private Guna.UI2.WinForms.Guna2Panel spacerPanel;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private System.Windows.Forms.Label label3;
     }
 }
 
