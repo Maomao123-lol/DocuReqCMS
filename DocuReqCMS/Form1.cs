@@ -157,5 +157,10 @@ namespace DocuReqCMS
         private void guna2Panel14_Paint(object sender, PaintEventArgs e) { }
         private void guna2Panel3_Paint(object sender, PaintEventArgs e) { }
         private void guna2HtmlLabel2_Click(object sender, EventArgs e) { }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -16,12 +16,14 @@ namespace DocuReqCMS.Cards
         public Action OnSaved { get; set; }
         public Action OnCancelled { get; set; }
 
+
         public createCard()
         {
             InitializeComponent();
             bttnAdd.Click += BttnAdd_Click;
             bttnCancel.Click += BttnCancel_Click;
             bttnBrowse.Click += BttnBrowse_Click;
+            this.Load += (s, e) => txtDocumentName.Focus();
         }
 
         private void BttnBrowse_Click(object sender, EventArgs e)
@@ -62,13 +64,14 @@ namespace DocuReqCMS.Cards
                     conn.Open();
                     string query = @"
                 INSERT INTO cms_db.kiosk_documents 
-                    (document_name, price, image_path, requirements, is_active, is_deleted) 
+                    (document_name, description, price, image_path, requirements, is_active, is_deleted) 
                 VALUES 
-                    (@name, @price, @imagePath, @requirements, 1, 0)";
+                    (@name, @description, @price, @imagePath, @requirements, 1, 0)";
 
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", txtDocumentName.Text.Trim());
+                        cmd.Parameters.AddWithValue("@description", guna2TextBox1.Text.Trim()); // ← add this
                         cmd.Parameters.AddWithValue("@price", price);
                         cmd.Parameters.AddWithValue("@imagePath", _selectedImagePath);
                         cmd.Parameters.AddWithValue("@requirements", requirements);
@@ -154,6 +157,11 @@ namespace DocuReqCMS.Cards
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void checkBox19_CheckedChanged(object sender, EventArgs e)
         {
 
         }

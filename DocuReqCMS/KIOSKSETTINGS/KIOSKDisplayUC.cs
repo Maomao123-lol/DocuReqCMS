@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -8,9 +9,11 @@ namespace DocuReqCMS.KIOSKSETTINGS
 {
     public partial class KIOSKDisplayUC :Form
     {
+        private readonly string _connStr;
         public KIOSKDisplayUC(string connStr)
         {
             InitializeComponent();
+            _connStr = connStr;
             WireColorButtons();
             guna2Button43.Click += BtnCustomColor_Click;
             guna2Button44.Click += BtnFont_Click;
@@ -62,6 +65,7 @@ namespace DocuReqCMS.KIOSKSETTINGS
                     byte[] bytes = File.ReadAllBytes(ofd.FileName);
                     picWelcomePreview.Image = Image.FromStream(new MemoryStream(bytes));
                     picWelcomePreview.SizeMode = PictureBoxSizeMode.Zoom;
+                    SaveWelcomeImage(ofd.FileName); // ← add this
                 }
             }
         }
@@ -85,6 +89,31 @@ namespace DocuReqCMS.KIOSKSETTINGS
         {
             if (fontDialog1.ShowDialog() == DialogResult.OK)
                 lblKIOSKTitlePreview.Font = fontDialog1.Font;
+        }
+
+
+        private void SaveWelcomeImage(string imagePath)
+        {
+            try
+            {
+                using (var conn = new MySqlConnection(_connStr))
+                {
+                    conn.Open();
+                    string query = @"UPDATE cms_db.kiosk_display 
+                             SET welcome_image = @path, updated_at = NOW() 
+                             WHERE id = 1";
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@path", imagePath);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving image: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
