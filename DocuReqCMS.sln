@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KIOSK", "KIOSK\KIOSK.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue_monitoring", "Queue_monitoring-20260323T020817Z-3-001\Queue_monitoring\Queue_monitoring\Queue_monitoring.csproj", "{3005A041-1847-4453-889D-46C7FA8ED5EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuFlow-Reg", "registrar-master\DocuFlow-Reg.csproj", "{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuFlow-Reg", "DocuFlow-Reg.csproj", "{9680B3C3-D5A0-4EFB-A452-B0C2FC54677A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
