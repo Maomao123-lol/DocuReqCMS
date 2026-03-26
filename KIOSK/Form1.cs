@@ -7,7 +7,7 @@ namespace KIOSK
     {
         private Form _activeChild;
         private Timer _idleTimer;
-        private const int IdleSeconds = 10;
+        private const int IdleSeconds = 100;
 
         public Form1()
         {
