@@ -19,7 +19,7 @@ namespace DocuFlow_Reg
                            Port=14367;
                            Database=cms_db;
                            Uid=avnadmin;
-                           Pwd=AVNS_S6TD7JR1R5p-ZsJwC98;
+                           Pwd=password;
                            SslMode=Required;";
 
         }
