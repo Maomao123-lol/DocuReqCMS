@@ -1,28 +1,20 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using System.Data;
 using System.Windows;
 
 namespace DocuFlow_Reg
 {
     internal class DatabaseHelper
     {
-        private readonly string connectionString;
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
-        public DatabaseHelper()
-        {
-            connectionString = @"Server=docuflow-2fa570c2-jan-b7b6.e.aivencloud.com;
-                           Port=14367;
-                           Database=cms_db;
-                           Uid=avnadmin;
-                           Pwd=password;
-                           SslMode=Required;";
-
-        }
         private MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);
@@ -33,10 +25,8 @@ namespace DocuFlow_Reg
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    // Add parameters if provided
                     if (parameters != null)
                     {
                         foreach (var param in parameters)
@@ -44,7 +34,6 @@ namespace DocuFlow_Reg
                             cmd.Parameters.AddWithValue(param.Key, param.Value);
                         }
                     }
-
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
                     {
                         DataTable dt = new DataTable();
@@ -60,7 +49,6 @@ namespace DocuFlow_Reg
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 return cmd.ExecuteNonQuery();
             }
