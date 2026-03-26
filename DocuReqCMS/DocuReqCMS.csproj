@@ -110,12 +110,6 @@
     <Compile Include="activityLogs.Designer.cs">
       <DependentUpon>activityLogs.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddDocumentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddDocumentForm.Designer.cs">
-      <DependentUpon>AddDocumentForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Cards\createCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,17 +153,11 @@
     <Compile Include="Forms\CMSSettings.Designer.cs">
       <DependentUpon>CMSSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="KIOSK and Queue.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ItemCard.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="KIOSK and Queue.Designer.cs">
-      <DependentUpon>KIOSK and Queue.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KIOSK.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KIOSK.Designer.cs">
-      <DependentUpon>KIOSK.cs</DependentUpon>
+    <Compile Include="ItemCard.Designer.cs">
+      <DependentUpon>ItemCard.cs</DependentUpon>
     </Compile>
     <Compile Include="KioskDocument.cs" />
     <Compile Include="KioskDocumentManager.cs" />
@@ -257,9 +245,6 @@
     <EmbeddedResource Include="activityLogs.resx">
       <DependentUpon>activityLogs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddDocumentForm.resx">
-      <DependentUpon>AddDocumentForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Cards\createCard.resx">
       <DependentUpon>createCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CMSSettings.resx">
       <DependentUpon>CMSSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemCard.resx">
+      <DependentUpon>ItemCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIOSKSETTINGS\DocsInfo.resx">
       <DependentUpon>DocsInfo.cs</DependentUpon>
