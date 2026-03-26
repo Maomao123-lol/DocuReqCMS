@@ -5,8 +5,6 @@ VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuReqCMS", "DocuReqCMS\DocuReqCMS.csproj", "{0A86FC74-2715-401B-8A41-A124175155A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourApp.DataAccess", "YourApp.DataAccess\YourApp.DataAccess.csproj", "{68860A93-00E9-4191-9940-55E87DE097E0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KIOSK", "KIOSK\KIOSK.csproj", "{06F8DB04-C52A-4907-9678-49FCE44F6EAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue_monitoring", "Queue_monitoring-20260323T020817Z-3-001\Queue_monitoring\Queue_monitoring\Queue_monitoring.csproj", "{3005A041-1847-4453-889D-46C7FA8ED5EF}"
@@ -23,10 +21,6 @@ Global
 		{0A86FC74-2715-401B-8A41-A124175155A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A86FC74-2715-401B-8A41-A124175155A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A86FC74-2715-401B-8A41-A124175155A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68860A93-00E9-4191-9940-55E87DE097E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68860A93-00E9-4191-9940-55E87DE097E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68860A93-00E9-4191-9940-55E87DE097E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68860A93-00E9-4191-9940-55E87DE097E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06F8DB04-C52A-4907-9678-49FCE44F6EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{06F8DB04-C52A-4907-9678-49FCE44F6EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06F8DB04-C52A-4907-9678-49FCE44F6EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU

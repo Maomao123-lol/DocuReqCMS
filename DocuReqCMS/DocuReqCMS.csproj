@@ -361,12 +361,6 @@
     <None Include="Resources\clearancefsstudent1-150721141604-lva1-app6891-thumbnail.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YourApp.DataAccess\YourApp.DataAccess.csproj">
-      <Project>{68860a93-00e9-4191-9940-55e87de097e0}</Project>
-      <Name>YourApp.DataAccess</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ucc1.png" />
   </ItemGroup>
   <ItemGroup />
