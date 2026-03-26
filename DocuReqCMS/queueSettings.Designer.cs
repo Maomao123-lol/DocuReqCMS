@@ -29,12 +29,18 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnColorUpcomingTicket = new System.Windows.Forms.Button();
+            this.btnColorTicketWindow = new System.Windows.Forms.Button();
+            this.btnFontUpcomingTicket = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.guna2Button47 = new System.Windows.Forms.Button();
+            this.btnFontTicketWindow = new System.Windows.Forms.Button();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,17 +48,36 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblPreview = new System.Windows.Forms.Label();
             this.picWelcomePreview = new System.Windows.Forms.PictureBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblUpcomingPreview6 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblUpcomingPreview3 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lblUpcomingPreview5 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblUpcomingPreview2 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.lblUpcomingPreview4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblUpcomingPreview = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblPreview3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPreview2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPreview = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Button44 = new System.Windows.Forms.Button();
+            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2Button43 = new System.Windows.Forms.Button();
+            this.btnBackgroundColor = new System.Windows.Forms.Button();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -98,53 +123,30 @@
             this.guna2Button40 = new System.Windows.Forms.Button();
             this.guna2Button41 = new System.Windows.Forms.Button();
             this.guna2Button42 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel10.SuspendLayout();
             this.guna2Panel14.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picWelcomePreview)).BeginInit();
             this.guna2Panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel18.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -159,6 +161,26 @@
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(5);
             this.guna2Panel1.Size = new System.Drawing.Size(1590, 102);
             this.guna2Panel1.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(19, 67);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(389, 23);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Manage Queue Monitor settings and preferences.";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(15, 14);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(390, 46);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Queue Monitor Settings";
             // 
             // guna2Panel2
             // 
@@ -196,12 +218,12 @@
             // guna2Panel14
             // 
             this.guna2Panel14.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel14.Controls.Add(this.button3);
-            this.guna2Panel14.Controls.Add(this.button2);
-            this.guna2Panel14.Controls.Add(this.button1);
+            this.guna2Panel14.Controls.Add(this.btnColorUpcomingTicket);
+            this.guna2Panel14.Controls.Add(this.btnColorTicketWindow);
+            this.guna2Panel14.Controls.Add(this.btnFontUpcomingTicket);
             this.guna2Panel14.Controls.Add(this.label5);
             this.guna2Panel14.Controls.Add(this.label6);
-            this.guna2Panel14.Controls.Add(this.guna2Button47);
+            this.guna2Panel14.Controls.Add(this.btnFontTicketWindow);
             this.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel14.FillColor = System.Drawing.Color.White;
             this.guna2Panel14.Location = new System.Drawing.Point(30, 579);
@@ -209,6 +231,52 @@
             this.guna2Panel14.Size = new System.Drawing.Size(924, 106);
             this.guna2Panel14.TabIndex = 17;
             this.guna2Panel14.UseTransparentBackground = true;
+            // 
+            // btnColorUpcomingTicket
+            // 
+            this.btnColorUpcomingTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnColorUpcomingTicket.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnColorUpcomingTicket.ForeColor = System.Drawing.Color.Black;
+            this.btnColorUpcomingTicket.Location = new System.Drawing.Point(778, 61);
+            this.btnColorUpcomingTicket.Name = "btnColorUpcomingTicket";
+            this.btnColorUpcomingTicket.Size = new System.Drawing.Size(122, 36);
+            this.btnColorUpcomingTicket.TabIndex = 15;
+            this.btnColorUpcomingTicket.Text = "View Colors";
+            this.btnColorUpcomingTicket.Click += new System.EventHandler(this.btnColorUpcomingTicket_Click);
+            // 
+            // btnColorTicketWindow
+            // 
+            this.btnColorTicketWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnColorTicketWindow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnColorTicketWindow.ForeColor = System.Drawing.Color.Black;
+            this.btnColorTicketWindow.Location = new System.Drawing.Point(778, 13);
+            this.btnColorTicketWindow.Name = "btnColorTicketWindow";
+            this.btnColorTicketWindow.Size = new System.Drawing.Size(122, 36);
+            this.btnColorTicketWindow.TabIndex = 4;
+            this.btnColorTicketWindow.Text = "View Colors";
+            this.btnColorTicketWindow.Click += new System.EventHandler(this.btnColorTicketWindow_Click);
+            // 
+            // btnFontUpcomingTicket
+            // 
+            this.btnFontUpcomingTicket.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnFontUpcomingTicket.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFontUpcomingTicket.ForeColor = System.Drawing.Color.Black;
+            this.btnFontUpcomingTicket.Location = new System.Drawing.Point(393, 61);
+            this.btnFontUpcomingTicket.Name = "btnFontUpcomingTicket";
+            this.btnFontUpcomingTicket.Size = new System.Drawing.Size(136, 36);
+            this.btnFontUpcomingTicket.TabIndex = 14;
+            this.btnFontUpcomingTicket.Text = "View Font";
+            this.btnFontUpcomingTicket.Click += new System.EventHandler(this.btnFontUpcomingTicket_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label5.Location = new System.Drawing.Point(22, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 23);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Waiting Text";
             // 
             // label6
             // 
@@ -220,16 +288,17 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Calling Text";
             // 
-            // guna2Button47
+            // btnFontTicketWindow
             // 
-            this.guna2Button47.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2Button47.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button47.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button47.Location = new System.Drawing.Point(623, 13);
-            this.guna2Button47.Name = "guna2Button47";
-            this.guna2Button47.Size = new System.Drawing.Size(136, 36);
-            this.guna2Button47.TabIndex = 8;
-            this.guna2Button47.Text = "View Font";
+            this.btnFontTicketWindow.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnFontTicketWindow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFontTicketWindow.ForeColor = System.Drawing.Color.Black;
+            this.btnFontTicketWindow.Location = new System.Drawing.Point(393, 13);
+            this.btnFontTicketWindow.Name = "btnFontTicketWindow";
+            this.btnFontTicketWindow.Size = new System.Drawing.Size(136, 36);
+            this.btnFontTicketWindow.TabIndex = 8;
+            this.btnFontTicketWindow.Text = "View Font";
+            this.btnFontTicketWindow.Click += new System.EventHandler(this.btnFontTicketWindow_Click);
             // 
             // guna2Panel12
             // 
@@ -273,6 +342,7 @@
             this.guna2Button45.Size = new System.Drawing.Size(136, 38);
             this.guna2Button45.TabIndex = 4;
             this.guna2Button45.Text = "Browse";
+            this.guna2Button45.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2TextBox1
             // 
@@ -319,25 +389,6 @@
             this.guna2Panel6.TabIndex = 12;
             this.guna2Panel6.UseTransparentBackground = true;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lblPreview);
-            this.panel1.Location = new System.Drawing.Point(16, 10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(441, 90);
-            this.panel1.TabIndex = 17;
-            // 
-            // lblPreview
-            // 
-            this.lblPreview.AutoSize = true;
-            this.lblPreview.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.lblPreview.Location = new System.Drawing.Point(18, 14);
-            this.lblPreview.Name = "lblPreview";
-            this.lblPreview.Size = new System.Drawing.Size(44, 35);
-            this.lblPreview.TabIndex = 21;
-            this.lblPreview.Text = "Aa";
-            // 
             // picWelcomePreview
             // 
             this.picWelcomePreview.BackColor = System.Drawing.Color.White;
@@ -367,6 +418,177 @@
             this.guna2Panel3.Size = new System.Drawing.Size(481, 446);
             this.guna2Panel3.TabIndex = 17;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.Controls.Add(this.lblUpcomingPreview6);
+            this.panel7.Location = new System.Drawing.Point(315, 379);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(142, 60);
+            this.panel7.TabIndex = 29;
+            // 
+            // lblUpcomingPreview6
+            // 
+            this.lblUpcomingPreview6.AutoSize = true;
+            this.lblUpcomingPreview6.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblUpcomingPreview6.Location = new System.Drawing.Point(18, 14);
+            this.lblUpcomingPreview6.Name = "lblUpcomingPreview6";
+            this.lblUpcomingPreview6.Size = new System.Drawing.Size(44, 35);
+            this.lblUpcomingPreview6.TabIndex = 21;
+            this.lblUpcomingPreview6.Text = "Aa";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.lblUpcomingPreview3);
+            this.panel6.Location = new System.Drawing.Point(314, 307);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(142, 60);
+            this.panel6.TabIndex = 26;
+            // 
+            // lblUpcomingPreview3
+            // 
+            this.lblUpcomingPreview3.AutoSize = true;
+            this.lblUpcomingPreview3.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblUpcomingPreview3.Location = new System.Drawing.Point(20, 14);
+            this.lblUpcomingPreview3.Name = "lblUpcomingPreview3";
+            this.lblUpcomingPreview3.Size = new System.Drawing.Size(44, 35);
+            this.lblUpcomingPreview3.TabIndex = 21;
+            this.lblUpcomingPreview3.Text = "Aa";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.Controls.Add(this.lblUpcomingPreview5);
+            this.panel8.Location = new System.Drawing.Point(164, 379);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(142, 60);
+            this.panel8.TabIndex = 28;
+            // 
+            // lblUpcomingPreview5
+            // 
+            this.lblUpcomingPreview5.AutoSize = true;
+            this.lblUpcomingPreview5.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblUpcomingPreview5.Location = new System.Drawing.Point(18, 14);
+            this.lblUpcomingPreview5.Name = "lblUpcomingPreview5";
+            this.lblUpcomingPreview5.Size = new System.Drawing.Size(44, 35);
+            this.lblUpcomingPreview5.TabIndex = 21;
+            this.lblUpcomingPreview5.Text = "Aa";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.lblUpcomingPreview2);
+            this.panel5.Location = new System.Drawing.Point(164, 307);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(142, 60);
+            this.panel5.TabIndex = 25;
+            // 
+            // lblUpcomingPreview2
+            // 
+            this.lblUpcomingPreview2.AutoSize = true;
+            this.lblUpcomingPreview2.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblUpcomingPreview2.Location = new System.Drawing.Point(18, 14);
+            this.lblUpcomingPreview2.Name = "lblUpcomingPreview2";
+            this.lblUpcomingPreview2.Size = new System.Drawing.Size(44, 35);
+            this.lblUpcomingPreview2.TabIndex = 21;
+            this.lblUpcomingPreview2.Text = "Aa";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Transparent;
+            this.panel9.Controls.Add(this.lblUpcomingPreview4);
+            this.panel9.Location = new System.Drawing.Point(16, 379);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(142, 60);
+            this.panel9.TabIndex = 27;
+            // 
+            // lblUpcomingPreview4
+            // 
+            this.lblUpcomingPreview4.AutoSize = true;
+            this.lblUpcomingPreview4.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblUpcomingPreview4.Location = new System.Drawing.Point(18, 14);
+            this.lblUpcomingPreview4.Name = "lblUpcomingPreview4";
+            this.lblUpcomingPreview4.Size = new System.Drawing.Size(44, 35);
+            this.lblUpcomingPreview4.TabIndex = 21;
+            this.lblUpcomingPreview4.Text = "Aa";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.lblUpcomingPreview);
+            this.panel4.Location = new System.Drawing.Point(16, 307);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(142, 60);
+            this.panel4.TabIndex = 24;
+            // 
+            // lblUpcomingPreview
+            // 
+            this.lblUpcomingPreview.AutoSize = true;
+            this.lblUpcomingPreview.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblUpcomingPreview.Location = new System.Drawing.Point(18, 14);
+            this.lblUpcomingPreview.Name = "lblUpcomingPreview";
+            this.lblUpcomingPreview.Size = new System.Drawing.Size(44, 35);
+            this.lblUpcomingPreview.TabIndex = 21;
+            this.lblUpcomingPreview.Text = "Aa";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.lblPreview3);
+            this.panel3.Location = new System.Drawing.Point(16, 211);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(441, 90);
+            this.panel3.TabIndex = 23;
+            // 
+            // lblPreview3
+            // 
+            this.lblPreview3.AutoSize = true;
+            this.lblPreview3.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblPreview3.Location = new System.Drawing.Point(18, 14);
+            this.lblPreview3.Name = "lblPreview3";
+            this.lblPreview3.Size = new System.Drawing.Size(44, 35);
+            this.lblPreview3.TabIndex = 21;
+            this.lblPreview3.Text = "Aa";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.lblPreview2);
+            this.panel2.Location = new System.Drawing.Point(16, 110);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(441, 90);
+            this.panel2.TabIndex = 22;
+            // 
+            // lblPreview2
+            // 
+            this.lblPreview2.AutoSize = true;
+            this.lblPreview2.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblPreview2.Location = new System.Drawing.Point(18, 14);
+            this.lblPreview2.Name = "lblPreview2";
+            this.lblPreview2.Size = new System.Drawing.Size(44, 35);
+            this.lblPreview2.TabIndex = 21;
+            this.lblPreview2.Text = "Aa";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblPreview);
+            this.panel1.Location = new System.Drawing.Point(16, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(441, 90);
+            this.panel1.TabIndex = 17;
+            // 
+            // lblPreview
+            // 
+            this.lblPreview.AutoSize = true;
+            this.lblPreview.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblPreview.Location = new System.Drawing.Point(18, 14);
+            this.lblPreview.Name = "lblPreview";
+            this.lblPreview.Size = new System.Drawing.Size(44, 35);
+            this.lblPreview.TabIndex = 21;
+            this.lblPreview.Text = "Aa";
+            // 
             // guna2Panel4
             // 
             this.guna2Panel4.Controls.Add(this.guna2Panel15);
@@ -383,6 +605,14 @@
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(606, 731);
             this.guna2Panel4.TabIndex = 0;
+            // 
+            // guna2Panel15
+            // 
+            this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel15.Location = new System.Drawing.Point(0, 721);
+            this.guna2Panel15.Name = "guna2Panel15";
+            this.guna2Panel15.Size = new System.Drawing.Size(606, 10);
+            this.guna2Panel15.TabIndex = 23;
             // 
             // guna2Panel18
             // 
@@ -416,12 +646,21 @@
             this.guna2Button44.Size = new System.Drawing.Size(121, 36);
             this.guna2Button44.TabIndex = 4;
             this.guna2Button44.Text = "View Font";
+            this.guna2Button44.Click += new System.EventHandler(this.guna2Button44_Click);
+            // 
+            // guna2Panel13
+            // 
+            this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel13.Location = new System.Drawing.Point(0, 636);
+            this.guna2Panel13.Name = "guna2Panel13";
+            this.guna2Panel13.Size = new System.Drawing.Size(606, 10);
+            this.guna2Panel13.TabIndex = 22;
             // 
             // guna2Panel5
             // 
             this.guna2Panel5.BorderRadius = 20;
             this.guna2Panel5.Controls.Add(this.label2);
-            this.guna2Panel5.Controls.Add(this.guna2Button43);
+            this.guna2Panel5.Controls.Add(this.btnBackgroundColor);
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
             this.guna2Panel5.Location = new System.Drawing.Point(0, 561);
@@ -439,16 +678,25 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Custom Color";
             // 
-            // guna2Button43
+            // btnBackgroundColor
             // 
-            this.guna2Button43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button43.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button43.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button43.Location = new System.Drawing.Point(463, 18);
-            this.guna2Button43.Name = "guna2Button43";
-            this.guna2Button43.Size = new System.Drawing.Size(122, 36);
-            this.guna2Button43.TabIndex = 2;
-            this.guna2Button43.Text = "View Colors";
+            this.btnBackgroundColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackgroundColor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBackgroundColor.ForeColor = System.Drawing.Color.Black;
+            this.btnBackgroundColor.Location = new System.Drawing.Point(463, 18);
+            this.btnBackgroundColor.Name = "btnBackgroundColor";
+            this.btnBackgroundColor.Size = new System.Drawing.Size(122, 36);
+            this.btnBackgroundColor.TabIndex = 2;
+            this.btnBackgroundColor.Text = "View Colors";
+            this.btnBackgroundColor.Click += new System.EventHandler(this.btnBackgroundColor_Click);
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel9.Location = new System.Drawing.Point(0, 551);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(606, 10);
+            this.guna2Panel9.TabIndex = 21;
             // 
             // guna2Panel7
             // 
@@ -984,245 +1232,6 @@
             this.guna2Button42.TabIndex = 42;
             this.guna2Button42.UseVisualStyleBackColor = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(16, 110);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(441, 90);
-            this.panel2.TabIndex = 22;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label7.Location = new System.Drawing.Point(18, 14);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 35);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Aa";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(16, 211);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(441, 90);
-            this.panel3.TabIndex = 23;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label8.Location = new System.Drawing.Point(18, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 35);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Aa";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(16, 307);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(142, 60);
-            this.panel4.TabIndex = 24;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label9.Location = new System.Drawing.Point(18, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 35);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Aa";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Location = new System.Drawing.Point(164, 307);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(142, 60);
-            this.panel5.TabIndex = 25;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label10.Location = new System.Drawing.Point(18, 14);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 35);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Aa";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(314, 307);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(142, 60);
-            this.panel6.TabIndex = 26;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label11.Location = new System.Drawing.Point(20, 14);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 35);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Aa";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.label12);
-            this.panel7.Location = new System.Drawing.Point(315, 379);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(142, 60);
-            this.panel7.TabIndex = 29;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label12.Location = new System.Drawing.Point(18, 14);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 35);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Aa";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.label13);
-            this.panel8.Location = new System.Drawing.Point(164, 379);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(142, 60);
-            this.panel8.TabIndex = 28;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label13.Location = new System.Drawing.Point(18, 14);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 35);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "Aa";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.label14);
-            this.panel9.Location = new System.Drawing.Point(16, 379);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(142, 60);
-            this.panel9.TabIndex = 27;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label14.Location = new System.Drawing.Point(18, 14);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 35);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Aa";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label5.Location = new System.Drawing.Point(22, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 23);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Waiting Text";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(623, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 36);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "View Font";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(778, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "View Colors";
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(778, 61);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 36);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "View Colors";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(15, 14);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(390, 46);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Queue Monitor Settings";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(19, 67);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(389, 23);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "Manage Queue Monitor settings and preferences.";
-            // 
-            // guna2Panel9
-            // 
-            this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel9.Location = new System.Drawing.Point(0, 551);
-            this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(606, 10);
-            this.guna2Panel9.TabIndex = 21;
-            // 
-            // guna2Panel13
-            // 
-            this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel13.Location = new System.Drawing.Point(0, 636);
-            this.guna2Panel13.Name = "guna2Panel13";
-            this.guna2Panel13.Size = new System.Drawing.Size(606, 10);
-            this.guna2Panel13.TabIndex = 22;
-            // 
-            // guna2Panel15
-            // 
-            this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel15.Location = new System.Drawing.Point(0, 721);
-            this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(606, 10);
-            this.guna2Panel15.TabIndex = 23;
-            // 
             // queueSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1242,10 +1251,26 @@
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picWelcomePreview)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel18.ResumeLayout(false);
             this.guna2Panel18.PerformLayout();
@@ -1254,22 +1279,6 @@
             this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel7.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1282,7 +1291,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel19;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button guna2Button47;
+        private System.Windows.Forms.Button btnFontTicketWindow;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private System.Windows.Forms.Label label4;
@@ -1300,7 +1309,7 @@
         private System.Windows.Forms.Button guna2Button44;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button guna2Button43;
+        private System.Windows.Forms.Button btnBackgroundColor;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
@@ -1347,29 +1356,31 @@
         private System.Windows.Forms.Button guna2Button41;
         private System.Windows.Forms.Button guna2Button42;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblPreview3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPreview2;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblUpcomingPreview6;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblUpcomingPreview3;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblUpcomingPreview5;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblUpcomingPreview2;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblUpcomingPreview4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblUpcomingPreview;
+        private System.Windows.Forms.Button btnColorUpcomingTicket;
+        private System.Windows.Forms.Button btnColorTicketWindow;
+        private System.Windows.Forms.Button btnFontUpcomingTicket;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
