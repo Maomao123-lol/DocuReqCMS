@@ -88,7 +88,7 @@ namespace DocuFlow_Reg.UserControls
             }
         }
 
-        private void dgvReq_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+       /* private void dgvReq_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -113,7 +113,7 @@ namespace DocuFlow_Reg.UserControls
                 }
 
             }
-        }
+        }*/
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
