@@ -1,4 +1,4 @@
-﻿using MySqlConnector;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -21,7 +21,6 @@ namespace DocuFlow_Reg
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     if (parameters != null)
@@ -31,7 +30,6 @@ namespace DocuFlow_Reg
                             cmd.Parameters.AddWithValue(param.Key, param.Value);
                         }
                     }
-
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
                     {
                         DataTable dt = new DataTable();
@@ -47,7 +45,6 @@ namespace DocuFlow_Reg
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     if (parameters != null)
@@ -57,7 +54,6 @@ namespace DocuFlow_Reg
                             cmd.Parameters.AddWithValue(param.Key, param.Value);
                         }
                     }
-
                     return cmd.ExecuteNonQuery();
                 }
             }
