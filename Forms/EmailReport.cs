@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DocuFlow_Reg.Forms
 {
-    public partial class RequestDetails : Form
+    public partial class EmailReport : Form
     {
-        public RequestDetails()
+        public EmailReport()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

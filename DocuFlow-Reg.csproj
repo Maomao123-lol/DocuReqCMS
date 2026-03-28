@@ -62,8 +62,14 @@
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=9.6.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.9.6.0\lib\net462\MySql.Data.dll</HintPath>
+      <HintPath>packages\MySql.Data.9.6.0\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -78,6 +84,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.10.0.5\lib\net462\System.IO.Pipelines.dll</HintPath>
       <Private>True</Private>
@@ -119,6 +128,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="Forms\EmailReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmailReport.Designer.cs">
+      <DependentUpon>EmailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaymentConfirmation.Designer.cs">
+      <DependentUpon>PaymentConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Recall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recall.Designer.cs">
+      <DependentUpon>Recall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\reg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +164,17 @@
     <Compile Include="Forms\RequestDetails.Designer.cs">
       <DependentUpon>RequestDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SharedMethods.cs" />
+    <Compile Include="Models\Archive.cs" />
+    <Compile Include="Models\BaseTransaction.cs" />
+    <Compile Include="Models\DocumentData.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Inquiry.cs" />
+    <Compile Include="Models\Queue.cs" />
+    <Compile Include="Models\Request.cs" />
+    <Compile Include="Models\SkippedQueue.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentDocuments.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RJControls\RJButton.cs">
@@ -181,6 +225,18 @@
     <Compile Include="UserControls\InquiriesUC.Designer.cs">
       <DependentUpon>InquiriesUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\EmailReport.resx">
+      <DependentUpon>EmailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentConfirmation.resx">
+      <DependentUpon>PaymentConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Recall.resx">
+      <DependentUpon>Recall.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\reg.resx">
       <DependentUpon>reg.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +271,7 @@
     <EmbeddedResource Include="UserControls\InquiriesUC.resx">
       <DependentUpon>InquiriesUC.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -225,9 +282,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\queue.png" />
@@ -279,6 +333,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wall-clock %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled Project.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
