@@ -73,7 +73,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
       <Private>True</Private>
@@ -128,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="Forms\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmailReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +223,9 @@
     <Compile Include="UserControls\InquiriesUC.Designer.cs">
       <DependentUpon>InquiriesUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailReport.resx">
       <DependentUpon>EmailReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,6 +343,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\view %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DocuReqCMS\DocuReqCMS.csproj">
+      <Project>{0a86fc74-2715-401b-8a41-a124175155a3}</Project>
+      <Name>DocuReqCMS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

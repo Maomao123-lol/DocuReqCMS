@@ -45,9 +45,9 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainContainer = new System.Windows.Forms.Panel();
             this.cardStaff = new System.Windows.Forms.Panel();
             this.lblStaffCount = new System.Windows.Forms.Label();
@@ -317,28 +317,28 @@
             // 
             // chartKioskUsage
             // 
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisX.Title = "Date";
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea2.AxisY.Title = "Number of Users";
-            chartArea2.Name = "ChartArea1";
-            this.chartKioskUsage.ChartAreas.Add(chartArea2);
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            this.chartKioskUsage.Legends.Add(legend2);
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.Title = "Date";
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea1.AxisY.Title = "Number of Users";
+            chartArea1.Name = "ChartArea1";
+            this.chartKioskUsage.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.chartKioskUsage.Legends.Add(legend1);
             this.chartKioskUsage.Location = new System.Drawing.Point(30, 70);
             this.chartKioskUsage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chartKioskUsage.Name = "chartKioskUsage";
-            series2.BorderWidth = 3;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            series2.Legend = "Legend1";
-            series2.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            series2.MarkerSize = 8;
-            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series2.Name = "Users";
-            this.chartKioskUsage.Series.Add(series2);
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            series1.Legend = "Legend1";
+            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            series1.MarkerSize = 8;
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series1.Name = "Users";
+            this.chartKioskUsage.Series.Add(series1);
             this.chartKioskUsage.Size = new System.Drawing.Size(984, 380);
             this.chartKioskUsage.TabIndex = 0;
             this.chartKioskUsage.Text = "chart1";
@@ -422,12 +422,12 @@
             // lblPeakDayValue
             // 
             this.lblPeakDayValue.AutoSize = true;
-            this.lblPeakDayValue.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeakDayValue.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeakDayValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
             this.lblPeakDayValue.Location = new System.Drawing.Point(30, 240);
             this.lblPeakDayValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPeakDayValue.Name = "lblPeakDayValue";
-            this.lblPeakDayValue.Size = new System.Drawing.Size(190, 38);
+            this.lblPeakDayValue.Size = new System.Drawing.Size(151, 30);
             this.lblPeakDayValue.TabIndex = 5;
             this.lblPeakDayValue.Text = "Mar 15, 2024";
             // 
