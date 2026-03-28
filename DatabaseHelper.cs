@@ -16,6 +16,18 @@ namespace DocuFlow_Reg
             return new MySqlConnection(connectionString);
         }
 
+        public int getDashboardCount(string query)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
         public DataTable ExecuteQuery(string query, Dictionary<string, object> parameters = null)
         {
             using (MySqlConnection conn = GetConnection())
