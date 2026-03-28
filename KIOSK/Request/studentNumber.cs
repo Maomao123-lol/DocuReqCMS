@@ -70,13 +70,17 @@ namespace KIOSK.Request
             using (var conn = new MySqlConnection(_connStr))
             {
                 conn.Open();
+                string classPrefix = _classification == "Undergraduate" ? "U" :
+                                     _classification == "Graduate" ? "G" : "L";
+                string pattern = $"{classPrefix}-R%";
                 string query = @"SELECT COUNT(*) FROM cms_db.queue_tickets 
-                                 WHERE queue_no LIKE 'R%' 
-                                 AND DATE(created_at) = CURDATE()";
+                         WHERE queue_no LIKE @prefix 
+                         AND DATE(created_at) = CURDATE()";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@prefix", pattern);
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return $"R{(count + 1):D3}";
+                    return $"{classPrefix}-R{(count + 1):D3}";
                 }
             }
         }
@@ -87,14 +91,15 @@ namespace KIOSK.Request
             {
                 conn.Open();
                 string query = @"INSERT INTO cms_db.queue_tickets 
-                         (queue_no, service_type, status, created_at, student_number, type) 
-                         VALUES (@queueNo, @serviceType, 'pending', NOW(), @studentNo, @type)";
+                 (queue_no, service_type, status, created_at, student_number, type, student_classification) 
+                 VALUES (@queueNo, @serviceType, 'pending', NOW(), @studentNo, @type, @classification)";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@queueNo", queueNo);
                     cmd.Parameters.AddWithValue("@serviceType", "REQUEST DOCUMENT");
                     cmd.Parameters.AddWithValue("@studentNo", studentNo);
                     cmd.Parameters.AddWithValue("@type", _documentName);
+                    cmd.Parameters.AddWithValue("@classification", _classification);
                     cmd.ExecuteNonQuery();
                 }
             }
