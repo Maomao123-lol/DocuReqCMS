@@ -2,6 +2,8 @@
 using LiveCharts.WinForms;
 using LiveCharts.Wpf;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 using System.Windows.Media;
 
@@ -9,36 +11,43 @@ namespace DocuFlow_Reg.UserControls
 {
     public partial class DashboardUC : UserControl
     {
+        DatabaseHelper db = new DatabaseHelper();
+
         public DashboardUC()
         {
             InitializeComponent();
             this.Load += DashboardUC_Load;
         }
 
-       private void DashboardUC_Load(object sender, EventArgs e)
+        private void DashboardUC_Load(object sender, EventArgs e)
         {
             SetDocumentTypeChart();
-            SetupRequestTrendChart();
+            LoadRequestTrend("Weekly"); // default filter on load
+
+            lblPendingRequest.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Pending'").ToString();
+            lblPendingPayment.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Waiting for Payment'").ToString();
+            lblReadyToRelease.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Ready'").ToString();
+            lblReleased.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Released'").ToString();
         }
 
         private void SetDocumentTypeChart()
         {
-            // ── Sample data (replace with DB query) ──
-            var documentTypes = new[]
+            DataTable dt = db.ExecuteQuery(@"
+                SELECT d.document_name, COUNT(r.request_number) as request_count
+                FROM Request r
+                INNER JOIN Document_Data d ON r.document_id = d.document_id
+                GROUP BY d.document_name
+            ");
+
+            var documentTypes = new List<string>();
+            var requestCounts = new ChartValues<int>();
+
+            foreach (DataRow row in dt.Rows)
             {
-                "Transcript",
-                "Diploma",
-                "Cert of Enrollment",
-                "Good Moral",
-                "Form 137",
-                "Hon. Dismissal",
-                "TOR",
-                "Medical"
-            };
+                documentTypes.Add(row["document_name"].ToString());
+                requestCounts.Add(Convert.ToInt32(row["request_count"]));
+            }
 
-            var requestCounts = new ChartValues<int> { 89, 54, 67, 41, 33, 22, 50, 120 };
-
-            // ── Configure Axes FIRST ──
             chDocumentTypeDistribution.AxisX = new AxesCollection
             {
                 new Axis
@@ -47,7 +56,7 @@ namespace DocuFlow_Reg.UserControls
                     Labels = documentTypes,
                     FontSize = 11,
                     LabelsRotation = 45,
-                    Separator = new Separator { StrokeThickness = 0 } // removes vertical grid lines
+                    Separator = new Separator { StrokeThickness = 0 }
                 }
             };
 
@@ -66,7 +75,6 @@ namespace DocuFlow_Reg.UserControls
                 }
             };
 
-            // ── Configure Series LAST ──
             chDocumentTypeDistribution.Series = new SeriesCollection
             {
                 new ColumnSeries
@@ -75,62 +83,132 @@ namespace DocuFlow_Reg.UserControls
                     Values = requestCounts,
                     DataLabels = true,
                     FontSize = 11,
-                    Fill = new SolidColorBrush(Color.FromRgb(26, 122, 26)), // green bars
+                    Fill = new SolidColorBrush(Color.FromRgb(26, 122, 26)),
                     StrokeThickness = 0,
                     MaxColumnWidth = 40
                 }
             };
 
-            // Optional: remove legend for a cleaner look
             chDocumentTypeDistribution.LegendLocation = LegendLocation.None;
             chDocumentTypeDistribution.AxisX[0].Separator.Step = 1;
         }
 
-        private void SetupRequestTrendChart()
+        private void LoadRequestTrend(string filter)
         {
-            // Sample data: number of requests per day of the week
-            int[] requestsPerDay = { 18, 9, 15, 22, 5 }; // Sun to Sat
+            string query = "";
+            string xAxisTitle = "";
 
-            // Clear existing series and axes
+            switch (filter)
+            {
+                case "Daily":
+                    query = @"
+                SELECT CONCAT(HOUR(created_at), ':00') as period, 
+                       COUNT(*) as request_count
+                FROM Request
+                WHERE DATE(created_at) = CURDATE()
+                GROUP BY HOUR(created_at)
+                ORDER BY HOUR(created_at)";
+                    xAxisTitle = "Hour of Day";
+                    break;
+
+                case "Weekly":
+                    query = @"
+                SELECT DAYNAME(created_at) as period, 
+                       COUNT(*) as request_count
+                FROM Request
+                WHERE WEEK(created_at) = WEEK(CURDATE())
+                AND YEAR(created_at) = YEAR(CURDATE())
+                GROUP BY DAYNAME(created_at), DAYOFWEEK(created_at)
+                ORDER BY DAYOFWEEK(created_at)";
+                    xAxisTitle = "Day of Week";
+                    break;
+
+                case "Monthly":
+                    query = @"
+                SELECT DAY(created_at) as period, 
+                       COUNT(*) as request_count
+                FROM Request
+                WHERE MONTH(created_at) = MONTH(CURDATE())
+                AND YEAR(created_at) = YEAR(CURDATE())
+                GROUP BY DAY(created_at)
+                ORDER BY DAY(created_at)";
+                    xAxisTitle = "Day of Month";
+                    break;
+
+                case "Yearly":
+                    query = @"
+                SELECT MONTHNAME(created_at) as period, 
+                       COUNT(*) as request_count
+                FROM Request
+                WHERE YEAR(created_at) = YEAR(CURDATE())
+                GROUP BY MONTHNAME(created_at), MONTH(created_at)
+                ORDER BY MONTH(created_at)";
+                    xAxisTitle = "Month";
+                    break;
+
+                default:
+                    return; // exit if filter doesnt match anything
+            }
+
+            // rest of chart code stays the same
+
+            DataTable dt = db.ExecuteQuery(query);
+
+            var periodLabels = new List<string>();
+            var requestCounts = new ChartValues<int>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                periodLabels.Add(row["period"].ToString());
+                requestCounts.Add(Convert.ToInt32(row["request_count"]));
+            }
+
+            // Fallback if no data
+            if (periodLabels.Count == 0)
+            {
+                periodLabels = new List<string> { "No Data" };
+                requestCounts = new ChartValues<int> { 0 };
+            }
+
             chRequestTrend.Series.Clear();
             chRequestTrend.AxisX.Clear();
             chRequestTrend.AxisY.Clear();
 
-            // 1. Add LineSeries
-            var lineSeries = new LiveCharts.Wpf.LineSeries
+            chRequestTrend.Series.Add(new LiveCharts.Wpf.LineSeries
             {
                 Title = "Requests",
-                Values = new ChartValues<int>(requestsPerDay),
+                Values = requestCounts,
                 PointGeometry = DefaultGeometries.Circle,
                 PointGeometrySize = 10,
                 StrokeThickness = 2,
-                Fill = System.Windows.Media.Brushes.DarkSeaGreen, // no fill under the line
+                Fill = System.Windows.Media.Brushes.DarkSeaGreen,
                 Opacity = 0.2
-            };
-            chRequestTrend.Series.Add(lineSeries);
+            });
 
-            // 2. Setup X-axis labels (days of the week)
             chRequestTrend.AxisX.Add(new LiveCharts.Wpf.Axis
             {
-                Title = "Day of Week",
-                Labels = new[] {"Mon", "Tue", "Wed", "Thu", "Fri" },
-                LabelsRotation = 15, // tilts labels slightly for readability
+                Title = xAxisTitle,
+                Labels = periodLabels,
+                LabelsRotation = 15,
                 Separator = new LiveCharts.Wpf.Separator
                 {
-                    Step = 1, // show every label
-                    IsEnabled = false // hides vertical grid lines
+                    Step = 1,
+                    IsEnabled = false
                 }
             });
 
-            // 3. Setup Y-axis
             chRequestTrend.AxisY.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Number of Requests",
-                LabelFormatter = value => value.ToString("N0") // integer formatting
+                LabelFormatter = value => value.ToString("N0")
             });
 
-            // Optional: disable chart legend if not needed
             chRequestTrend.LegendLocation = LegendLocation.Top;
+        }
+
+        private void cbWidgetFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadRequestTrend(cbWidgetFilter.SelectedItem.ToString());
         }
     }
 }

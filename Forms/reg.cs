@@ -54,7 +54,7 @@ namespace DocuFlow_Reg
                 btnDashboard.ForeColor = Color.Black;
                 btnArchive.ForeColor = Color.Black;
             }
-            methods.LoadUserControl(new DashboardUC(), panel5);
+            methods.LoadUserControl(new DocumentRequestsUC(), panel5);
         }
 
         private void btnArchive_CheckedChanged(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace DocuFlow_Reg
                 btnDocReq.ForeColor = Color.Black;
             }
 
-            methods.LoadUserControl(new DashboardUC(), panel5);
+            methods.LoadUserControl(new ArchiveUC(), panel5);
         }
 
         private void btnInquiry_CheckedChanged(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace DocuFlow_Reg
                 btnArchive.ForeColor = Color.Black;
             }
 
-            methods.LoadUserControl(new DashboardUC(), panel5);
+            methods.LoadUserControl(new InquiriesUC(), panel5);
         }
 
         private void Reg_Load_1(object sender, EventArgs e)
