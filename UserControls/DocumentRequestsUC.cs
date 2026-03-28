@@ -11,6 +11,9 @@ namespace DocuFlow_Reg.UserControls
     public partial class DocumentRequestsUC : UserControl
     {
         DatabaseHelper db = new DatabaseHelper();
+        private Timer searchTimer = new Timer();
+        private string searchText = "";
+        private int currentPage = 1;
         private RequestDetails _detailsForm;
 
         public DocumentRequestsUC()
@@ -29,7 +32,7 @@ namespace DocuFlow_Reg.UserControls
             {
                 searchText = text;
                 currentPage = 1;
-                LoadInquiries();
+                LoadRequests();
             }
         );
             LoadRequests();

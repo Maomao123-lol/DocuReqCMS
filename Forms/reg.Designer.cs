@@ -34,34 +34,34 @@
             this.tlpUserControl = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnlSide = new System.Windows.Forms.Panel();
-            this.rjButton1 = new DocuFlow_Reg.RJControls.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rjCircularPictureBox1 = new CustomControls.RJControls.RJCircularPictureBox();
-            this.rjPanel1 = new DocuFlow_Reg.RJControls.RJPanel();
             this.tlpSideButton = new System.Windows.Forms.TableLayoutPanel();
-            this.btnInquiry = new System.Windows.Forms.RadioButton();
-            this.btnDashboard = new System.Windows.Forms.RadioButton();
-            this.btnDocReq = new System.Windows.Forms.RadioButton();
-            this.btnArchive = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblOrgName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnInquiry = new System.Windows.Forms.RadioButton();
+            this.btnDashboard = new System.Windows.Forms.RadioButton();
+            this.btnDocReq = new System.Windows.Forms.RadioButton();
+            this.btnArchive = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rjButton1 = new DocuFlow_Reg.RJControls.RJButton();
+            this.rjCircularPictureBox1 = new CustomControls.RJControls.RJCircularPictureBox();
+            this.rjPanel1 = new DocuFlow_Reg.RJControls.RJPanel();
             this.tlpMain.SuspendLayout();
             this.tlpBody.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.tlpUserControl.SuspendLayout();
             this.pnlSide.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.tlpSideButton.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -71,11 +71,12 @@
             this.tlpMain.Controls.Add(this.tlpBody, 0, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 718F));
-            this.tlpMain.Size = new System.Drawing.Size(1167, 718);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1105F));
+            this.tlpMain.Size = new System.Drawing.Size(1750, 1105);
             this.tlpMain.TabIndex = 0;
             // 
             // tlpBody
@@ -92,7 +93,7 @@
             this.tlpBody.Name = "tlpBody";
             this.tlpBody.RowCount = 1;
             this.tlpBody.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBody.Size = new System.Drawing.Size(1167, 718);
+            this.tlpBody.Size = new System.Drawing.Size(1750, 1105);
             this.tlpBody.TabIndex = 1;
             // 
             // pnlMain
@@ -100,10 +101,10 @@
             this.pnlMain.AutoScroll = true;
             this.pnlMain.Controls.Add(this.tlpUserControl);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(233, 0);
+            this.pnlMain.Location = new System.Drawing.Point(350, 0);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(934, 718);
+            this.pnlMain.Size = new System.Drawing.Size(1400, 1105);
             this.pnlMain.TabIndex = 2;
             // 
             // tlpUserControl
@@ -114,11 +115,12 @@
             this.tlpUserControl.Controls.Add(this.panel5, 0, 0);
             this.tlpUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpUserControl.Location = new System.Drawing.Point(0, 0);
+            this.tlpUserControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tlpUserControl.Name = "tlpUserControl";
             this.tlpUserControl.RowCount = 1;
             this.tlpUserControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpUserControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 718F));
-            this.tlpUserControl.Size = new System.Drawing.Size(934, 718);
+            this.tlpUserControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1105F));
+            this.tlpUserControl.Size = new System.Drawing.Size(1400, 1105);
             this.tlpUserControl.TabIndex = 0;
             // 
             // panel5
@@ -129,7 +131,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(934, 718);
+            this.panel5.Size = new System.Drawing.Size(1400, 1105);
             this.panel5.TabIndex = 1;
             // 
             // pnlSide
@@ -146,44 +148,17 @@
             this.pnlSide.Location = new System.Drawing.Point(0, 0);
             this.pnlSide.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSide.Name = "pnlSide";
-            this.pnlSide.Size = new System.Drawing.Size(233, 718);
+            this.pnlSide.Size = new System.Drawing.Size(350, 1105);
             this.pnlSide.TabIndex = 0;
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 0;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton1.ForeColor = System.Drawing.Color.Black;
-            this.rjButton1.Image = global::DocuFlow_Reg.Properties.Resources.logout;
-            this.rjButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rjButton1.Location = new System.Drawing.Point(10, 669);
-            this.rjButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Padding = new System.Windows.Forms.Padding(68, 0, 38, 0);
-            this.rjButton1.Size = new System.Drawing.Size(202, 32);
-            this.rjButton1.TabIndex = 11;
-            this.rjButton1.Text = "Log Out";
-            this.rjButton1.TextColor = System.Drawing.Color.Black;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(86, 622);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(129, 957);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 19);
+            this.label2.Size = new System.Drawing.Size(55, 30);
             this.label2.TabIndex = 10;
             this.label2.Text = "Staff";
             // 
@@ -192,54 +167,12 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(86, 604);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(129, 929);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 21);
+            this.label1.Size = new System.Drawing.Size(197, 32);
             this.label1.TabIndex = 9;
             this.label1.Text = "Vergel Moyamoy";
-            // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = global::DocuFlow_Reg.Properties.Resources.profile;
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(22, 595);
-            this.rjCircularPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(55, 55);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 8;
-            this.rjCircularPictureBox1.TabStop = false;
-            // 
-            // rjPanel1
-            // 
-            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rjPanel1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rjPanel1.BorderBottomColor = System.Drawing.Color.Empty;
-            this.rjPanel1.BorderColor = System.Drawing.Color.Gray;
-            this.rjPanel1.BorderLeftColor = System.Drawing.Color.Empty;
-            this.rjPanel1.BorderRadius = 0;
-            this.rjPanel1.BorderRightColor = System.Drawing.Color.Empty;
-            this.rjPanel1.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Top;
-            this.rjPanel1.BorderSize = 1;
-            this.rjPanel1.BorderTopColor = System.Drawing.Color.Empty;
-            this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rjPanel1.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel1.GradientColor1 = System.Drawing.Color.Empty;
-            this.rjPanel1.GradientColor2 = System.Drawing.Color.Empty;
-            this.rjPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.rjPanel1.Location = new System.Drawing.Point(0, 586);
-            this.rjPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(233, 132);
-            this.rjPanel1.TabIndex = 7;
-            this.rjPanel1.UseGradient = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tlpSideButton
             // 
@@ -250,16 +183,72 @@
             this.tlpSideButton.Controls.Add(this.btnDocReq, 0, 2);
             this.tlpSideButton.Controls.Add(this.btnArchive, 0, 3);
             this.tlpSideButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpSideButton.Location = new System.Drawing.Point(0, 115);
-            this.tlpSideButton.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpSideButton.Location = new System.Drawing.Point(0, 177);
             this.tlpSideButton.Name = "tlpSideButton";
             this.tlpSideButton.RowCount = 4;
             this.tlpSideButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpSideButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpSideButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpSideButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpSideButton.Size = new System.Drawing.Size(233, 315);
+            this.tlpSideButton.Size = new System.Drawing.Size(350, 485);
             this.tlpSideButton.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(350, 177);
+            this.panel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(350, 177);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblOrgName);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(151, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(199, 177);
+            this.panel3.TabIndex = 1;
+            // 
+            // lblOrgName
+            // 
+            this.lblOrgName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblOrgName.AutoSize = true;
+            this.lblOrgName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrgName.Location = new System.Drawing.Point(9, 55);
+            this.lblOrgName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOrgName.Name = "lblOrgName";
+            this.lblOrgName.Size = new System.Drawing.Size(170, 64);
+            this.lblOrgName.TabIndex = 5;
+            this.lblOrgName.Text = "University of \r\nCaloocan City";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(151, 177);
+            this.panel2.TabIndex = 0;
             // 
             // btnInquiry
             // 
@@ -271,11 +260,11 @@
             this.btnInquiry.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInquiry.Image = global::DocuFlow_Reg.Properties.Resources.wall_clock;
             this.btnInquiry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInquiry.Location = new System.Drawing.Point(0, 78);
+            this.btnInquiry.Location = new System.Drawing.Point(0, 121);
             this.btnInquiry.Margin = new System.Windows.Forms.Padding(0);
             this.btnInquiry.Name = "btnInquiry";
-            this.btnInquiry.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnInquiry.Size = new System.Drawing.Size(233, 78);
+            this.btnInquiry.Padding = new System.Windows.Forms.Padding(75, 0, 0, 0);
+            this.btnInquiry.Size = new System.Drawing.Size(350, 121);
             this.btnInquiry.TabIndex = 6;
             this.btnInquiry.TabStop = true;
             this.btnInquiry.Text = "Inquiry";
@@ -297,8 +286,8 @@
             this.btnDashboard.Location = new System.Drawing.Point(0, 0);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(233, 78);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(75, 0, 0, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(350, 121);
             this.btnDashboard.TabIndex = 5;
             this.btnDashboard.TabStop = true;
             this.btnDashboard.Text = "Dashboard";
@@ -316,11 +305,11 @@
             this.btnDocReq.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDocReq.Image = global::DocuFlow_Reg.Properties.Resources.google_docs;
             this.btnDocReq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocReq.Location = new System.Drawing.Point(0, 156);
+            this.btnDocReq.Location = new System.Drawing.Point(0, 242);
             this.btnDocReq.Margin = new System.Windows.Forms.Padding(0);
             this.btnDocReq.Name = "btnDocReq";
-            this.btnDocReq.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnDocReq.Size = new System.Drawing.Size(233, 78);
+            this.btnDocReq.Padding = new System.Windows.Forms.Padding(75, 0, 0, 0);
+            this.btnDocReq.Size = new System.Drawing.Size(350, 121);
             this.btnDocReq.TabIndex = 2;
             this.btnDocReq.TabStop = true;
             this.btnDocReq.Text = "Document \r\nRequest";
@@ -337,11 +326,11 @@
             this.btnArchive.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArchive.Image = global::DocuFlow_Reg.Properties.Resources.archive;
             this.btnArchive.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArchive.Location = new System.Drawing.Point(0, 234);
+            this.btnArchive.Location = new System.Drawing.Point(0, 363);
             this.btnArchive.Margin = new System.Windows.Forms.Padding(0);
             this.btnArchive.Name = "btnArchive";
-            this.btnArchive.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnArchive.Size = new System.Drawing.Size(233, 81);
+            this.btnArchive.Padding = new System.Windows.Forms.Padding(75, 0, 0, 0);
+            this.btnArchive.Size = new System.Drawing.Size(350, 122);
             this.btnArchive.TabIndex = 4;
             this.btnArchive.TabStop = true;
             this.btnArchive.Text = "Archive";
@@ -349,83 +338,95 @@
             this.btnArchive.UseVisualStyleBackColor = true;
             this.btnArchive.CheckedChanged += new System.EventHandler(this.btnArchive_CheckedChanged);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 115);
-            this.panel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(233, 115);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lblOrgName);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(101, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(132, 115);
-            this.panel3.TabIndex = 1;
-            // 
-            // lblOrgName
-            // 
-            this.lblOrgName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblOrgName.AutoSize = true;
-            this.lblOrgName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrgName.Location = new System.Drawing.Point(6, 36);
-            this.lblOrgName.Name = "lblOrgName";
-            this.lblOrgName.Size = new System.Drawing.Size(115, 42);
-            this.lblOrgName.TabIndex = 5;
-            this.lblOrgName.Text = "University of \r\nCaloocan City";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(101, 115);
-            this.panel2.TabIndex = 0;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DocuFlow_Reg.Properties.Resources._449317779_467638099243811_6701941218915482820_n;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 36);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 55);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // rjButton1
+            // 
+            this.rjButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 0;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton1.ForeColor = System.Drawing.Color.Black;
+            this.rjButton1.Image = global::DocuFlow_Reg.Properties.Resources.logout;
+            this.rjButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rjButton1.Location = new System.Drawing.Point(15, 1029);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Padding = new System.Windows.Forms.Padding(102, 0, 57, 0);
+            this.rjButton1.Size = new System.Drawing.Size(303, 49);
+            this.rjButton1.TabIndex = 11;
+            this.rjButton1.Text = "Log Out";
+            this.rjButton1.TextColor = System.Drawing.Color.Black;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 2;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Image = global::DocuFlow_Reg.Properties.Resources.profile;
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(33, 915);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(82, 82);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 8;
+            this.rjCircularPictureBox1.TabStop = false;
+            this.rjCircularPictureBox1.Click += new System.EventHandler(this.rjCircularPictureBox1_Click);
+            // 
+            // rjPanel1
+            // 
+            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rjPanel1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rjPanel1.BorderBottomColor = System.Drawing.Color.Empty;
+            this.rjPanel1.BorderColor = System.Drawing.Color.Gray;
+            this.rjPanel1.BorderLeftColor = System.Drawing.Color.Empty;
+            this.rjPanel1.BorderRadius = 0;
+            this.rjPanel1.BorderRightColor = System.Drawing.Color.Empty;
+            this.rjPanel1.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Top;
+            this.rjPanel1.BorderSize = 1;
+            this.rjPanel1.BorderTopColor = System.Drawing.Color.Empty;
+            this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rjPanel1.ForeColor = System.Drawing.Color.Black;
+            this.rjPanel1.GradientColor1 = System.Drawing.Color.Empty;
+            this.rjPanel1.GradientColor2 = System.Drawing.Color.Empty;
+            this.rjPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.rjPanel1.Location = new System.Drawing.Point(0, 902);
+            this.rjPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.rjPanel1.Name = "rjPanel1";
+            this.rjPanel1.Size = new System.Drawing.Size(350, 203);
+            this.rjPanel1.TabIndex = 7;
+            this.rjPanel1.UseGradient = false;
+            // 
             // Reg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1167, 718);
+            this.ClientSize = new System.Drawing.Size(1750, 1105);
             this.ControlBox = false;
             this.Controls.Add(this.tlpMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Reg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reg";
@@ -437,7 +438,6 @@
             this.tlpUserControl.ResumeLayout(false);
             this.pnlSide.ResumeLayout(false);
             this.pnlSide.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.tlpSideButton.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -445,6 +445,7 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

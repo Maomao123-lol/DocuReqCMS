@@ -100,20 +100,6 @@ namespace DocuReqCMS
 
                 UpdateLoginStatus(userId, username, role);
 
-                if (role == "REGISTRAR" && isDefaultPassword)
-                {
-                    MessageBox.Show(
-                        "Login successful.\n\nYou are using the default password.\nPlease change it now.",
-                        "Security Required",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-
-                    ChangePasswordForm cpf = new ChangePasswordForm(userId);
-                    cpf.Show();
-                    this.Hide();
-                    return;
-                }
 
                 //MessageBox.Show(
                 //    $"Login successful.\n\nWelcome, {role}!",
