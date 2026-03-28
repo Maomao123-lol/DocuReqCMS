@@ -18,6 +18,30 @@ namespace DocuFlow_Reg.Forms
         }
 
         // ============================
+        // AUTO SEARCH
+        // ============================
+        public static void SetupAutoSearch(
+            Control txtSearch,
+            Timer searchTimer,
+            int delayMs,
+            Action<string> onSearch)
+        {
+            searchTimer.Interval = delayMs;
+
+            searchTimer.Tick += (s, e) =>
+            {
+                searchTimer.Stop();
+                onSearch?.Invoke(txtSearch.Text.Trim());
+            };
+
+            txtSearch.TextChanged += (s, e) =>
+            {
+                searchTimer.Stop();
+                searchTimer.Start();
+            };
+        }
+
+        // ============================
         // PAGINATION
         // ============================
         public class Pagination
