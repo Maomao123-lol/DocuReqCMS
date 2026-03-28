@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnDone = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(862, 83);
+            this.label1.Location = new System.Drawing.Point(879, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 197);
             this.label1.TabIndex = 0;
@@ -64,27 +64,28 @@
             this.panel1.Size = new System.Drawing.Size(1902, 878);
             this.panel1.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(554, 373);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(848, 162);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Please wait for your number \r\nto be called on monitor";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnDone
             // 
             this.btnDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(208)))), ((int)(((byte)(102)))));
             this.btnDone.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDone.Location = new System.Drawing.Point(747, 598);
+            this.btnDone.Location = new System.Drawing.Point(761, 679);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(464, 164);
             this.btnDone.TabIndex = 2;
             this.btnDone.Text = "DONE";
             this.btnDone.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(487, 375);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(848, 162);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Please wait for your number \r\nto be called on monitor";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // thankPage
             // 

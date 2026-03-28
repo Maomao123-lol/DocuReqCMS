@@ -16,20 +16,5 @@ namespace DocuFlow_Reg.Forms
         {
             InitializeComponent();
         }
-
-        private void pnlStudentInfo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void RequestDetails_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

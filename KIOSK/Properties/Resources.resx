@@ -124,6 +124,9 @@
   <data name="UCC FB PAGE-Mq6GQJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UCC FB PAGE-Mq6GQJ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="student" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\student.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="application (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,8 +154,14 @@
   <data name="backspace (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backspace (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="question (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\question (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="application (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="education (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\education (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bill (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bill (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +169,7 @@
   <data name="application (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="question (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\question (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="office-worker-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\office-worker-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

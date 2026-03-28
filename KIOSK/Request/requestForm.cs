@@ -11,15 +11,19 @@ namespace KIOSK.Request
     {
         private readonly Form1 _parent;
         private Form _activeChild;
+        public readonly string ClassPrefix;
+        public readonly string Classification;
         private string _connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
-        public requestForm(Form1 parent)
+        public requestForm(Form1 parent, string classPrefix = "U", string classification = "Undergraduate")
         {
             InitializeComponent();
             _parent = parent;
+            ClassPrefix = classPrefix;
+            Classification = classification;
             btnDocument.Click += (s, e) => LoadDocumentCards();
             btnPayFee.Click += (s, e) => LoadFeeCards();
-            button4.Click += (s, e) => _parent.LoadChild(new preChoice(_parent));
+            button4.Click += (s, e) => _parent.LoadChild(new preChoice(_parent, ClassPrefix, Classification));
             this.Load += (s, e) => btnDocument.PerformClick();
         }
 
@@ -49,14 +53,13 @@ namespace KIOSK.Request
                             var card = new documentCard
                             {
                                 DocumentName = name,
-                                Size = new Size(210,210),
+                                Size = new Size(210, 210),
                                 Margin = new Padding(10)
                             };
 
-                            // When card is clicked, open studentNumber
                             card.OnCardClicked = () =>
                             {
-                                _parent.LoadChild(new studentNumber(this, _parent, name, requirements));
+                                _parent.LoadChild(new feeStudentNumber(this, _parent, name, Classification));
                             };
 
                             flowLayoutPanel1.Controls.Add(card);
@@ -102,7 +105,7 @@ namespace KIOSK.Request
 
                             card.OnCardClicked = () =>
                             {
-                                _parent.LoadChild(new feeStudentNumber(this, _parent, name));
+                                _parent.LoadChild(new feeStudentNumber(this, _parent, name, Classification));
                             };
 
                             flowLayoutPanel1.Controls.Add(card);

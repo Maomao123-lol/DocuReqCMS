@@ -32,17 +32,18 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnRequest = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEvaluation = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnSubmitReceipt = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnInquiry = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnRequest = new System.Windows.Forms.Button();
+            this.btnEvaluation = new System.Windows.Forms.Button();
+            this.btnSubmitReceipt = new System.Windows.Forms.Button();
+            this.btnInquiry = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +74,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -105,20 +107,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Request Document, Pay Fee";
             // 
-            // btnRequest
-            // 
-            this.btnRequest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRequest.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRequest.Image = global::KIOSK.Properties.Resources.application__4_;
-            this.btnRequest.Location = new System.Drawing.Point(20, 20);
-            this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(429, 393);
-            this.btnRequest.TabIndex = 4;
-            this.btnRequest.Text = "REQUEST";
-            this.btnRequest.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRequest.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnRequest.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label3);
@@ -142,20 +130,6 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Ask document, evaluation, registrar related question";
             // 
-            // btnEvaluation
-            // 
-            this.btnEvaluation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEvaluation.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEvaluation.Image = global::KIOSK.Properties.Resources.evaluation__1_;
-            this.btnEvaluation.Location = new System.Drawing.Point(20, 20);
-            this.btnEvaluation.Name = "btnEvaluation";
-            this.btnEvaluation.Size = new System.Drawing.Size(429, 393);
-            this.btnEvaluation.TabIndex = 5;
-            this.btnEvaluation.Text = "EVALUATION";
-            this.btnEvaluation.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEvaluation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEvaluation.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnSubmitReceipt);
@@ -166,20 +140,6 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(20);
             this.panel3.Size = new System.Drawing.Size(469, 433);
             this.panel3.TabIndex = 12;
-            // 
-            // btnSubmitReceipt
-            // 
-            this.btnSubmitReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSubmitReceipt.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitReceipt.Image = global::KIOSK.Properties.Resources.bill__1_;
-            this.btnSubmitReceipt.Location = new System.Drawing.Point(20, 20);
-            this.btnSubmitReceipt.Name = "btnSubmitReceipt";
-            this.btnSubmitReceipt.Size = new System.Drawing.Size(429, 393);
-            this.btnSubmitReceipt.TabIndex = 6;
-            this.btnSubmitReceipt.Text = "SUBMIT RECEIPT/\r\nPICK UP DOCUMENT";
-            this.btnSubmitReceipt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSubmitReceipt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSubmitReceipt.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -216,6 +176,59 @@
             this.label6.Text = "Ask document, evaluation, and\r\nregistrar related question";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(953, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(490, 28);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Ask document, evaluation, registrar related question";
+            // 
+            // btnRequest
+            // 
+            this.btnRequest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRequest.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRequest.Image = global::KIOSK.Properties.Resources.application__4_;
+            this.btnRequest.Location = new System.Drawing.Point(20, 20);
+            this.btnRequest.Name = "btnRequest";
+            this.btnRequest.Size = new System.Drawing.Size(429, 393);
+            this.btnRequest.TabIndex = 4;
+            this.btnRequest.Text = "REQUEST";
+            this.btnRequest.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRequest.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRequest.UseVisualStyleBackColor = true;
+            // 
+            // btnEvaluation
+            // 
+            this.btnEvaluation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEvaluation.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvaluation.Image = global::KIOSK.Properties.Resources.evaluation__1_;
+            this.btnEvaluation.Location = new System.Drawing.Point(20, 20);
+            this.btnEvaluation.Name = "btnEvaluation";
+            this.btnEvaluation.Size = new System.Drawing.Size(429, 393);
+            this.btnEvaluation.TabIndex = 5;
+            this.btnEvaluation.Text = "EVALUATION";
+            this.btnEvaluation.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEvaluation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEvaluation.UseVisualStyleBackColor = true;
+            // 
+            // btnSubmitReceipt
+            // 
+            this.btnSubmitReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSubmitReceipt.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitReceipt.Image = global::KIOSK.Properties.Resources.bill__1_;
+            this.btnSubmitReceipt.Location = new System.Drawing.Point(20, 20);
+            this.btnSubmitReceipt.Name = "btnSubmitReceipt";
+            this.btnSubmitReceipt.Size = new System.Drawing.Size(429, 393);
+            this.btnSubmitReceipt.TabIndex = 6;
+            this.btnSubmitReceipt.Text = "SUBMIT RECEIPT/\r\nPICK UP DOCUMENT";
+            this.btnSubmitReceipt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSubmitReceipt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSubmitReceipt.UseVisualStyleBackColor = true;
+            // 
             // btnInquiry
             // 
             this.btnInquiry.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -230,16 +243,19 @@
             this.btnInquiry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnInquiry.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // button4
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(953, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(490, 28);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Ask document, evaluation, registrar related question";
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.BackColor = System.Drawing.Color.Red;
+            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(20, 788);
+            this.button4.Margin = new System.Windows.Forms.Padding(20);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(223, 70);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Back";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // preChoice
             // 
@@ -280,5 +296,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
     }
 }

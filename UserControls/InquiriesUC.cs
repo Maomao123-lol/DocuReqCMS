@@ -1,11 +1,8 @@
-﻿using System;
+﻿using DocuFlow_Reg.Forms;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DocuFlow_Reg.UserControls
@@ -13,17 +10,89 @@ namespace DocuFlow_Reg.UserControls
     public partial class InquiriesUC : UserControl
     {
         DatabaseHelper db = new DatabaseHelper();
+        Recall recall = new Recall();
+        SharedMethods.Pagination pagination;
+
+        private string searchText = "";
+
         public InquiriesUC()
         {
             InitializeComponent();
-            dgvInquiries.Rows.Clear();
-            LoadData();
+            this.Load += InquiriesUC_Load;
         }
 
-        public void LoadData() 
+        private void InquiriesUC_Load(object sender, EventArgs e)
         {
-            string query = "SELECT RequestNumber, StudentNumber, student_name, document_type, InquiryType FROM document_requests";
-            dgvInquiries.DataSource = db.ExecuteQuery(query);
+            pagination = new SharedMethods.Pagination(
+                10,
+                btnPreviousPage,
+                btnNextPage,
+                lblCurrentPage,
+                lblLastPage
+            );
+
+            pagination.OnPageChanged += LoadInquiries;
+            LoadInquiries();
+        }
+
+        private void LoadInquiries()
+        {
+            // Get total records
+            string countQuery = @"
+            SELECT COUNT(*) 
+            FROM queue_tickets qt
+            LEFT JOIN Inquiry i ON i.ticket_id = qt.id
+            LEFT JOIN Student s ON s.student_number = qt.student_number
+            WHERE qt.status != 'done'
+            AND (qt.student_number LIKE @search
+            OR s.name              LIKE @search
+            OR qt.queue_no         LIKE @search
+            OR qt.service_type     LIKE @search
+            OR qt.status           LIKE @search)";
+
+            int totalRecords = db.getDashboardCount(
+                countQuery.Replace("@search", "'%" + searchText + "%'")
+            );
+
+            pagination.SetTotalRecords(totalRecords);
+
+            // Get paginated records
+            DataTable dt = db.ExecuteQuery(@"
+                SELECT 
+                    qt.queue_no        AS 'Queue No',
+                    qt.student_number  AS 'Student Number',
+                    s.name             AS 'Student Name',
+                    qt.service_type    AS 'Inquiry Type',
+                    qt.status          AS 'Status'
+                FROM queue_tickets qt
+                LEFT JOIN Inquiry i ON i.ticket_id = qt.id
+                LEFT JOIN Student s ON s.student_number = qt.student_number
+                WHERE qt.status != 'done'
+                AND (qt.student_number LIKE @search
+                OR s.name              LIKE @search
+                OR qt.queue_no         LIKE @search
+                OR qt.service_type     LIKE @search
+                OR qt.status           LIKE @search)
+                ORDER BY qt.created_at ASC
+                LIMIT @pageSize OFFSET @offset",
+                new Dictionary<string, object>
+                {
+                    { "@search", "%" + searchText + "%" },
+                    { "@pageSize", pagination.PageSize },
+                    { "@offset", pagination.Offset }
+                });
+
+            dgvInquiries.DataSource = dt;
+            StyleDataGridView();
+        }
+
+        private void StyleDataGridView()
+        {
+            dgvInquiries.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvInquiries.RowHeadersVisible = false;
+            dgvInquiries.AllowUserToAddRows = false;
+            dgvInquiries.ReadOnly = true;
+            dgvInquiries.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -36,24 +105,16 @@ namespace DocuFlow_Reg.UserControls
             pnlSearch.BorderColor = Color.Black;
         }
 
+        private void btnRecall_Click(object sender, EventArgs e)
+        {
+            recall.ShowDialog();
+        }
+
         private void txtSearch__TextChanged(object sender, EventArgs e)
         {
-            string searchText = txtSearch.Text;
-
-            string query = "SELECT RequestNumber, StudentNumber, student_name, document_type, InquiryType " +
-                           "FROM document_requests " +
-                           "WHERE RequestNumber LIKE @search OR " +
-                           "StudentNumber LIKE @search OR " +
-                           "student_name LIKE @search OR " +
-                           "document_type LIKE @search OR " +
-                           "InquiryType LIKE @search";
-
-            string searchParam = "%" + searchText + "%";
-
-            var parameters = new Dictionary<string, object>();
-            parameters.Add("@search", searchParam);
-
-            dgvInquiries.DataSource = db.ExecuteQuery(query, parameters);
+            searchText = txtSearch.Text.Trim();
+            pagination.Reset();
+            LoadInquiries();
         }
     }
 }

@@ -13,17 +13,17 @@ namespace KIOSK.Request
         private readonly requestForm _requestParent;
         private KIOSK.keyboardUI _keyboard;
         private readonly string _feeName;
+        private readonly string _classification;
         private string _connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
-        public feeStudentNumber(requestForm requestParent, Form1 mainParent, string feeName)
+        public feeStudentNumber(requestForm requestParent, Form1 mainParent, string feeName, string classification = "Undergraduate")
         {
             InitializeComponent();
             _requestParent = requestParent;
             _mainParent = mainParent;
             _feeName = feeName;
-
+            _classification = classification;
             label1.Text = feeName;
-
             LoadKeyboard();
             button2.Click += (s, e) => _mainParent.LoadChild(new requestForm(_mainParent));
             button1.Click += BtnEnter_Click;
@@ -47,7 +47,7 @@ namespace KIOSK.Request
             {
                 string queueNo = GetNextQueueNo();
                 SaveToDatabase(queueNo, input);
-                ReceiptHelper.Print(queueNo, "PAY FEE");
+                ReceiptHelper.Print(queueNo, "PAY FEE", _classification);
                 _mainParent.LoadChild(new thankPage(_mainParent));
             }
             catch (Exception ex)

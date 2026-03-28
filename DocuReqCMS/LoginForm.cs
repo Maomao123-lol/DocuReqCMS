@@ -17,7 +17,19 @@ namespace DocuReqCMS
         {
             InitializeComponent();
             SetupPasswordEye();
+            this.AcceptButton = btnLogin;
+
         }
+
+        private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+                e.SuppressKeyPress = true;
+            }
+        }
+
 
         private void SetupPasswordEye()
         {
@@ -43,7 +55,6 @@ namespace DocuReqCMS
                 : Properties.Resources.eye;
         }
 
-        // ===================== LOGIN =====================
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
@@ -111,7 +122,6 @@ namespace DocuReqCMS
                 //    MessageBoxIcon.Information
                 //);
 
-                // 🚀 OPEN DASHBOARD
                 if (role == "ADMIN")
                 {
                     Form1 adminDashboard = new Form1(userId);
@@ -164,6 +174,16 @@ namespace DocuReqCMS
         private bool VerifyPassword(string input, string storedHash)
         {
             return HashPassword(input) == storedHash;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
