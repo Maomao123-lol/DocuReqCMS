@@ -35,10 +35,12 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.chDocumentTypeDistribution = new LiveCharts.WinForms.CartesianChart();
             this.label4 = new System.Windows.Forms.Label();
+            this.pnlDocumentDistribution = new DocuFlow_Reg.RJControls.RJPanel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.chRequestTrend = new LiveCharts.WinForms.CartesianChart();
             this.label6 = new System.Windows.Forms.Label();
+            this.pnlRequestTrend = new DocuFlow_Reg.RJControls.RJPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -47,34 +49,32 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblReleased = new System.Windows.Forms.Label();
+            this.rjPanel5 = new DocuFlow_Reg.RJControls.RJPanel();
+            this.pnlReleased = new DocuFlow_Reg.RJControls.RJPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblReadyToRelease = new System.Windows.Forms.Label();
+            this.rjPanel3 = new DocuFlow_Reg.RJControls.RJPanel();
+            this.pnlReadyToRelease = new DocuFlow_Reg.RJControls.RJPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblPendingPayment = new System.Windows.Forms.Label();
+            this.rjPanel1 = new DocuFlow_Reg.RJControls.RJPanel();
+            this.pnlPendingPayment = new DocuFlow_Reg.RJControls.RJPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pbPendingRequestIcon = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPendingRequest = new System.Windows.Forms.Label();
+            this.pnlPendingRequestIcon = new DocuFlow_Reg.RJControls.RJPanel();
+            this.pnlPendingRequest = new DocuFlow_Reg.RJControls.RJPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblOverview = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlDropDownFilter = new System.Windows.Forms.Panel();
             this.cbWidgetFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlDocumentDistribution = new DocuFlow_Reg.RJControls.RJPanel();
-            this.pnlRequestTrend = new DocuFlow_Reg.RJControls.RJPanel();
-            this.rjPanel5 = new DocuFlow_Reg.RJControls.RJPanel();
-            this.pnlReleased = new DocuFlow_Reg.RJControls.RJPanel();
-            this.rjPanel3 = new DocuFlow_Reg.RJControls.RJPanel();
-            this.pnlReadyToRelease = new DocuFlow_Reg.RJControls.RJPanel();
-            this.rjPanel1 = new DocuFlow_Reg.RJControls.RJPanel();
-            this.pnlPendingPayment = new DocuFlow_Reg.RJControls.RJPanel();
-            this.pnlPendingRequestIcon = new DocuFlow_Reg.RJControls.RJPanel();
-            this.pnlPendingRequest = new DocuFlow_Reg.RJControls.RJPanel();
             this.s.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -186,6 +186,33 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Document Type Distribution";
             // 
+            // pnlDocumentDistribution
+            // 
+            this.pnlDocumentDistribution.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDocumentDistribution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
+            this.pnlDocumentDistribution.BackgroundColor = System.Drawing.Color.White;
+            this.pnlDocumentDistribution.BorderBottomColor = System.Drawing.Color.Empty;
+            this.pnlDocumentDistribution.BorderColor = System.Drawing.Color.Gray;
+            this.pnlDocumentDistribution.BorderLeftColor = System.Drawing.Color.Empty;
+            this.pnlDocumentDistribution.BorderRadius = 15;
+            this.pnlDocumentDistribution.BorderRightColor = System.Drawing.Color.Empty;
+            this.pnlDocumentDistribution.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
+            | DocuFlow_Reg.RJControls.BorderSides.Right) 
+            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
+            this.pnlDocumentDistribution.BorderSize = 0;
+            this.pnlDocumentDistribution.BorderTopColor = System.Drawing.Color.Empty;
+            this.pnlDocumentDistribution.ForeColor = System.Drawing.Color.Black;
+            this.pnlDocumentDistribution.GradientColor1 = System.Drawing.Color.Empty;
+            this.pnlDocumentDistribution.GradientColor2 = System.Drawing.Color.Empty;
+            this.pnlDocumentDistribution.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlDocumentDistribution.Location = new System.Drawing.Point(16, 15);
+            this.pnlDocumentDistribution.Name = "pnlDocumentDistribution";
+            this.pnlDocumentDistribution.Size = new System.Drawing.Size(424, 361);
+            this.pnlDocumentDistribution.TabIndex = 0;
+            this.pnlDocumentDistribution.UseGradient = false;
+            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.panel13);
@@ -229,6 +256,33 @@
             this.label6.Size = new System.Drawing.Size(132, 25);
             this.label6.TabIndex = 2;
             this.label6.Text = "Request Trend";
+            // 
+            // pnlRequestTrend
+            // 
+            this.pnlRequestTrend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlRequestTrend.BackColor = System.Drawing.Color.Transparent;
+            this.pnlRequestTrend.BackgroundColor = System.Drawing.Color.White;
+            this.pnlRequestTrend.BorderBottomColor = System.Drawing.Color.Empty;
+            this.pnlRequestTrend.BorderColor = System.Drawing.Color.Gray;
+            this.pnlRequestTrend.BorderLeftColor = System.Drawing.Color.Empty;
+            this.pnlRequestTrend.BorderRadius = 15;
+            this.pnlRequestTrend.BorderRightColor = System.Drawing.Color.Empty;
+            this.pnlRequestTrend.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
+            | DocuFlow_Reg.RJControls.BorderSides.Right) 
+            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
+            this.pnlRequestTrend.BorderSize = 0;
+            this.pnlRequestTrend.BorderTopColor = System.Drawing.Color.Empty;
+            this.pnlRequestTrend.ForeColor = System.Drawing.Color.Black;
+            this.pnlRequestTrend.GradientColor1 = System.Drawing.Color.Empty;
+            this.pnlRequestTrend.GradientColor2 = System.Drawing.Color.Empty;
+            this.pnlRequestTrend.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlRequestTrend.Location = new System.Drawing.Point(16, 15);
+            this.pnlRequestTrend.Name = "pnlRequestTrend";
+            this.pnlRequestTrend.Size = new System.Drawing.Size(424, 361);
+            this.pnlRequestTrend.TabIndex = 0;
+            this.pnlRequestTrend.UseGradient = false;
             // 
             // panel8
             // 
@@ -334,6 +388,56 @@
             this.lblReleased.Size = new System.Drawing.Size(0, 40);
             this.lblReleased.TabIndex = 13;
             // 
+            // rjPanel5
+            // 
+            this.rjPanel5.BackColor = System.Drawing.Color.White;
+            this.rjPanel5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.rjPanel5.BorderBottomColor = System.Drawing.Color.Empty;
+            this.rjPanel5.BorderColor = System.Drawing.Color.Goldenrod;
+            this.rjPanel5.BorderLeftColor = System.Drawing.Color.Empty;
+            this.rjPanel5.BorderRadius = 10;
+            this.rjPanel5.BorderRightColor = System.Drawing.Color.Empty;
+            this.rjPanel5.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
+            | DocuFlow_Reg.RJControls.BorderSides.Right) 
+            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
+            this.rjPanel5.BorderSize = 0;
+            this.rjPanel5.BorderTopColor = System.Drawing.Color.Empty;
+            this.rjPanel5.ForeColor = System.Drawing.Color.Black;
+            this.rjPanel5.GradientColor1 = System.Drawing.Color.Empty;
+            this.rjPanel5.GradientColor2 = System.Drawing.Color.Empty;
+            this.rjPanel5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.rjPanel5.Location = new System.Drawing.Point(33, 46);
+            this.rjPanel5.Name = "rjPanel5";
+            this.rjPanel5.Size = new System.Drawing.Size(47, 48);
+            this.rjPanel5.TabIndex = 12;
+            this.rjPanel5.UseGradient = false;
+            // 
+            // pnlReleased
+            // 
+            this.pnlReleased.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlReleased.BackColor = System.Drawing.Color.Transparent;
+            this.pnlReleased.BackgroundColor = System.Drawing.Color.White;
+            this.pnlReleased.BorderBottomColor = System.Drawing.Color.Empty;
+            this.pnlReleased.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(237)))));
+            this.pnlReleased.BorderLeftColor = System.Drawing.Color.Empty;
+            this.pnlReleased.BorderRadius = 10;
+            this.pnlReleased.BorderRightColor = System.Drawing.Color.Empty;
+            this.pnlReleased.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Bottom;
+            this.pnlReleased.BorderSize = 3;
+            this.pnlReleased.BorderTopColor = System.Drawing.Color.Empty;
+            this.pnlReleased.ForeColor = System.Drawing.Color.Black;
+            this.pnlReleased.GradientColor1 = System.Drawing.Color.Empty;
+            this.pnlReleased.GradientColor2 = System.Drawing.Color.Empty;
+            this.pnlReleased.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlReleased.Location = new System.Drawing.Point(16, 20);
+            this.pnlReleased.Name = "pnlReleased";
+            this.pnlReleased.Size = new System.Drawing.Size(196, 98);
+            this.pnlReleased.TabIndex = 11;
+            this.pnlReleased.UseGradient = false;
+            this.pnlReleased.Click += new System.EventHandler(this.pnlReleased_Click);
+            // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -389,6 +493,56 @@
             this.lblReadyToRelease.Name = "lblReadyToRelease";
             this.lblReadyToRelease.Size = new System.Drawing.Size(0, 40);
             this.lblReadyToRelease.TabIndex = 13;
+            // 
+            // rjPanel3
+            // 
+            this.rjPanel3.BackColor = System.Drawing.Color.White;
+            this.rjPanel3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(244)))));
+            this.rjPanel3.BorderBottomColor = System.Drawing.Color.Empty;
+            this.rjPanel3.BorderColor = System.Drawing.Color.Goldenrod;
+            this.rjPanel3.BorderLeftColor = System.Drawing.Color.Empty;
+            this.rjPanel3.BorderRadius = 10;
+            this.rjPanel3.BorderRightColor = System.Drawing.Color.Empty;
+            this.rjPanel3.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
+            | DocuFlow_Reg.RJControls.BorderSides.Right) 
+            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
+            this.rjPanel3.BorderSize = 0;
+            this.rjPanel3.BorderTopColor = System.Drawing.Color.Empty;
+            this.rjPanel3.ForeColor = System.Drawing.Color.Black;
+            this.rjPanel3.GradientColor1 = System.Drawing.Color.Empty;
+            this.rjPanel3.GradientColor2 = System.Drawing.Color.Empty;
+            this.rjPanel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.rjPanel3.Location = new System.Drawing.Point(33, 46);
+            this.rjPanel3.Name = "rjPanel3";
+            this.rjPanel3.Size = new System.Drawing.Size(47, 48);
+            this.rjPanel3.TabIndex = 12;
+            this.rjPanel3.UseGradient = false;
+            // 
+            // pnlReadyToRelease
+            // 
+            this.pnlReadyToRelease.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlReadyToRelease.BackColor = System.Drawing.Color.Transparent;
+            this.pnlReadyToRelease.BackgroundColor = System.Drawing.Color.White;
+            this.pnlReadyToRelease.BorderBottomColor = System.Drawing.Color.Empty;
+            this.pnlReadyToRelease.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(122)))), ((int)(((byte)(26)))));
+            this.pnlReadyToRelease.BorderLeftColor = System.Drawing.Color.Empty;
+            this.pnlReadyToRelease.BorderRadius = 10;
+            this.pnlReadyToRelease.BorderRightColor = System.Drawing.Color.Empty;
+            this.pnlReadyToRelease.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Bottom;
+            this.pnlReadyToRelease.BorderSize = 3;
+            this.pnlReadyToRelease.BorderTopColor = System.Drawing.Color.Empty;
+            this.pnlReadyToRelease.ForeColor = System.Drawing.Color.Black;
+            this.pnlReadyToRelease.GradientColor1 = System.Drawing.Color.Empty;
+            this.pnlReadyToRelease.GradientColor2 = System.Drawing.Color.Empty;
+            this.pnlReadyToRelease.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlReadyToRelease.Location = new System.Drawing.Point(16, 20);
+            this.pnlReadyToRelease.Name = "pnlReadyToRelease";
+            this.pnlReadyToRelease.Size = new System.Drawing.Size(196, 98);
+            this.pnlReadyToRelease.TabIndex = 11;
+            this.pnlReadyToRelease.UseGradient = false;
+            this.pnlReadyToRelease.Click += new System.EventHandler(this.pnlReadyToRelease_Click);
             // 
             // panel5
             // 
@@ -446,6 +600,56 @@
             this.lblPendingPayment.Size = new System.Drawing.Size(0, 40);
             this.lblPendingPayment.TabIndex = 13;
             // 
+            // rjPanel1
+            // 
+            this.rjPanel1.BackColor = System.Drawing.Color.White;
+            this.rjPanel1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(252)))), ((int)(((byte)(232)))));
+            this.rjPanel1.BorderBottomColor = System.Drawing.Color.Empty;
+            this.rjPanel1.BorderColor = System.Drawing.Color.Goldenrod;
+            this.rjPanel1.BorderLeftColor = System.Drawing.Color.Empty;
+            this.rjPanel1.BorderRadius = 10;
+            this.rjPanel1.BorderRightColor = System.Drawing.Color.Empty;
+            this.rjPanel1.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
+            | DocuFlow_Reg.RJControls.BorderSides.Right) 
+            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
+            this.rjPanel1.BorderSize = 0;
+            this.rjPanel1.BorderTopColor = System.Drawing.Color.Empty;
+            this.rjPanel1.ForeColor = System.Drawing.Color.Black;
+            this.rjPanel1.GradientColor1 = System.Drawing.Color.Empty;
+            this.rjPanel1.GradientColor2 = System.Drawing.Color.Empty;
+            this.rjPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.rjPanel1.Location = new System.Drawing.Point(33, 46);
+            this.rjPanel1.Name = "rjPanel1";
+            this.rjPanel1.Size = new System.Drawing.Size(47, 48);
+            this.rjPanel1.TabIndex = 12;
+            this.rjPanel1.UseGradient = false;
+            // 
+            // pnlPendingPayment
+            // 
+            this.pnlPendingPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlPendingPayment.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPendingPayment.BackgroundColor = System.Drawing.Color.White;
+            this.pnlPendingPayment.BorderBottomColor = System.Drawing.Color.Empty;
+            this.pnlPendingPayment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
+            this.pnlPendingPayment.BorderLeftColor = System.Drawing.Color.Empty;
+            this.pnlPendingPayment.BorderRadius = 10;
+            this.pnlPendingPayment.BorderRightColor = System.Drawing.Color.Empty;
+            this.pnlPendingPayment.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Bottom;
+            this.pnlPendingPayment.BorderSize = 3;
+            this.pnlPendingPayment.BorderTopColor = System.Drawing.Color.Empty;
+            this.pnlPendingPayment.ForeColor = System.Drawing.Color.Black;
+            this.pnlPendingPayment.GradientColor1 = System.Drawing.Color.Empty;
+            this.pnlPendingPayment.GradientColor2 = System.Drawing.Color.Empty;
+            this.pnlPendingPayment.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlPendingPayment.Location = new System.Drawing.Point(16, 20);
+            this.pnlPendingPayment.Name = "pnlPendingPayment";
+            this.pnlPendingPayment.Size = new System.Drawing.Size(196, 98);
+            this.pnlPendingPayment.TabIndex = 11;
+            this.pnlPendingPayment.UseGradient = false;
+            this.pnlPendingPayment.Click += new System.EventHandler(this.pnlPendingPayment_Click);
+            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -501,6 +705,56 @@
             this.lblPendingRequest.Name = "lblPendingRequest";
             this.lblPendingRequest.Size = new System.Drawing.Size(0, 40);
             this.lblPendingRequest.TabIndex = 13;
+            // 
+            // pnlPendingRequestIcon
+            // 
+            this.pnlPendingRequestIcon.BackColor = System.Drawing.Color.White;
+            this.pnlPendingRequestIcon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pnlPendingRequestIcon.BorderBottomColor = System.Drawing.Color.Empty;
+            this.pnlPendingRequestIcon.BorderColor = System.Drawing.Color.Goldenrod;
+            this.pnlPendingRequestIcon.BorderLeftColor = System.Drawing.Color.Empty;
+            this.pnlPendingRequestIcon.BorderRadius = 10;
+            this.pnlPendingRequestIcon.BorderRightColor = System.Drawing.Color.Empty;
+            this.pnlPendingRequestIcon.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
+            | DocuFlow_Reg.RJControls.BorderSides.Right) 
+            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
+            this.pnlPendingRequestIcon.BorderSize = 0;
+            this.pnlPendingRequestIcon.BorderTopColor = System.Drawing.Color.Empty;
+            this.pnlPendingRequestIcon.ForeColor = System.Drawing.Color.Black;
+            this.pnlPendingRequestIcon.GradientColor1 = System.Drawing.Color.Empty;
+            this.pnlPendingRequestIcon.GradientColor2 = System.Drawing.Color.Empty;
+            this.pnlPendingRequestIcon.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlPendingRequestIcon.Location = new System.Drawing.Point(33, 46);
+            this.pnlPendingRequestIcon.Name = "pnlPendingRequestIcon";
+            this.pnlPendingRequestIcon.Size = new System.Drawing.Size(47, 48);
+            this.pnlPendingRequestIcon.TabIndex = 12;
+            this.pnlPendingRequestIcon.UseGradient = false;
+            // 
+            // pnlPendingRequest
+            // 
+            this.pnlPendingRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlPendingRequest.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPendingRequest.BackgroundColor = System.Drawing.Color.White;
+            this.pnlPendingRequest.BorderBottomColor = System.Drawing.Color.Empty;
+            this.pnlPendingRequest.BorderColor = System.Drawing.Color.Red;
+            this.pnlPendingRequest.BorderLeftColor = System.Drawing.Color.Empty;
+            this.pnlPendingRequest.BorderRadius = 10;
+            this.pnlPendingRequest.BorderRightColor = System.Drawing.Color.Empty;
+            this.pnlPendingRequest.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Bottom;
+            this.pnlPendingRequest.BorderSize = 3;
+            this.pnlPendingRequest.BorderTopColor = System.Drawing.Color.Empty;
+            this.pnlPendingRequest.ForeColor = System.Drawing.Color.Black;
+            this.pnlPendingRequest.GradientColor1 = System.Drawing.Color.Empty;
+            this.pnlPendingRequest.GradientColor2 = System.Drawing.Color.Empty;
+            this.pnlPendingRequest.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlPendingRequest.Location = new System.Drawing.Point(16, 20);
+            this.pnlPendingRequest.Name = "pnlPendingRequest";
+            this.pnlPendingRequest.Size = new System.Drawing.Size(196, 98);
+            this.pnlPendingRequest.TabIndex = 11;
+            this.pnlPendingRequest.UseGradient = false;
+            this.pnlPendingRequest.Click += new System.EventHandler(this.pnlPendingRequest_Click);
             // 
             // panel2
             // 
@@ -569,256 +823,6 @@
             this.label1.Size = new System.Drawing.Size(105, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Dashboard";
-            // 
-            // pnlDocumentDistribution
-            // 
-            this.pnlDocumentDistribution.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlDocumentDistribution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
-            this.pnlDocumentDistribution.BackgroundColor = System.Drawing.Color.White;
-            this.pnlDocumentDistribution.BorderBottomColor = System.Drawing.Color.Empty;
-            this.pnlDocumentDistribution.BorderColor = System.Drawing.Color.Gray;
-            this.pnlDocumentDistribution.BorderLeftColor = System.Drawing.Color.Empty;
-            this.pnlDocumentDistribution.BorderRadius = 15;
-            this.pnlDocumentDistribution.BorderRightColor = System.Drawing.Color.Empty;
-            this.pnlDocumentDistribution.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
-            | DocuFlow_Reg.RJControls.BorderSides.Right) 
-            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
-            this.pnlDocumentDistribution.BorderSize = 0;
-            this.pnlDocumentDistribution.BorderTopColor = System.Drawing.Color.Empty;
-            this.pnlDocumentDistribution.ForeColor = System.Drawing.Color.Black;
-            this.pnlDocumentDistribution.GradientColor1 = System.Drawing.Color.Empty;
-            this.pnlDocumentDistribution.GradientColor2 = System.Drawing.Color.Empty;
-            this.pnlDocumentDistribution.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlDocumentDistribution.Location = new System.Drawing.Point(16, 15);
-            this.pnlDocumentDistribution.Name = "pnlDocumentDistribution";
-            this.pnlDocumentDistribution.Size = new System.Drawing.Size(424, 361);
-            this.pnlDocumentDistribution.TabIndex = 0;
-            this.pnlDocumentDistribution.UseGradient = false;
-            // 
-            // pnlRequestTrend
-            // 
-            this.pnlRequestTrend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlRequestTrend.BackColor = System.Drawing.Color.Transparent;
-            this.pnlRequestTrend.BackgroundColor = System.Drawing.Color.White;
-            this.pnlRequestTrend.BorderBottomColor = System.Drawing.Color.Empty;
-            this.pnlRequestTrend.BorderColor = System.Drawing.Color.Gray;
-            this.pnlRequestTrend.BorderLeftColor = System.Drawing.Color.Empty;
-            this.pnlRequestTrend.BorderRadius = 15;
-            this.pnlRequestTrend.BorderRightColor = System.Drawing.Color.Empty;
-            this.pnlRequestTrend.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
-            | DocuFlow_Reg.RJControls.BorderSides.Right) 
-            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
-            this.pnlRequestTrend.BorderSize = 0;
-            this.pnlRequestTrend.BorderTopColor = System.Drawing.Color.Empty;
-            this.pnlRequestTrend.ForeColor = System.Drawing.Color.Black;
-            this.pnlRequestTrend.GradientColor1 = System.Drawing.Color.Empty;
-            this.pnlRequestTrend.GradientColor2 = System.Drawing.Color.Empty;
-            this.pnlRequestTrend.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlRequestTrend.Location = new System.Drawing.Point(16, 15);
-            this.pnlRequestTrend.Name = "pnlRequestTrend";
-            this.pnlRequestTrend.Size = new System.Drawing.Size(424, 361);
-            this.pnlRequestTrend.TabIndex = 0;
-            this.pnlRequestTrend.UseGradient = false;
-            // 
-            // rjPanel5
-            // 
-            this.rjPanel5.BackColor = System.Drawing.Color.White;
-            this.rjPanel5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.rjPanel5.BorderBottomColor = System.Drawing.Color.Empty;
-            this.rjPanel5.BorderColor = System.Drawing.Color.Goldenrod;
-            this.rjPanel5.BorderLeftColor = System.Drawing.Color.Empty;
-            this.rjPanel5.BorderRadius = 10;
-            this.rjPanel5.BorderRightColor = System.Drawing.Color.Empty;
-            this.rjPanel5.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
-            | DocuFlow_Reg.RJControls.BorderSides.Right) 
-            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
-            this.rjPanel5.BorderSize = 0;
-            this.rjPanel5.BorderTopColor = System.Drawing.Color.Empty;
-            this.rjPanel5.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel5.GradientColor1 = System.Drawing.Color.Empty;
-            this.rjPanel5.GradientColor2 = System.Drawing.Color.Empty;
-            this.rjPanel5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.rjPanel5.Location = new System.Drawing.Point(33, 46);
-            this.rjPanel5.Name = "rjPanel5";
-            this.rjPanel5.Size = new System.Drawing.Size(47, 48);
-            this.rjPanel5.TabIndex = 12;
-            this.rjPanel5.UseGradient = false;
-            // 
-            // pnlReleased
-            // 
-            this.pnlReleased.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlReleased.BackColor = System.Drawing.Color.Transparent;
-            this.pnlReleased.BackgroundColor = System.Drawing.Color.White;
-            this.pnlReleased.BorderBottomColor = System.Drawing.Color.Empty;
-            this.pnlReleased.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(237)))));
-            this.pnlReleased.BorderLeftColor = System.Drawing.Color.Empty;
-            this.pnlReleased.BorderRadius = 10;
-            this.pnlReleased.BorderRightColor = System.Drawing.Color.Empty;
-            this.pnlReleased.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Bottom;
-            this.pnlReleased.BorderSize = 3;
-            this.pnlReleased.BorderTopColor = System.Drawing.Color.Empty;
-            this.pnlReleased.ForeColor = System.Drawing.Color.Black;
-            this.pnlReleased.GradientColor1 = System.Drawing.Color.Empty;
-            this.pnlReleased.GradientColor2 = System.Drawing.Color.Empty;
-            this.pnlReleased.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlReleased.Location = new System.Drawing.Point(16, 20);
-            this.pnlReleased.Name = "pnlReleased";
-            this.pnlReleased.Size = new System.Drawing.Size(196, 98);
-            this.pnlReleased.TabIndex = 11;
-            this.pnlReleased.UseGradient = false;
-            // 
-            // rjPanel3
-            // 
-            this.rjPanel3.BackColor = System.Drawing.Color.White;
-            this.rjPanel3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(244)))));
-            this.rjPanel3.BorderBottomColor = System.Drawing.Color.Empty;
-            this.rjPanel3.BorderColor = System.Drawing.Color.Goldenrod;
-            this.rjPanel3.BorderLeftColor = System.Drawing.Color.Empty;
-            this.rjPanel3.BorderRadius = 10;
-            this.rjPanel3.BorderRightColor = System.Drawing.Color.Empty;
-            this.rjPanel3.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
-            | DocuFlow_Reg.RJControls.BorderSides.Right) 
-            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
-            this.rjPanel3.BorderSize = 0;
-            this.rjPanel3.BorderTopColor = System.Drawing.Color.Empty;
-            this.rjPanel3.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel3.GradientColor1 = System.Drawing.Color.Empty;
-            this.rjPanel3.GradientColor2 = System.Drawing.Color.Empty;
-            this.rjPanel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.rjPanel3.Location = new System.Drawing.Point(33, 46);
-            this.rjPanel3.Name = "rjPanel3";
-            this.rjPanel3.Size = new System.Drawing.Size(47, 48);
-            this.rjPanel3.TabIndex = 12;
-            this.rjPanel3.UseGradient = false;
-            // 
-            // pnlReadyToRelease
-            // 
-            this.pnlReadyToRelease.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlReadyToRelease.BackColor = System.Drawing.Color.Transparent;
-            this.pnlReadyToRelease.BackgroundColor = System.Drawing.Color.White;
-            this.pnlReadyToRelease.BorderBottomColor = System.Drawing.Color.Empty;
-            this.pnlReadyToRelease.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(122)))), ((int)(((byte)(26)))));
-            this.pnlReadyToRelease.BorderLeftColor = System.Drawing.Color.Empty;
-            this.pnlReadyToRelease.BorderRadius = 10;
-            this.pnlReadyToRelease.BorderRightColor = System.Drawing.Color.Empty;
-            this.pnlReadyToRelease.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Bottom;
-            this.pnlReadyToRelease.BorderSize = 3;
-            this.pnlReadyToRelease.BorderTopColor = System.Drawing.Color.Empty;
-            this.pnlReadyToRelease.ForeColor = System.Drawing.Color.Black;
-            this.pnlReadyToRelease.GradientColor1 = System.Drawing.Color.Empty;
-            this.pnlReadyToRelease.GradientColor2 = System.Drawing.Color.Empty;
-            this.pnlReadyToRelease.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlReadyToRelease.Location = new System.Drawing.Point(16, 20);
-            this.pnlReadyToRelease.Name = "pnlReadyToRelease";
-            this.pnlReadyToRelease.Size = new System.Drawing.Size(196, 98);
-            this.pnlReadyToRelease.TabIndex = 11;
-            this.pnlReadyToRelease.UseGradient = false;
-            // 
-            // rjPanel1
-            // 
-            this.rjPanel1.BackColor = System.Drawing.Color.White;
-            this.rjPanel1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(252)))), ((int)(((byte)(232)))));
-            this.rjPanel1.BorderBottomColor = System.Drawing.Color.Empty;
-            this.rjPanel1.BorderColor = System.Drawing.Color.Goldenrod;
-            this.rjPanel1.BorderLeftColor = System.Drawing.Color.Empty;
-            this.rjPanel1.BorderRadius = 10;
-            this.rjPanel1.BorderRightColor = System.Drawing.Color.Empty;
-            this.rjPanel1.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
-            | DocuFlow_Reg.RJControls.BorderSides.Right) 
-            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
-            this.rjPanel1.BorderSize = 0;
-            this.rjPanel1.BorderTopColor = System.Drawing.Color.Empty;
-            this.rjPanel1.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel1.GradientColor1 = System.Drawing.Color.Empty;
-            this.rjPanel1.GradientColor2 = System.Drawing.Color.Empty;
-            this.rjPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.rjPanel1.Location = new System.Drawing.Point(33, 46);
-            this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(47, 48);
-            this.rjPanel1.TabIndex = 12;
-            this.rjPanel1.UseGradient = false;
-            // 
-            // pnlPendingPayment
-            // 
-            this.pnlPendingPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPendingPayment.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPendingPayment.BackgroundColor = System.Drawing.Color.White;
-            this.pnlPendingPayment.BorderBottomColor = System.Drawing.Color.Empty;
-            this.pnlPendingPayment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
-            this.pnlPendingPayment.BorderLeftColor = System.Drawing.Color.Empty;
-            this.pnlPendingPayment.BorderRadius = 10;
-            this.pnlPendingPayment.BorderRightColor = System.Drawing.Color.Empty;
-            this.pnlPendingPayment.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Bottom;
-            this.pnlPendingPayment.BorderSize = 3;
-            this.pnlPendingPayment.BorderTopColor = System.Drawing.Color.Empty;
-            this.pnlPendingPayment.ForeColor = System.Drawing.Color.Black;
-            this.pnlPendingPayment.GradientColor1 = System.Drawing.Color.Empty;
-            this.pnlPendingPayment.GradientColor2 = System.Drawing.Color.Empty;
-            this.pnlPendingPayment.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlPendingPayment.Location = new System.Drawing.Point(16, 20);
-            this.pnlPendingPayment.Name = "pnlPendingPayment";
-            this.pnlPendingPayment.Size = new System.Drawing.Size(196, 98);
-            this.pnlPendingPayment.TabIndex = 11;
-            this.pnlPendingPayment.UseGradient = false;
-            // 
-            // pnlPendingRequestIcon
-            // 
-            this.pnlPendingRequestIcon.BackColor = System.Drawing.Color.White;
-            this.pnlPendingRequestIcon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.pnlPendingRequestIcon.BorderBottomColor = System.Drawing.Color.Empty;
-            this.pnlPendingRequestIcon.BorderColor = System.Drawing.Color.Goldenrod;
-            this.pnlPendingRequestIcon.BorderLeftColor = System.Drawing.Color.Empty;
-            this.pnlPendingRequestIcon.BorderRadius = 10;
-            this.pnlPendingRequestIcon.BorderRightColor = System.Drawing.Color.Empty;
-            this.pnlPendingRequestIcon.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
-            | DocuFlow_Reg.RJControls.BorderSides.Right) 
-            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
-            this.pnlPendingRequestIcon.BorderSize = 0;
-            this.pnlPendingRequestIcon.BorderTopColor = System.Drawing.Color.Empty;
-            this.pnlPendingRequestIcon.ForeColor = System.Drawing.Color.Black;
-            this.pnlPendingRequestIcon.GradientColor1 = System.Drawing.Color.Empty;
-            this.pnlPendingRequestIcon.GradientColor2 = System.Drawing.Color.Empty;
-            this.pnlPendingRequestIcon.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlPendingRequestIcon.Location = new System.Drawing.Point(33, 46);
-            this.pnlPendingRequestIcon.Name = "pnlPendingRequestIcon";
-            this.pnlPendingRequestIcon.Size = new System.Drawing.Size(47, 48);
-            this.pnlPendingRequestIcon.TabIndex = 12;
-            this.pnlPendingRequestIcon.UseGradient = false;
-            // 
-            // pnlPendingRequest
-            // 
-            this.pnlPendingRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPendingRequest.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPendingRequest.BackgroundColor = System.Drawing.Color.White;
-            this.pnlPendingRequest.BorderBottomColor = System.Drawing.Color.Empty;
-            this.pnlPendingRequest.BorderColor = System.Drawing.Color.Red;
-            this.pnlPendingRequest.BorderLeftColor = System.Drawing.Color.Empty;
-            this.pnlPendingRequest.BorderRadius = 10;
-            this.pnlPendingRequest.BorderRightColor = System.Drawing.Color.Empty;
-            this.pnlPendingRequest.BorderSides = DocuFlow_Reg.RJControls.BorderSides.Bottom;
-            this.pnlPendingRequest.BorderSize = 3;
-            this.pnlPendingRequest.BorderTopColor = System.Drawing.Color.Empty;
-            this.pnlPendingRequest.ForeColor = System.Drawing.Color.Black;
-            this.pnlPendingRequest.GradientColor1 = System.Drawing.Color.Empty;
-            this.pnlPendingRequest.GradientColor2 = System.Drawing.Color.Empty;
-            this.pnlPendingRequest.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlPendingRequest.Location = new System.Drawing.Point(16, 20);
-            this.pnlPendingRequest.Name = "pnlPendingRequest";
-            this.pnlPendingRequest.Size = new System.Drawing.Size(196, 98);
-            this.pnlPendingRequest.TabIndex = 11;
-            this.pnlPendingRequest.UseGradient = false;
             // 
             // DashboardUC
             // 

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using DocuFlow_Reg.Forms;
 
 namespace DocuFlow_Reg.UserControls
 {
@@ -12,6 +11,14 @@ namespace DocuFlow_Reg.UserControls
     {
         DatabaseHelper db = new DatabaseHelper();
         private RequestDetails _detailsForm;
+
+        private string searchText = "";
+        private Timer searchTimer = new Timer();
+
+        int hoveredRowIndex = -1;
+        Color hoverColor = Color.FromArgb(235, 245, 255);
+        Color normalColor = Color.White;
+        Color altColor = Color.FromArgb(245, 245, 245);
 
         public DocumentRequestsUC()
         {
@@ -21,18 +28,21 @@ namespace DocuFlow_Reg.UserControls
 
         private void DocumentRequestsUC_Load(object sender, EventArgs e)
         {
-            SharedMethods.SetupAutoSearch(
-            txtSearch,
-            searchTimer,
-            800,
-            onSearch: (text) =>
+            searchTimer.Interval = 800;
+            searchTimer.Tick += (s, ev) =>
             {
-                searchText = text;
-                currentPage = 1;
-                LoadInquiries();
-            }
-        );
+                searchTimer.Stop();
+                searchText = txtSearch.Text.Trim();
+                LoadRequests();
+            };
+
             LoadRequests();
+        }
+
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            searchTimer.Stop();
+            searchTimer.Start();
         }
 
         private void LoadRequests()
@@ -46,7 +56,18 @@ namespace DocuFlow_Reg.UserControls
                     r.status            AS 'Status'
                 FROM Request r
                 WHERE r.status NOT IN ('Pending', 'Released')
-                ORDER BY r.created_at ASC");
+                AND (
+                    r.request_number LIKE @search
+                    OR r.student_number LIKE @search
+                    OR r.name LIKE @search
+                    OR r.inquiry_type LIKE @search
+                    OR r.status LIKE @search
+                )
+                ORDER BY r.created_at ASC",
+                new Dictionary<string, object>
+                {
+                    { "@search", "%" + searchText + "%" }
+                });
 
             dgvReq.DataSource = dt;
             StyleDataGridView();
@@ -70,11 +91,6 @@ namespace DocuFlow_Reg.UserControls
         {
             pnlSearch.BorderColor = Color.Black;
         }
-
-        int hoveredRowIndex = -1;
-        Color hoverColor = Color.FromArgb(235, 245, 255);
-        Color normalColor = Color.White;
-        Color altColor = Color.FromArgb(245, 245, 245);
 
         private void dgvReq_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -105,17 +121,6 @@ namespace DocuFlow_Reg.UserControls
                 dgvReq.Rows[rowIndex].DefaultCellStyle.BackColor = altColor;
         }
 
-        private void dgvReq_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (_detailsForm != null && !_detailsForm.IsDisposed)
-            {
-                _detailsForm.Close();
-            }
-
-            _detailsForm = new RequestDetails();
-            _detailsForm.Show();
-        }
-
         private void dgvReq_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             if (dgvReq.IsCurrentCellDirty)
@@ -123,17 +128,32 @@ namespace DocuFlow_Reg.UserControls
                 dgvReq.CommitEdit(DataGridViewDataErrorContexts.Commit);
             }
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void dgvReq_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-        }
+            if (e.RowIndex < 0) return;
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-        }
+            DataGridViewRow row = dgvReq.Rows[e.RowIndex];
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+            // Get status from selected row
+            string status = row.Cells["Status"].Value.ToString();
+
+            // Close existing form if open
+            if (_detailsForm != null && !_detailsForm.IsDisposed)
+            {
+                _detailsForm.Close();
+            }
+
+            // Show different form based on status
+            if (status == "Waiting for Payment")
+            {
+                PaymentConfirmation paymentForm = new PaymentConfirmation();
+                paymentForm.ShowDialog();
+            }
+            else
+            {
+                ChangeStatus changeForm = new ChangeStatus();
+                changeForm.ShowDialog();
+            }
         }
     }
 }

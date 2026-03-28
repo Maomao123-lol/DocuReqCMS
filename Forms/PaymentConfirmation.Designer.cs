@@ -31,6 +31,7 @@
             this.txtConfirmationRequest = new CustomControls.RJControls.RJTextBox();
             this.Save = new DocuFlow_Reg.RJControls.RJButton();
             this.btnCancel = new DocuFlow_Reg.RJControls.RJButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtConfirmationRequest
@@ -73,6 +74,7 @@
             this.Save.Text = "Save";
             this.Save.TextColor = System.Drawing.Color.Black;
             this.Save.UseVisualStyleBackColor = false;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // btnCancel
             // 
@@ -92,18 +94,31 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextColor = System.Drawing.Color.Black;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(52, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 21);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Enter Payment Confimation";
             // 
             // PaymentConfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 194);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.txtConfirmationRequest);
             this.Name = "PaymentConfirmation";
             this.Text = "PaymentConfirmation";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,5 +127,6 @@
         private CustomControls.RJControls.RJTextBox txtConfirmationRequest;
         private RJControls.RJButton Save;
         private RJControls.RJButton btnCancel;
+        private System.Windows.Forms.Label label1;
     }
 }

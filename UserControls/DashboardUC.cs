@@ -207,5 +207,25 @@ namespace DocuFlow_Reg.UserControls
         {
             LoadRequestTrend(cbWidgetFilter.SelectedItem.ToString());
         }
+
+        private void pnlPendingRequest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlPendingPayment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlReadyToRelease_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlReleased_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
