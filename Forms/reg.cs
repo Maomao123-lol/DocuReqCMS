@@ -99,7 +99,12 @@ namespace DocuFlow_Reg
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frmLogin login = new frmLogin();
+
+            login.FormClosed += (s, args) => this.Close();
+
+            login.Show();
+            this.Hide();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace DocuFlow_Reg
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Reg());
+            Application.Run(new frmLogin());
         }
     }
 }

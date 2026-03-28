@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DocuFlow_Reg.Forms
 {
-    public partial class RequestDetails : Form
+    public partial class PaymentConfirmation : Form
     {
-        public RequestDetails()
+        public PaymentConfirmation()
         {
             InitializeComponent();
         }

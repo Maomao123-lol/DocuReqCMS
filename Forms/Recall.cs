@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DocuFlow_Reg.Forms
 {
-    public partial class RequestDetails : Form
+    public partial class Recall : Form
     {
-        public RequestDetails()
+        public Recall()
         {
             InitializeComponent();
         }
