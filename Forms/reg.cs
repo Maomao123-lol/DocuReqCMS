@@ -10,24 +10,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using DocuFlow_Reg.UserControls;
+using DocuFlow_Reg.Forms;
 
 namespace DocuFlow_Reg
 {
     public partial class Reg : Form
     {
+        SharedMethods methods = new SharedMethods();
         public Reg()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
-            AutoScaleMode = AutoScaleMode.None;
         }
 
-        private void LoadUserControl(UserControl uc)
-        {
-            uc.Dock = DockStyle.Fill;
-            panel5.Controls.Clear();
-            panel5.Controls.Add(uc);
-        }
         public void buttonClick(RadioButton btn)
         {
             btn.ForeColor = Color.FromArgb(0, 64, 64);
@@ -45,7 +39,7 @@ namespace DocuFlow_Reg
                 btnArchive.Image = Properties.Resources.archive;
                 btnArchive.ForeColor = Color.Black;
             }
-            LoadUserControl(new DashboardUC());
+            methods.LoadUserControl(new DashboardUC(),panel5);
         }
 
         private void btnDocReq_CheckedChanged(object sender, EventArgs e)
@@ -60,7 +54,7 @@ namespace DocuFlow_Reg
                 btnDashboard.ForeColor = Color.Black;
                 btnArchive.ForeColor = Color.Black;
             }
-            LoadUserControl(new DocumentRequestsUC());
+            methods.LoadUserControl(new DashboardUC(), panel5);
         }
 
         private void btnArchive_CheckedChanged(object sender, EventArgs e)
@@ -76,7 +70,7 @@ namespace DocuFlow_Reg
                 btnDocReq.ForeColor = Color.Black;
             }
 
-            LoadUserControl(new ArchiveUC());
+            methods.LoadUserControl(new DashboardUC(), panel5);
         }
 
         private void btnInquiry_CheckedChanged(object sender, EventArgs e)
@@ -93,19 +87,24 @@ namespace DocuFlow_Reg
                 btnArchive.ForeColor = Color.Black;
             }
 
-            LoadUserControl(new InquiriesUC());
+            methods.LoadUserControl(new DashboardUC(), panel5);
         }
 
         private void Reg_Load_1(object sender, EventArgs e)
         {
-            LoadUserControl(new DashboardUC());
+            methods.LoadUserControl(new DashboardUC(), panel5);
             btnDashboard.Checked = true;
             this.WindowState = FormWindowState.Maximized;
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frmLogin login = new frmLogin();
+
+            login.FormClosed += (s, args) => this.Close();
+
+            login.Show();
+            this.Hide();
         }
     }
 }

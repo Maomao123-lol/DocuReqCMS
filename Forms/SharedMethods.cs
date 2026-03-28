@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +7,13 @@ using System.Windows.Forms;
 
 namespace DocuFlow_Reg.Forms
 {
-    public partial class RequestDetails : Form
+    internal class SharedMethods
     {
-        public RequestDetails()
+        public void LoadUserControl(UserControl uc, Panel panel)
         {
-            InitializeComponent();
+            uc.Dock = DockStyle.Fill;
+            panel.Controls.Clear();
+            panel.Controls.Add(uc);
         }
     }
 }
