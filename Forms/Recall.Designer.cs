@@ -114,6 +114,7 @@ namespace DocuFlow_Reg.Forms
             this.btnDrop.Text = "Drop";
             this.btnDrop.TextColor = System.Drawing.Color.Black;
             this.btnDrop.UseVisualStyleBackColor = false;
+            this.btnDrop.Click += new System.EventHandler(this.btnDrop_Click);
             // 
             // lblSkippedQueue
             // 
@@ -136,6 +137,7 @@ namespace DocuFlow_Reg.Forms
             this.Controls.Add(this.dgvRecall);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Recall";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recall";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecall)).EndInit();
             this.ResumeLayout(false);
