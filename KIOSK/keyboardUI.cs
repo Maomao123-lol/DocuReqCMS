@@ -38,17 +38,17 @@ namespace KIOSK
 
             switch (btn.Name)
             {
-                case "button41": // CLEAR
+                case "button41":
                     _targetTextBox.Text = "";
                     break;
 
-                case "button42": // BACKSPACE
+                case "button42":
                     if (_targetTextBox.Text.Length > 0)
                         _targetTextBox.Text = _targetTextBox.Text
                             .Substring(0, _targetTextBox.Text.Length - 1);
                     break;
 
-                case "button38": // SPACE
+                case "button38":
                     _targetTextBox.Text += " ";
                     break;
 

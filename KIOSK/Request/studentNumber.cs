@@ -14,15 +14,17 @@ namespace KIOSK.Request
         private KIOSK.keyboardUI _keyboard;
         private readonly string _documentName;
         private readonly string _requirements;
+        private readonly string _classification;
         private string _connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
-        public studentNumber(requestForm requestParent, Form1 mainParent, string documentName, string requirements)
+        public studentNumber(requestForm requestParent, Form1 mainParent, string documentName, string requirements, string classification = "Undergraduate")
         {
             InitializeComponent();
             _requestParent = requestParent;
             _mainParent = mainParent;
             _documentName = documentName;
             _requirements = requirements;
+            _classification = classification;
 
             label4.Text = documentName;
             label2.Text = string.IsNullOrWhiteSpace(requirements)
@@ -53,7 +55,7 @@ namespace KIOSK.Request
             {
                 string queueNo = GetNextQueueNo();
                 SaveToDatabase(queueNo, input);
-                ReceiptHelper.Print(queueNo, "REQUEST DOCUMENT");
+                ReceiptHelper.Print(queueNo, "REQUEST DOCUMENT", _classification);
                 _mainParent.LoadChild(new thankPage(_mainParent));
             }
             catch (Exception ex)

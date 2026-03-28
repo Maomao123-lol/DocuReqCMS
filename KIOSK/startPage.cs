@@ -53,7 +53,7 @@ namespace KIOSK
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
-            _parent.LoadChild(new preChoice(_parent));
+            _parent.LoadChild(new studentClassification(_parent));
         }
     }
 }

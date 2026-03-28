@@ -1,5 +1,7 @@
-﻿using System;
+﻿using KIOSK.Request;
+using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace KIOSK
 {
@@ -7,7 +9,7 @@ namespace KIOSK
     {
         private Form _activeChild;
         private Timer _idleTimer;
-        private const int IdleSeconds = 100;
+        private const int IdleSeconds = 20;
 
         public Form1()
         {
@@ -23,18 +25,23 @@ namespace KIOSK
             _idleTimer.Tick += (s, e) =>
             {
                 _idleTimer.Stop();
-                LoadChild(new startPage(this));
+                Form previousPage = _activeChild;
+                Func<Form> recreate = () =>
+                {
+                    if (previousPage is preChoice prev)
+                        return new preChoice(this, prev.ClassPrefix, prev.Classification);
+                    if (previousPage is studentClassification) return new studentClassification(this);
+                    if (previousPage is startPage) return new startPage(this);
+                    if (previousPage is thankPage) return new thankPage(this);
+                    if (previousPage is requestForm prevReq) return new requestForm(this, prevReq.ClassPrefix, prevReq.Classification);
+                    return new startPage(this);
+                };
+                LoadChild(new warning(this, recreate));
             };
-            _idleTimer.Start();
-
-            Application.AddMessageFilter(new IdleMessageFilter(_idleTimer));
         }
-
         public void LoadChild(Form form)
         {
-            if (_activeChild != null)
-                _activeChild.Close();
-
+            Form previousChild = _activeChild;
             _activeChild = form;
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -42,8 +49,9 @@ namespace KIOSK
             panel3.Controls.Add(form);
             form.BringToFront();
             form.Show();
-
-            if (_idleTimer != null)
+            if (previousChild != null && !previousChild.IsDisposed)
+                previousChild.Close();
+            if (_idleTimer != null && !(form is warning))
             {
                 _idleTimer.Stop();
                 _idleTimer.Start();
