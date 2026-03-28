@@ -18,6 +18,13 @@ namespace DocuReqCMS
         {
             InitializeComponent();
             currentUserId = userId;
+
+            this.Load += Form1_Load;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            openChildForm(new AdminDashboardHome());
         }
 
         private void ActivateButton(Guna.UI2.WinForms.Guna2Button button)
@@ -79,11 +86,6 @@ namespace DocuReqCMS
             openChildForm(new Reports());
             ActivateButton((Guna.UI2.WinForms.Guna2Button)sender);
         }
-
-        //private void btnCMS_Click(object sender, EventArgs e)
-        //{
-        //    openChildForm(new CMSSettings());
-        //}
 
         private void openChildForm(Form childForm)
         {
@@ -161,6 +163,11 @@ namespace DocuReqCMS
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnDashboard_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new AdminDashboardHome());
         }
     }
 }

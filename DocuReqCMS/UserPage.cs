@@ -2,6 +2,7 @@
 using System;
 using System.Configuration;
 using System.Data;
+using System.Drawing;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -12,19 +13,35 @@ namespace DocuReqCMS
     {
         private string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
-        // Admin info passed from dashboard
+
         private int adminUserId;
         private string adminUsername = "Admin";
 
         public UserPage(int adminId = 0, string adminName = "Admin")
         {
             InitializeComponent();
+
             adminUserId = adminId;
             adminUsername = adminName;
+
+            dataGridViewUsers.EnableHeadersVisualStyles = false;
+
+            dataGridViewUsers.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(91, 208, 102);
+            dataGridViewUsers.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            dataGridViewUsers.RowHeadersDefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(91, 208, 102);
+
+            dataGridViewUsers.ColumnHeadersDefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(91, 208, 102);
+
+            dataGridViewUsers.CellPainting += dataGridViewUsers_CellPainting;
+
             LoadUsers();
+            dataGridViewUsers.ClearSelection();
         }
 
-        // ===================== LOAD USERS =====================
         private void LoadUsers()
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -58,7 +75,40 @@ namespace DocuReqCMS
             }
         }
 
-        // ===================== HASH PASSWORD =====================
+        private void dataGridViewUsers_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            if (dataGridViewUsers.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
+            {
+                e.PaintBackground(e.CellBounds, true);
+
+                bool isChecked = e.Value != null && (bool)e.Value;
+
+                Rectangle box = new Rectangle(
+                    e.CellBounds.X + (e.CellBounds.Width - 14) / 2,
+                    e.CellBounds.Y + (e.CellBounds.Height - 14) / 2,
+                    14,
+                    14
+                );
+
+                Color green = Color.FromArgb(91, 208, 102);
+                Color borderGreen = Color.FromArgb(91, 208, 102);
+
+                using (Pen borderPen = new Pen(borderGreen, 2))
+                using (Brush fillBrush = new SolidBrush(green))
+                {
+                    if (isChecked)
+                        e.Graphics.FillRectangle(fillBrush, box);
+
+                    e.Graphics.DrawRectangle(borderPen, box);
+                }
+
+                e.Handled = true;
+            }
+        }
+
         private string HashPassword(string password)
         {
             using (SHA256 sha = SHA256.Create())
@@ -71,7 +121,6 @@ namespace DocuReqCMS
             }
         }
 
-        // ===================== ADD USER =====================
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
@@ -103,11 +152,10 @@ namespace DocuReqCMS
                     cmd.ExecuteNonQuery();
 
                     ActivityLogger.Log(
-                        adminUserId != 0 ? (int?)adminUserId : null, 
+                        adminUserId != 0 ? (int?)adminUserId : null,
                         "ADMIN",
                         $"Admin created a new registrar account: '{username}'"
                     );
-
 
                     MessageBox.Show(
                         "Registrar account created.\nDefault password: user123",
@@ -135,7 +183,7 @@ namespace DocuReqCMS
             }
 
             string role = dataGridViewUsers.SelectedRows[0]
-                            .Cells["colRole"].Value.ToString();
+                .Cells["colRole"].Value.ToString();
 
             if (role == "ADMIN")
             {
@@ -149,7 +197,7 @@ namespace DocuReqCMS
             );
 
             string username = dataGridViewUsers.SelectedRows[0]
-                                .Cells["colUsername"].Value.ToString();
+                .Cells["colUsername"].Value.ToString();
 
             string defaultPassword = "user123";
             string hashed = HashPassword(defaultPassword);
@@ -172,15 +220,14 @@ namespace DocuReqCMS
                     cmd.ExecuteNonQuery();
 
                     ActivityLogger.Log(
-                         adminUserId != 0 ? (int?)adminUserId : null, 
-                         "ADMIN",
-                         $"Admin has reset the password for registrar '{username}'"
-                     );
-
+                        adminUserId != 0 ? (int?)adminUserId : null,
+                        "ADMIN",
+                        $"Admin reset the password for registrar '{username}'"
+                    );
 
                     MessageBox.Show(
-                        "Password has been reset to default (user123).",
-                        "Reset Successful",
+                        "Password reset to default (user123).",
+                        "Success",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information
                     );

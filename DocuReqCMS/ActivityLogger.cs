@@ -8,6 +8,7 @@ namespace DocuReqCMS
     {
         private static string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
+
         public static void Log(
             int? userId,
             string role,
