@@ -102,39 +102,55 @@ namespace DocuFlow_Reg.UserControls
             {
                 case "Daily":
                     query = @"
-                        SELECT CONCAT(HOUR(created_at), ':00') as period, 
-                               COUNT(*) as request_count
-                        FROM Request
-                        WHERE DATE(created_at) = CURDATE()
-                        GROUP BY HOUR(created_at)
-                        ORDER BY HOUR(created_at)";
+                SELECT CONCAT(HOUR(created_at), ':00') as period, 
+                       COUNT(*) as request_count
+                FROM Request
+                WHERE DATE(created_at) = CURDATE()
+                GROUP BY HOUR(created_at)
+                ORDER BY HOUR(created_at)";
                     xAxisTitle = "Hour of Day";
                     break;
 
                 case "Weekly":
                     query = @"
-                        SELECT DAYNAME(created_at) as period, 
-                               COUNT(*) as request_count
-                        FROM Request
-                        WHERE WEEK(created_at) = WEEK(CURDATE())
-                        AND YEAR(created_at) = YEAR(CURDATE())
-                        GROUP BY DAYNAME(created_at), DAYOFWEEK(created_at)
-                        ORDER BY DAYOFWEEK(created_at)";
+                SELECT DAYNAME(created_at) as period, 
+                       COUNT(*) as request_count
+                FROM Request
+                WHERE WEEK(created_at) = WEEK(CURDATE())
+                AND YEAR(created_at) = YEAR(CURDATE())
+                GROUP BY DAYNAME(created_at), DAYOFWEEK(created_at)
+                ORDER BY DAYOFWEEK(created_at)";
                     xAxisTitle = "Day of Week";
                     break;
 
                 case "Monthly":
                     query = @"
-                        SELECT DAY(created_at) as period, 
-                               COUNT(*) as request_count
-                        FROM Request
-                        WHERE MONTH(created_at) = MONTH(CURDATE())
-                        AND YEAR(created_at) = YEAR(CURDATE())
-                        GROUP BY DAY(created_at)
-                        ORDER BY DAY(created_at)";
+                SELECT DAY(created_at) as period, 
+                       COUNT(*) as request_count
+                FROM Request
+                WHERE MONTH(created_at) = MONTH(CURDATE())
+                AND YEAR(created_at) = YEAR(CURDATE())
+                GROUP BY DAY(created_at)
+                ORDER BY DAY(created_at)";
                     xAxisTitle = "Day of Month";
                     break;
+
+                case "Yearly":
+                    query = @"
+                SELECT MONTHNAME(created_at) as period, 
+                       COUNT(*) as request_count
+                FROM Request
+                WHERE YEAR(created_at) = YEAR(CURDATE())
+                GROUP BY MONTHNAME(created_at), MONTH(created_at)
+                ORDER BY MONTH(created_at)";
+                    xAxisTitle = "Month";
+                    break;
+
+                default:
+                    return; // exit if filter doesnt match anything
             }
+
+            // rest of chart code stays the same
 
             DataTable dt = db.ExecuteQuery(query);
 
