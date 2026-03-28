@@ -16,5 +16,10 @@ namespace DocuFlow_Reg.Forms
         {
             InitializeComponent();
         }
+
+        private void btnDrop_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

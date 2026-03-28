@@ -102,23 +102,23 @@ namespace DocuFlow_Reg.UserControls
             {
                 case "Daily":
                     query = @"
-                SELECT CONCAT(HOUR(created_at), ':00') as period, 
-                       COUNT(*) as request_count
-                FROM Request
-                WHERE DATE(created_at) = CURDATE()
-                GROUP BY HOUR(created_at)
-                ORDER BY HOUR(created_at)";
+                    SELECT CONCAT(HOUR(MIN(created_at)), ':00') as period, 
+                           COUNT(*) as request_count
+                    FROM Request
+                    WHERE DATE(created_at) = CURDATE()
+                    GROUP BY HOUR(created_at)
+                    ORDER BY HOUR(created_at)";
                     xAxisTitle = "Hour of Day";
                     break;
 
                 case "Weekly":
                     query = @"
-                SELECT DAYNAME(created_at) as period, 
+                SELECT DAYNAME(MIN(created_at)) as period, 
                        COUNT(*) as request_count
                 FROM Request
                 WHERE WEEK(created_at) = WEEK(CURDATE())
                 AND YEAR(created_at) = YEAR(CURDATE())
-                GROUP BY DAYNAME(created_at), DAYOFWEEK(created_at)
+                GROUP BY DAYOFWEEK(created_at)
                 ORDER BY DAYOFWEEK(created_at)";
                     xAxisTitle = "Day of Week";
                     break;
@@ -137,20 +137,18 @@ namespace DocuFlow_Reg.UserControls
 
                 case "Yearly":
                     query = @"
-                SELECT MONTHNAME(created_at) as period, 
+                SELECT MONTHNAME(MIN(created_at)) as period, 
                        COUNT(*) as request_count
                 FROM Request
                 WHERE YEAR(created_at) = YEAR(CURDATE())
-                GROUP BY MONTHNAME(created_at), MONTH(created_at)
+                GROUP BY MONTH(created_at)
                 ORDER BY MONTH(created_at)";
                     xAxisTitle = "Month";
                     break;
 
                 default:
-                    return; // exit if filter doesnt match anything
+                    return;
             }
-
-            // rest of chart code stays the same
 
             DataTable dt = db.ExecuteQuery(query);
 
@@ -163,7 +161,6 @@ namespace DocuFlow_Reg.UserControls
                 requestCounts.Add(Convert.ToInt32(row["request_count"]));
             }
 
-            // Fallback if no data
             if (periodLabels.Count == 0)
             {
                 periodLabels = new List<string> { "No Data" };

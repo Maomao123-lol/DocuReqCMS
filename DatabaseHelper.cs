@@ -16,13 +16,20 @@ namespace DocuFlow_Reg
             return new MySqlConnection(connectionString);
         }
 
-        public int getDashboardCount(string query)
+        public int getDashboardCount(string query, Dictionary<string, object> parameters = null)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
+                    if (parameters != null)
+                    {
+                        foreach (var param in parameters)
+                        {
+                            cmd.Parameters.AddWithValue(param.Key, param.Value);
+                        }
+                    }
                     return Convert.ToInt32(cmd.ExecuteScalar());
                 }
             }
