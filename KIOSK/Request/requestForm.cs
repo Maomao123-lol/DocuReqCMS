@@ -59,7 +59,7 @@ namespace KIOSK.Request
 
                             card.OnCardClicked = () =>
                             {
-                                _parent.LoadChild(new feeStudentNumber(this, _parent, name, Classification));
+                                _parent.LoadChild(new studentNumber(this, _parent, name, requirements, Classification));
                             };
 
                             flowLayoutPanel1.Controls.Add(card);
