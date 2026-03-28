@@ -1,29 +1,76 @@
 ﻿using DocuFlow_Reg.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocuFlow_Reg.Forms;
 
 namespace DocuFlow_Reg.UserControls
 {
     public partial class DocumentRequestsUC : UserControl
     {
-
+        DatabaseHelper db = new DatabaseHelper();
         private RequestDetails _detailsForm;
+
         public DocumentRequestsUC()
         {
             InitializeComponent();
+            this.Load += DocumentRequestsUC_Load;
+        }
+
+        private void DocumentRequestsUC_Load(object sender, EventArgs e)
+        {
+            SharedMethods.SetupAutoSearch(
+            txtSearch,
+            searchTimer,
+            800,
+            onSearch: (text) =>
+            {
+                searchText = text;
+                currentPage = 1;
+                LoadInquiries();
+            }
+        );
+            LoadRequests();
+        }
+
+        private void LoadRequests()
+        {
+            DataTable dt = db.ExecuteQuery(@"
+                SELECT
+                    r.request_number    AS 'Request Number',
+                    r.student_number    AS 'Student Number',
+                    r.name              AS 'Name',
+                    r.inquiry_type      AS 'Inquiry Type',
+                    r.status            AS 'Status'
+                FROM Request r
+                WHERE r.status NOT IN ('Pending', 'Released')
+                ORDER BY r.created_at ASC");
+
+            dgvReq.DataSource = dt;
+            StyleDataGridView();
+        }
+
+        private void StyleDataGridView()
+        {
+            dgvReq.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvReq.RowHeadersVisible = false;
+            dgvReq.AllowUserToAddRows = false;
+            dgvReq.ReadOnly = true;
+            dgvReq.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             pnlSearch.BorderColor = Color.Green;
         }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            pnlSearch.BorderColor = Color.Black;
+        }
+
         int hoveredRowIndex = -1;
         Color hoverColor = Color.FromArgb(235, 245, 255);
         Color normalColor = Color.White;
@@ -33,7 +80,6 @@ namespace DocuFlow_Reg.UserControls
         {
             if (e.RowIndex < 0) return;
 
-  
             if (hoveredRowIndex != -1 && hoveredRowIndex != e.RowIndex)
                 ResetRowColor(hoveredRowIndex);
 
@@ -59,11 +105,6 @@ namespace DocuFlow_Reg.UserControls
                 dgvReq.Rows[rowIndex].DefaultCellStyle.BackColor = altColor;
         }
 
-        private void dgvReq_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
         private void dgvReq_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (_detailsForm != null && !_detailsForm.IsDisposed)
@@ -75,11 +116,6 @@ namespace DocuFlow_Reg.UserControls
             _detailsForm.Show();
         }
 
-        private void txtSearch_Leave(object sender, EventArgs e)
-        {
-            pnlSearch.BorderColor = Color.Black;
-        }
-
         private void dgvReq_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             if (dgvReq.IsCurrentCellDirty)
@@ -88,46 +124,16 @@ namespace DocuFlow_Reg.UserControls
             }
         }
 
-       /* private void dgvReq_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-
-            if (dgvReq.Columns[e.ColumnIndex].Name == reqStat.Name)
-            {
-                string status = dgvReq.Rows[e.RowIndex].Cells[reqStat.Name].Value?.ToString();
-
-                if(status == "Not Approved" || status == "Released")
-                {
-                    DialogResult result = MessageBox.Show(
-                       $"This request will be marked as '{status}' and moved to the archive. Continue?",
-                       "Confirm Update",
-                       MessageBoxButtons.YesNo,
-                       MessageBoxIcon.Warning);
-
-                    if (result == DialogResult.No)
-                    {
-                        dgvReq.Rows[e.RowIndex].Cells[reqStat.Name].Value = status;
-                        MessageBox.Show(status);
-                        return;
-                    }
-                }
-
-            }
-        }*/
-
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
