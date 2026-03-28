@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 using DocuFlow_Reg.UserControls;
 using DocuFlow_Reg.Forms;
 
@@ -17,9 +19,47 @@ namespace DocuFlow_Reg
     public partial class Reg : Form
     {
         SharedMethods methods = new SharedMethods();
+        string connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
+
+        private int _userId;
+
+        // ✅ Default constructor (keep for compatibility)
         public Reg()
         {
             InitializeComponent();
+        }
+
+        // ✅ New constructor that accepts userId
+        public Reg(int userId)
+        {
+            InitializeComponent();
+            _userId = userId;
+        }
+
+        private void LoadUserFullName()
+        {
+            if (_userId <= 0) return;
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(
+                        "SELECT fullname FROM users WHERE user_id = @id", conn);
+                    cmd.Parameters.AddWithValue("@id", _userId);
+
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        label1.Text = result.ToString();
+                    }
+                }
+            }
+            catch
+            {
+                label1.Text = "Unknown User";
+            }
         }
 
         public void buttonClick(RadioButton btn)
@@ -39,7 +79,7 @@ namespace DocuFlow_Reg
                 btnArchive.Image = Properties.Resources.archive;
                 btnArchive.ForeColor = Color.Black;
             }
-            methods.LoadUserControl(new DashboardUC(),panel5);
+            methods.LoadUserControl(new DashboardUC(), panel5);
         }
 
         private void btnDocReq_CheckedChanged(object sender, EventArgs e)
@@ -54,7 +94,7 @@ namespace DocuFlow_Reg
                 btnDashboard.ForeColor = Color.Black;
                 btnArchive.ForeColor = Color.Black;
             }
-            methods.LoadUserControl(new DocumentRequestsUC(), panel5);
+            methods.LoadUserControl(new DashboardUC(), panel5);
         }
 
         private void btnArchive_CheckedChanged(object sender, EventArgs e)
@@ -69,13 +109,12 @@ namespace DocuFlow_Reg
                 btnDashboard.ForeColor = Color.Black;
                 btnDocReq.ForeColor = Color.Black;
             }
-
-            methods.LoadUserControl(new ArchiveUC(), panel5);
+            methods.LoadUserControl(new DashboardUC(), panel5);
         }
 
         private void btnInquiry_CheckedChanged(object sender, EventArgs e)
         {
-            if(btnInquiry.Checked)
+            if (btnInquiry.Checked)
             {
                 buttonClick(btnInquiry);
                 btnInquiry.Image = Properties.Resources.wall_clock__1_;
@@ -86,8 +125,7 @@ namespace DocuFlow_Reg
                 btnDocReq.ForeColor = Color.Black;
                 btnArchive.ForeColor = Color.Black;
             }
-
-            methods.LoadUserControl(new InquiriesUC(), panel5);
+            methods.LoadUserControl(new DashboardUC(), panel5);
         }
 
         private void Reg_Load_1(object sender, EventArgs e)
@@ -95,16 +133,25 @@ namespace DocuFlow_Reg
             methods.LoadUserControl(new DashboardUC(), panel5);
             btnDashboard.Checked = true;
             this.WindowState = FormWindowState.Maximized;
+            LoadUserFullName(); // ✅ Load and display fullname on startup
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
             frmLogin login = new frmLogin();
-
             login.FormClosed += (s, args) => this.Close();
-
             login.Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjCircularPictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

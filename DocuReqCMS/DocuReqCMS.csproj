@@ -142,12 +142,6 @@
     <Compile Include="Cards\previewServiceCards.Designer.cs">
       <DependentUpon>previewServiceCards.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChangePasswordForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChangePasswordForm.Designer.cs">
-      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DatabaseHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

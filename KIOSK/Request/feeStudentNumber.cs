@@ -13,17 +13,17 @@ namespace KIOSK.Request
         private readonly requestForm _requestParent;
         private KIOSK.keyboardUI _keyboard;
         private readonly string _feeName;
+        private readonly string _classification;
         private string _connStr = ConfigurationManager.ConnectionStrings["DocuFlowDB"].ConnectionString;
 
-        public feeStudentNumber(requestForm requestParent, Form1 mainParent, string feeName)
+        public feeStudentNumber(requestForm requestParent, Form1 mainParent, string feeName, string classification = "Undergraduate")
         {
             InitializeComponent();
             _requestParent = requestParent;
             _mainParent = mainParent;
             _feeName = feeName;
-
+            _classification = classification;
             label1.Text = feeName;
-
             LoadKeyboard();
             button2.Click += (s, e) => _mainParent.LoadChild(new requestForm(_mainParent));
             button1.Click += BtnEnter_Click;
@@ -32,22 +32,19 @@ namespace KIOSK.Request
         private void BtnEnter_Click(object sender, EventArgs e)
         {
             string input = textBox1.Text.Trim();
-
             if (!IsValidStudentNumber(input))
             {
                 label6.ForeColor = Color.Red;
                 label6.Text = "Invalid format. Use: 00000000-X";
                 return;
             }
-
             label6.ForeColor = Color.Black;
             label6.Text = "Format: 00000000-X";
-
             try
             {
                 string queueNo = GetNextQueueNo();
                 SaveToDatabase(queueNo, input);
-                ReceiptHelper.Print(queueNo, "PAY FEE");
+                ReceiptHelper.Print(queueNo, "PAY FEE", _classification);
                 _mainParent.LoadChild(new thankPage(_mainParent));
             }
             catch (Exception ex)
@@ -62,13 +59,17 @@ namespace KIOSK.Request
             using (var conn = new MySqlConnection(_connStr))
             {
                 conn.Open();
+                string classPrefix = _classification == "Undergraduate" ? "U" :
+                                     _classification == "Graduate" ? "G" : "L";
+                string pattern = $"{classPrefix}-R%";
                 string query = @"SELECT COUNT(*) FROM cms_db.queue_tickets 
-                                 WHERE queue_no LIKE 'F%' 
+                                 WHERE queue_no LIKE @prefix 
                                  AND DATE(created_at) = CURDATE()";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@prefix", pattern);
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return $"F{(count + 1):D3}";
+                    return $"{classPrefix}-R{(count + 1):D3}";
                 }
             }
         }
@@ -79,14 +80,15 @@ namespace KIOSK.Request
             {
                 conn.Open();
                 string query = @"INSERT INTO cms_db.queue_tickets 
-                         (queue_no, service_type, status, created_at, student_number, type) 
-                         VALUES (@queueNo, @serviceType, 'pending', NOW(), @studentNo, @type)";
+                         (queue_no, service_type, status, created_at, student_number, type, student_classification) 
+                         VALUES (@queueNo, @serviceType, 'pending', NOW(), @studentNo, @type, @classification)";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@queueNo", queueNo);
                     cmd.Parameters.AddWithValue("@serviceType", "PAY FEE");
                     cmd.Parameters.AddWithValue("@studentNo", studentNo);
                     cmd.Parameters.AddWithValue("@type", _feeName);
+                    cmd.Parameters.AddWithValue("@classification", _classification);
                     cmd.ExecuteNonQuery();
                 }
             }
