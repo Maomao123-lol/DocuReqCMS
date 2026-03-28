@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmailReport));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEmailAddress = new System.Windows.Forms.Label();
             this.lblSenderEmail = new System.Windows.Forms.Label();
-            this.txtEmailSubject = new CustomControls.RJControls.RJTextBox();
-            this.btnSend = new DocuFlow_Reg.RJControls.RJButton();
             this.btnCancel = new DocuFlow_Reg.RJControls.RJButton();
+            this.btnSend = new DocuFlow_Reg.RJControls.RJButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEmailSubject = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -46,7 +49,6 @@
             this.label1.Size = new System.Drawing.Size(40, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "To: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -78,28 +80,25 @@
             this.lblSenderEmail.TabIndex = 3;
             this.lblSenderEmail.Text = "UCC@gmail.Educ";
             // 
-            // txtEmailSubject
+            // btnCancel
             // 
-            this.txtEmailSubject.AutoSize = true;
-            this.txtEmailSubject.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEmailSubject.BorderColor = System.Drawing.Color.Black;
-            this.txtEmailSubject.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtEmailSubject.BorderRadius = 0;
-            this.txtEmailSubject.BorderSize = 2;
-            this.txtEmailSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailSubject.ForeColor = System.Drawing.Color.DimGray;
-            this.txtEmailSubject.Location = new System.Drawing.Point(51, 143);
-            this.txtEmailSubject.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmailSubject.Multiline = true;
-            this.txtEmailSubject.Name = "txtEmailSubject";
-            this.txtEmailSubject.Padding = new System.Windows.Forms.Padding(7);
-            this.txtEmailSubject.PasswordChar = false;
-            this.txtEmailSubject.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtEmailSubject.PlaceholderText = "";
-            this.txtEmailSubject.Size = new System.Drawing.Size(681, 162);
-            this.txtEmailSubject.TabIndex = 4;
-            this.txtEmailSubject.Texts = "";
-            this.txtEmailSubject.UnderlinedStyle = false;
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.BorderRadius = 15;
+            this.btnCancel.BorderSize = 1;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(592, 323);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(128, 40);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextColor = System.Drawing.Color.Black;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSend
             // 
@@ -120,39 +119,43 @@
             this.btnSend.TextColor = System.Drawing.Color.Black;
             this.btnSend.UseVisualStyleBackColor = false;
             // 
-            // btnCancel
+            // panel1
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCancel.BorderColor = System.Drawing.Color.Black;
-            this.btnCancel.BorderRadius = 15;
-            this.btnCancel.BorderSize = 1;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(592, 323);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(128, 40);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TextColor = System.Drawing.Color.Black;
-            this.btnCancel.UseVisualStyleBackColor = false;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.lblEmailSubject);
+            this.panel1.Location = new System.Drawing.Point(52, 131);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(697, 173);
+            this.panel1.TabIndex = 7;
+            // 
+            // lblEmailSubject
+            // 
+            this.lblEmailSubject.BackColor = System.Drawing.Color.White;
+            this.lblEmailSubject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEmailSubject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailSubject.Location = new System.Drawing.Point(0, 0);
+            this.lblEmailSubject.Name = "lblEmailSubject";
+            this.lblEmailSubject.Size = new System.Drawing.Size(697, 173);
+            this.lblEmailSubject.TabIndex = 9;
+            this.lblEmailSubject.Text = resources.GetString("lblEmailSubject.Text");
             // 
             // EmailReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 384);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.txtEmailSubject);
             this.Controls.Add(this.lblSenderEmail);
             this.Controls.Add(this.lblEmailAddress);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "EmailReport";
             this.Text = "EmailReport";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,8 +167,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEmailAddress;
         private System.Windows.Forms.Label lblSenderEmail;
-        private CustomControls.RJControls.RJTextBox txtEmailSubject;
         private RJControls.RJButton btnSend;
         private RJControls.RJButton btnCancel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblEmailSubject;
     }
 }

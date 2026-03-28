@@ -1,24 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DocuFlow_Reg.UserControls
 {
     public partial class ArchiveUC : UserControl
     {
+        DatabaseHelper db = new DatabaseHelper();
+
+        private string searchText = "";
+        private Timer searchTimer = new Timer();
+
         int hoveredRowIndex = -1;
-        Color hoverColor = Color.FromArgb(235, 245, 255); // soft blue
+        Color hoverColor = Color.FromArgb(235, 245, 255);
         Color normalColor = Color.White;
         Color altColor = Color.FromArgb(245, 245, 245);
+
         public ArchiveUC()
         {
             InitializeComponent();
+            this.Load += ArchiveUC_Load;
+        }
+
+        private void ArchiveUC_Load(object sender, EventArgs e)
+        {
+            searchTimer.Interval = 800;
+            searchTimer.Tick += (s, ev) =>
+            {
+                searchTimer.Stop();
+                searchText = txtSearch.Text.Trim();
+                LoadArchive();
+            };
+
+            LoadArchive();
+        }
+
+        private void LoadArchive()
+        {
+            DataTable dt = db.ExecuteQuery(@"
+                SELECT
+                    a.student_number    AS 'Student Number',
+                    a.name              AS 'Name',
+                    a.final_status      AS 'Final Status',
+                    a.archived_at       AS 'Archived At'
+                FROM Archive a
+                WHERE (
+                    a.student_number LIKE @search
+                    OR a.name LIKE @search
+                    OR a.final_status LIKE @search
+                )
+                ORDER BY a.archived_at DESC",
+                new Dictionary<string, object>
+                {
+                    { "@search", "%" + searchText + "%" }
+                });
+
+            dgvArchive.DataSource = dt;
+            StyleDataGridView();
+        }
+
+        private void StyleDataGridView()
+        {
+            dgvArchive.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvArchive.RowHeadersVisible = false;
+            dgvArchive.AllowUserToAddRows = false;
+            dgvArchive.ReadOnly = true;
+            dgvArchive.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            searchTimer.Stop();
+            searchTimer.Start();
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -30,6 +85,7 @@ namespace DocuFlow_Reg.UserControls
         {
             pnlSearch.BorderColor = Color.Black;
         }
+
         private void ResetRowColor(int rowIndex)
         {
             if (rowIndex % 2 == 0)
@@ -42,13 +98,11 @@ namespace DocuFlow_Reg.UserControls
         {
             if (e.RowIndex < 0) return;
 
-            // Reset previously hovered row
             if (hoveredRowIndex != -1 && hoveredRowIndex != e.RowIndex)
                 ResetRowColor(hoveredRowIndex);
 
             hoveredRowIndex = e.RowIndex;
 
-            // Apply hover color ONLY if not selected
             if (!dgvArchive.Rows[e.RowIndex].Selected)
                 dgvArchive.Rows[e.RowIndex].DefaultCellStyle.BackColor = hoverColor;
         }

@@ -366,6 +366,7 @@
             this.dgvInquiries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInquiries.Size = new System.Drawing.Size(943, 501);
             this.dgvInquiries.TabIndex = 2;
+            this.dgvInquiries.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInquiries_CellDoubleClick);
             // 
             // pnlSearchFil
             // 

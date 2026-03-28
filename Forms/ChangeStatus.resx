@@ -117,14 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblEmailSubject.Text" xml:space="preserve">
-    <value>Dear Student,
-
-Your requested document is now ready for pickup. Please proceed to the registrar’s office during office hours and present a valid ID.  
-
-Please be advised that failure to claim your document on time may result in your request being requeued.  
-
-Thank you.
-</value>
-  </data>
 </root>

@@ -37,18 +37,17 @@ namespace DocuFlow_Reg.UserControls
 
         private void LoadInquiries()
         {
-            // Get total records
             string countQuery = @"
-            SELECT COUNT(*) 
-            FROM queue_tickets qt
-            LEFT JOIN Inquiry i ON i.ticket_id = qt.id
-            LEFT JOIN Student s ON s.student_number = qt.student_number
-            WHERE qt.status != 'done'
-            AND (qt.student_number LIKE @search
-            OR s.name              LIKE @search
-            OR qt.queue_no         LIKE @search
-            OR qt.service_type     LIKE @search
-            OR qt.status           LIKE @search)";
+    SELECT COUNT(*) 
+    FROM queue_tickets qt
+    LEFT JOIN Student s ON s.student_number = qt.student_number
+    WHERE qt.status != 'done'
+    AND (qt.student_number LIKE @search
+    OR s.name              LIKE @search
+    OR qt.queue_no         LIKE @search
+    OR qt.student_classification LIKE @search
+    OR qt.type             LIKE @search
+    OR qt.status           LIKE @search)";
 
             int totalRecords = db.getDashboardCount(
                 countQuery.Replace("@search", "'%" + searchText + "%'")
@@ -56,31 +55,31 @@ namespace DocuFlow_Reg.UserControls
 
             pagination.SetTotalRecords(totalRecords);
 
-            // Get paginated records
             DataTable dt = db.ExecuteQuery(@"
-                SELECT 
-                    qt.queue_no        AS 'Queue No',
-                    qt.student_number  AS 'Student Number',
-                    s.name             AS 'Student Name',
-                    qt.service_type    AS 'Inquiry Type',
-                    qt.status          AS 'Status'
-                FROM queue_tickets qt
-                LEFT JOIN Inquiry i ON i.ticket_id = qt.id
-                LEFT JOIN Student s ON s.student_number = qt.student_number
-                WHERE qt.status != 'done'
-                AND (qt.student_number LIKE @search
-                OR s.name              LIKE @search
-                OR qt.queue_no         LIKE @search
-                OR qt.service_type     LIKE @search
-                OR qt.status           LIKE @search)
-                ORDER BY qt.created_at ASC
-                LIMIT @pageSize OFFSET @offset",
-                new Dictionary<string, object>
-                {
-                    { "@search", "%" + searchText + "%" },
-                    { "@pageSize", pagination.PageSize },
-                    { "@offset", pagination.Offset }
-                });
+    SELECT 
+        qt.queue_no             AS 'Queue No',
+        qt.student_number       AS 'Student Number',
+        s.name                  AS 'Student Name',
+        qt.student_classification AS 'Inquiry Type',
+        qt.type                 AS 'Document Requested',
+        qt.status               AS 'Status'
+    FROM queue_tickets qt
+    LEFT JOIN Student s ON s.student_number = qt.student_number
+    WHERE qt.status != 'done'
+    AND (qt.student_number      LIKE @search
+    OR s.name                   LIKE @search
+    OR qt.queue_no              LIKE @search
+    OR qt.student_classification LIKE @search
+    OR qt.type                  LIKE @search
+    OR qt.status                LIKE @search)
+    ORDER BY qt.created_at ASC
+    LIMIT @pageSize OFFSET @offset",
+    new Dictionary<string, object>
+    {
+        { "@search", "%" + searchText + "%" },
+        { "@pageSize", pagination.PageSize },
+        { "@offset", pagination.Offset }
+    });
 
             dgvInquiries.DataSource = dt;
             StyleDataGridView();
@@ -115,6 +114,18 @@ namespace DocuFlow_Reg.UserControls
             searchText = txtSearch.Text.Trim();
             pagination.Reset();
             LoadInquiries();
+        }
+
+        private void dgvInquiries_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string studentNumber = dgvInquiries.Rows[e.RowIndex].Cells["Student Number"].Value.ToString();
+            string queueNo = dgvInquiries.Rows[e.RowIndex].Cells["Queue No"].Value.ToString();
+
+            RequestDetails detailsForm = new RequestDetails(studentNumber, queueNo);
+            LoadInquiries();
+            detailsForm.Show();
         }
     }
 }

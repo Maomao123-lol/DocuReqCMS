@@ -128,6 +128,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="DocumentRequirements.cs" />
+    <Compile Include="Forms\ChangeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeStatus.Designer.cs">
+      <DependentUpon>ChangeStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmailReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +232,9 @@
     <Compile Include="UserControls\InquiriesUC.Designer.cs">
       <DependentUpon>InquiriesUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ChangeStatus.resx">
+      <DependentUpon>ChangeStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailReport.resx">
       <DependentUpon>EmailReport.cs</DependentUpon>
     </EmbeddedResource>
