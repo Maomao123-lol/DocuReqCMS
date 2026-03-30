@@ -44,9 +44,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 40);
+            this.label1.Location = new System.Drawing.Point(87, 49);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 25);
+            this.label1.Size = new System.Drawing.Size(51, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "To: ";
             // 
@@ -54,9 +55,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 77);
+            this.label2.Location = new System.Drawing.Point(87, 95);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 25);
+            this.label2.Size = new System.Drawing.Size(81, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "From: ";
             // 
@@ -64,9 +66,10 @@
             // 
             this.lblEmailAddress.AutoSize = true;
             this.lblEmailAddress.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailAddress.Location = new System.Drawing.Point(99, 35);
+            this.lblEmailAddress.Location = new System.Drawing.Point(132, 43);
+            this.lblEmailAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmailAddress.Name = "lblEmailAddress";
-            this.lblEmailAddress.Size = new System.Drawing.Size(256, 30);
+            this.lblEmailAddress.Size = new System.Drawing.Size(312, 36);
             this.lblEmailAddress.TabIndex = 2;
             this.lblEmailAddress.Text = "JuanDelaCruz@gmail.com";
             // 
@@ -74,9 +77,10 @@
             // 
             this.lblSenderEmail.AutoSize = true;
             this.lblSenderEmail.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenderEmail.Location = new System.Drawing.Point(135, 73);
+            this.lblSenderEmail.Location = new System.Drawing.Point(180, 90);
+            this.lblSenderEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSenderEmail.Name = "lblSenderEmail";
-            this.lblSenderEmail.Size = new System.Drawing.Size(173, 30);
+            this.lblSenderEmail.Size = new System.Drawing.Size(212, 36);
             this.lblSenderEmail.TabIndex = 3;
             this.lblSenderEmail.Text = "UCC@gmail.Educ";
             // 
@@ -91,9 +95,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(592, 323);
+            this.btnCancel.Location = new System.Drawing.Point(789, 398);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(128, 40);
+            this.btnCancel.Size = new System.Drawing.Size(171, 49);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextColor = System.Drawing.Color.Black;
@@ -111,13 +116,15 @@
             this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.Black;
-            this.btnSend.Location = new System.Drawing.Point(438, 323);
+            this.btnSend.Location = new System.Drawing.Point(584, 398);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(139, 40);
+            this.btnSend.Size = new System.Drawing.Size(185, 49);
             this.btnSend.TabIndex = 5;
             this.btnSend.Text = "Send";
             this.btnSend.TextColor = System.Drawing.Color.Black;
             this.btnSend.UseVisualStyleBackColor = false;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // panel1
             // 
@@ -125,9 +132,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.lblEmailSubject);
-            this.panel1.Location = new System.Drawing.Point(52, 131);
+            this.panel1.Location = new System.Drawing.Point(69, 161);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(697, 173);
+            this.panel1.Size = new System.Drawing.Size(929, 213);
             this.panel1.TabIndex = 7;
             // 
             // lblEmailSubject
@@ -136,16 +144,17 @@
             this.lblEmailSubject.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEmailSubject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailSubject.Location = new System.Drawing.Point(0, 0);
+            this.lblEmailSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmailSubject.Name = "lblEmailSubject";
-            this.lblEmailSubject.Size = new System.Drawing.Size(697, 173);
+            this.lblEmailSubject.Size = new System.Drawing.Size(929, 213);
             this.lblEmailSubject.TabIndex = 9;
             this.lblEmailSubject.Text = resources.GetString("lblEmailSubject.Text");
             // 
             // EmailReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 384);
+            this.ClientSize = new System.Drawing.Size(1067, 473);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSend);
@@ -153,6 +162,7 @@
             this.Controls.Add(this.lblEmailAddress);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmailReport";
             this.Text = "EmailReport";
             this.panel1.ResumeLayout(false);

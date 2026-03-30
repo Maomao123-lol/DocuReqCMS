@@ -22,8 +22,12 @@ namespace DocuFlow_Reg.UserControls
         private void DashboardUC_Load(object sender, EventArgs e)
         {
             SetDocumentTypeChart();
-            LoadRequestTrend("Weekly"); // default filter on load
+            LoadRequestTrend("Weekly");
+            LoadWidgetCounts();
+        }
 
+        private void LoadWidgetCounts()
+        {
             lblPendingRequest.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Pending'").ToString();
             lblPendingPayment.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Waiting for Payment'").ToString();
             lblReadyToRelease.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Ready'").ToString();
@@ -32,12 +36,16 @@ namespace DocuFlow_Reg.UserControls
 
         private void SetDocumentTypeChart()
         {
+            // Use document_name from Request table since Document_Data no longer exists
             DataTable dt = db.ExecuteQuery(@"
-                SELECT d.document_name, COUNT(r.request_number) as request_count
+                SELECT 
+                    r.document_name     AS document_name,
+                    COUNT(*)            AS request_count
                 FROM Request r
-                INNER JOIN Document_Data d ON r.document_id = d.document_id
-                GROUP BY d.document_name
-            ");
+                WHERE r.document_name IS NOT NULL
+                AND r.document_name != ''
+                GROUP BY r.document_name
+                ORDER BY request_count DESC");
 
             var documentTypes = new List<string>();
             var requestCounts = new ChartValues<int>();
@@ -46,6 +54,12 @@ namespace DocuFlow_Reg.UserControls
             {
                 documentTypes.Add(row["document_name"].ToString());
                 requestCounts.Add(Convert.ToInt32(row["request_count"]));
+            }
+
+            if (documentTypes.Count == 0)
+            {
+                documentTypes.Add("No Data");
+                requestCounts.Add(0);
             }
 
             chDocumentTypeDistribution.AxisX = new AxesCollection
@@ -102,47 +116,47 @@ namespace DocuFlow_Reg.UserControls
             {
                 case "Daily":
                     query = @"
-                    SELECT CONCAT(HOUR(MIN(created_at)), ':00') as period, 
-                           COUNT(*) as request_count
-                    FROM Request
-                    WHERE DATE(created_at) = CURDATE()
-                    GROUP BY HOUR(created_at)
-                    ORDER BY HOUR(created_at)";
+                        SELECT CONCAT(HOUR(MIN(created_at)), ':00') as period, 
+                               COUNT(*) as request_count
+                        FROM Request
+                        WHERE DATE(created_at) = CURDATE()
+                        GROUP BY HOUR(created_at)
+                        ORDER BY HOUR(created_at)";
                     xAxisTitle = "Hour of Day";
                     break;
 
                 case "Weekly":
                     query = @"
-                SELECT DAYNAME(MIN(created_at)) as period, 
-                       COUNT(*) as request_count
-                FROM Request
-                WHERE WEEK(created_at) = WEEK(CURDATE())
-                AND YEAR(created_at) = YEAR(CURDATE())
-                GROUP BY DAYOFWEEK(created_at)
-                ORDER BY DAYOFWEEK(created_at)";
+                        SELECT DAYNAME(MIN(created_at)) as period, 
+                               COUNT(*) as request_count
+                        FROM Request
+                        WHERE WEEK(created_at) = WEEK(CURDATE())
+                        AND YEAR(created_at) = YEAR(CURDATE())
+                        GROUP BY DAYOFWEEK(created_at)
+                        ORDER BY DAYOFWEEK(created_at)";
                     xAxisTitle = "Day of Week";
                     break;
 
                 case "Monthly":
                     query = @"
-                SELECT DAY(created_at) as period, 
-                       COUNT(*) as request_count
-                FROM Request
-                WHERE MONTH(created_at) = MONTH(CURDATE())
-                AND YEAR(created_at) = YEAR(CURDATE())
-                GROUP BY DAY(created_at)
-                ORDER BY DAY(created_at)";
+                        SELECT DAY(created_at) as period, 
+                               COUNT(*) as request_count
+                        FROM Request
+                        WHERE MONTH(created_at) = MONTH(CURDATE())
+                        AND YEAR(created_at) = YEAR(CURDATE())
+                        GROUP BY DAY(created_at)
+                        ORDER BY DAY(created_at)";
                     xAxisTitle = "Day of Month";
                     break;
 
                 case "Yearly":
                     query = @"
-                SELECT MONTHNAME(MIN(created_at)) as period, 
-                       COUNT(*) as request_count
-                FROM Request
-                WHERE YEAR(created_at) = YEAR(CURDATE())
-                GROUP BY MONTH(created_at)
-                ORDER BY MONTH(created_at)";
+                        SELECT MONTHNAME(MIN(created_at)) as period, 
+                               COUNT(*) as request_count
+                        FROM Request
+                        WHERE YEAR(created_at) = YEAR(CURDATE())
+                        GROUP BY MONTH(created_at)
+                        ORDER BY MONTH(created_at)";
                     xAxisTitle = "Month";
                     break;
 
@@ -208,24 +222,9 @@ namespace DocuFlow_Reg.UserControls
             LoadRequestTrend(cbWidgetFilter.SelectedItem.ToString());
         }
 
-        private void pnlPendingRequest_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlPendingPayment_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlReadyToRelease_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlReleased_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void pnlPendingRequest_Click(object sender, EventArgs e) { }
+        private void pnlPendingPayment_Click(object sender, EventArgs e) { }
+        private void pnlReadyToRelease_Click(object sender, EventArgs e) { }
+        private void pnlReleased_Click(object sender, EventArgs e) { }
     }
 }

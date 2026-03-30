@@ -316,18 +316,19 @@ namespace DocuFlow_Reg.Forms
 
                 db.ExecuteNonQuery(@"
                     INSERT INTO Request 
-                    (request_number, student_number, document_id, name, service_type, status, or_number, pickup_deadline, created_at)
+                    (request_number, student_number, document_id, name, service_type, document_name, status, or_number, pickup_deadline, created_at)
                     VALUES 
-                    (@requestNumber, @studentNumber, @documentId, @name, @serviceType, @status, NULL, NULL, NOW())",
-                    new Dictionary<string, object>
-                    {
+                    (@requestNumber, @studentNumber, @documentId, @name, @serviceType, @documentName, @status, NULL, NULL, NOW())",
+                     new Dictionary<string, object>
+                     {
                         { "@requestNumber", requestNumber },
                         { "@studentNumber", _studentNumber },
                         { "@documentId",    documentId },
                         { "@name",          lblName.Text.Trim() },
                         { "@serviceType",   mappedServiceType },
+                        { "@documentName",  lblDocumentType.Text.Trim() },
                         { "@status",        status }
-                    });
+                     });
 
                 DeleteFromQueue();
 

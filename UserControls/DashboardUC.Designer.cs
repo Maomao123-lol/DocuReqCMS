@@ -108,17 +108,19 @@
             this.s.Controls.Add(this.panel1);
             this.s.Dock = System.Windows.Forms.DockStyle.Fill;
             this.s.Location = new System.Drawing.Point(0, 0);
+            this.s.Margin = new System.Windows.Forms.Padding(4);
             this.s.Name = "s";
-            this.s.Size = new System.Drawing.Size(912, 639);
+            this.s.Size = new System.Drawing.Size(1216, 786);
             this.s.TabIndex = 0;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.tableLayoutPanel2);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 236);
+            this.panel9.Location = new System.Drawing.Point(0, 290);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(912, 403);
+            this.panel9.Size = new System.Drawing.Size(1216, 496);
             this.panel9.TabIndex = 4;
             // 
             // tableLayoutPanel2
@@ -130,10 +132,11 @@
             this.tableLayoutPanel2.Controls.Add(this.panel11, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(912, 403);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1216, 496);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // panel10
@@ -147,7 +150,7 @@
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Margin = new System.Windows.Forms.Padding(0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(456, 403);
+            this.panel10.Size = new System.Drawing.Size(608, 496);
             this.panel10.TabIndex = 0;
             // 
             // panel12
@@ -156,10 +159,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.Controls.Add(this.chDocumentTypeDistribution);
-            this.panel12.Location = new System.Drawing.Point(38, 81);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2);
+            this.panel12.Location = new System.Drawing.Point(51, 100);
+            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(385, 283);
+            this.panel12.Size = new System.Drawing.Size(513, 348);
             this.panel12.TabIndex = 4;
             // 
             // chDocumentTypeDistribution
@@ -169,9 +172,9 @@
             this.chDocumentTypeDistribution.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chDocumentTypeDistribution.ForeColor = System.Drawing.Color.Black;
             this.chDocumentTypeDistribution.Location = new System.Drawing.Point(0, 0);
-            this.chDocumentTypeDistribution.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
+            this.chDocumentTypeDistribution.Margin = new System.Windows.Forms.Padding(0, 0, 0, 37);
             this.chDocumentTypeDistribution.Name = "chDocumentTypeDistribution";
-            this.chDocumentTypeDistribution.Size = new System.Drawing.Size(385, 283);
+            this.chDocumentTypeDistribution.Size = new System.Drawing.Size(513, 348);
             this.chDocumentTypeDistribution.TabIndex = 3;
             this.chDocumentTypeDistribution.Text = "Document Type Request";
             // 
@@ -180,9 +183,10 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 30);
+            this.label4.Location = new System.Drawing.Point(37, 37);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(254, 25);
+            this.label4.Size = new System.Drawing.Size(320, 32);
             this.label4.TabIndex = 1;
             this.label4.Text = "Document Type Distribution";
             // 
@@ -207,9 +211,10 @@
             this.pnlDocumentDistribution.GradientColor1 = System.Drawing.Color.Empty;
             this.pnlDocumentDistribution.GradientColor2 = System.Drawing.Color.Empty;
             this.pnlDocumentDistribution.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlDocumentDistribution.Location = new System.Drawing.Point(16, 15);
+            this.pnlDocumentDistribution.Location = new System.Drawing.Point(21, 18);
+            this.pnlDocumentDistribution.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDocumentDistribution.Name = "pnlDocumentDistribution";
-            this.pnlDocumentDistribution.Size = new System.Drawing.Size(424, 361);
+            this.pnlDocumentDistribution.Size = new System.Drawing.Size(565, 444);
             this.pnlDocumentDistribution.TabIndex = 0;
             this.pnlDocumentDistribution.UseGradient = false;
             // 
@@ -219,10 +224,10 @@
             this.panel11.Controls.Add(this.label6);
             this.panel11.Controls.Add(this.pnlRequestTrend);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(456, 0);
+            this.panel11.Location = new System.Drawing.Point(608, 0);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(456, 403);
+            this.panel11.Size = new System.Drawing.Size(608, 496);
             this.panel11.TabIndex = 1;
             // 
             // panel13
@@ -231,18 +236,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel13.Controls.Add(this.chRequestTrend);
-            this.panel13.Location = new System.Drawing.Point(38, 81);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2);
+            this.panel13.Location = new System.Drawing.Point(51, 100);
+            this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(387, 283);
+            this.panel13.Size = new System.Drawing.Size(516, 348);
             this.panel13.TabIndex = 5;
             // 
             // chRequestTrend
             // 
             this.chRequestTrend.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chRequestTrend.Location = new System.Drawing.Point(0, 0);
+            this.chRequestTrend.Margin = new System.Windows.Forms.Padding(4);
             this.chRequestTrend.Name = "chRequestTrend";
-            this.chRequestTrend.Size = new System.Drawing.Size(387, 283);
+            this.chRequestTrend.Size = new System.Drawing.Size(516, 348);
             this.chRequestTrend.TabIndex = 4;
             this.chRequestTrend.Text = "cartesianChart2";
             // 
@@ -251,9 +257,10 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 30);
+            this.label6.Location = new System.Drawing.Point(44, 37);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 25);
+            this.label6.Size = new System.Drawing.Size(169, 32);
             this.label6.TabIndex = 2;
             this.label6.Text = "Request Trend";
             // 
@@ -278,9 +285,10 @@
             this.pnlRequestTrend.GradientColor1 = System.Drawing.Color.Empty;
             this.pnlRequestTrend.GradientColor2 = System.Drawing.Color.Empty;
             this.pnlRequestTrend.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlRequestTrend.Location = new System.Drawing.Point(16, 15);
+            this.pnlRequestTrend.Location = new System.Drawing.Point(21, 18);
+            this.pnlRequestTrend.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRequestTrend.Name = "pnlRequestTrend";
-            this.pnlRequestTrend.Size = new System.Drawing.Size(424, 361);
+            this.pnlRequestTrend.Size = new System.Drawing.Size(565, 444);
             this.pnlRequestTrend.TabIndex = 0;
             this.pnlRequestTrend.UseGradient = false;
             // 
@@ -290,9 +298,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(0, 236);
+            this.panel8.Location = new System.Drawing.Point(0, 290);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(912, 23);
+            this.panel8.Size = new System.Drawing.Size(1216, 28);
             this.panel8.TabIndex = 3;
             // 
             // label8
@@ -300,9 +309,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(35, 2);
+            this.label8.Location = new System.Drawing.Point(47, 2);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 21);
+            this.label8.Size = new System.Drawing.Size(92, 28);
             this.label8.TabIndex = 3;
             this.label8.Text = "Analytics";
             // 
@@ -310,9 +320,10 @@
             // 
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 98);
+            this.panel3.Location = new System.Drawing.Point(0, 120);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(912, 138);
+            this.panel3.Size = new System.Drawing.Size(1216, 170);
             this.panel3.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -328,11 +339,12 @@
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 138F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 138);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1216, 170);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel7
@@ -345,19 +357,20 @@
             this.panel7.Controls.Add(this.lblReleased);
             this.panel7.Controls.Add(this.rjPanel5);
             this.panel7.Controls.Add(this.pnlReleased);
-            this.panel7.Location = new System.Drawing.Point(684, 0);
+            this.panel7.Location = new System.Drawing.Point(912, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(228, 138);
+            this.panel7.Size = new System.Drawing.Size(304, 170);
             this.panel7.TabIndex = 3;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.pictureBox3.Image = global::DocuFlow_Reg.Properties.Resources.new_release;
-            this.pictureBox3.Location = new System.Drawing.Point(38, 56);
+            this.pictureBox3.Location = new System.Drawing.Point(51, 69);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 32);
+            this.pictureBox3.Size = new System.Drawing.Size(49, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
@@ -371,9 +384,10 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(86, 71);
+            this.label7.Location = new System.Drawing.Point(115, 87);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 17);
+            this.label7.Size = new System.Drawing.Size(76, 21);
             this.label7.TabIndex = 14;
             this.label7.Text = "Released";
             // 
@@ -383,9 +397,10 @@
             this.lblReleased.BackColor = System.Drawing.Color.White;
             this.lblReleased.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReleased.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(237)))));
-            this.lblReleased.Location = new System.Drawing.Point(86, 31);
+            this.lblReleased.Location = new System.Drawing.Point(115, 38);
+            this.lblReleased.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReleased.Name = "lblReleased";
-            this.lblReleased.Size = new System.Drawing.Size(0, 40);
+            this.lblReleased.Size = new System.Drawing.Size(0, 48);
             this.lblReleased.TabIndex = 13;
             // 
             // rjPanel5
@@ -406,9 +421,10 @@
             this.rjPanel5.GradientColor1 = System.Drawing.Color.Empty;
             this.rjPanel5.GradientColor2 = System.Drawing.Color.Empty;
             this.rjPanel5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.rjPanel5.Location = new System.Drawing.Point(33, 46);
+            this.rjPanel5.Location = new System.Drawing.Point(44, 57);
+            this.rjPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.rjPanel5.Name = "rjPanel5";
-            this.rjPanel5.Size = new System.Drawing.Size(47, 48);
+            this.rjPanel5.Size = new System.Drawing.Size(63, 59);
             this.rjPanel5.TabIndex = 12;
             this.rjPanel5.UseGradient = false;
             // 
@@ -431,9 +447,10 @@
             this.pnlReleased.GradientColor1 = System.Drawing.Color.Empty;
             this.pnlReleased.GradientColor2 = System.Drawing.Color.Empty;
             this.pnlReleased.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlReleased.Location = new System.Drawing.Point(16, 20);
+            this.pnlReleased.Location = new System.Drawing.Point(21, 25);
+            this.pnlReleased.Margin = new System.Windows.Forms.Padding(4);
             this.pnlReleased.Name = "pnlReleased";
-            this.pnlReleased.Size = new System.Drawing.Size(196, 98);
+            this.pnlReleased.Size = new System.Drawing.Size(261, 121);
             this.pnlReleased.TabIndex = 11;
             this.pnlReleased.UseGradient = false;
             this.pnlReleased.Click += new System.EventHandler(this.pnlReleased_Click);
@@ -448,19 +465,20 @@
             this.panel6.Controls.Add(this.lblReadyToRelease);
             this.panel6.Controls.Add(this.rjPanel3);
             this.panel6.Controls.Add(this.pnlReadyToRelease);
-            this.panel6.Location = new System.Drawing.Point(456, 0);
+            this.panel6.Location = new System.Drawing.Point(608, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(228, 138);
+            this.panel6.Size = new System.Drawing.Size(304, 170);
             this.panel6.TabIndex = 2;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(244)))));
             this.pictureBox2.Image = global::DocuFlow_Reg.Properties.Resources.document;
-            this.pictureBox2.Location = new System.Drawing.Point(38, 51);
+            this.pictureBox2.Location = new System.Drawing.Point(51, 63);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(37, 42);
+            this.pictureBox2.Size = new System.Drawing.Size(49, 52);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
@@ -474,9 +492,10 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(86, 71);
+            this.label5.Location = new System.Drawing.Point(115, 87);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 17);
+            this.label5.Size = new System.Drawing.Size(135, 21);
             this.label5.TabIndex = 14;
             this.label5.Text = "Ready to Release";
             // 
@@ -489,9 +508,10 @@
             this.lblReadyToRelease.BackColor = System.Drawing.Color.White;
             this.lblReadyToRelease.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReadyToRelease.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(122)))), ((int)(((byte)(26)))));
-            this.lblReadyToRelease.Location = new System.Drawing.Point(86, 31);
+            this.lblReadyToRelease.Location = new System.Drawing.Point(115, 38);
+            this.lblReadyToRelease.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReadyToRelease.Name = "lblReadyToRelease";
-            this.lblReadyToRelease.Size = new System.Drawing.Size(0, 40);
+            this.lblReadyToRelease.Size = new System.Drawing.Size(0, 48);
             this.lblReadyToRelease.TabIndex = 13;
             // 
             // rjPanel3
@@ -512,9 +532,10 @@
             this.rjPanel3.GradientColor1 = System.Drawing.Color.Empty;
             this.rjPanel3.GradientColor2 = System.Drawing.Color.Empty;
             this.rjPanel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.rjPanel3.Location = new System.Drawing.Point(33, 46);
+            this.rjPanel3.Location = new System.Drawing.Point(44, 57);
+            this.rjPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.rjPanel3.Name = "rjPanel3";
-            this.rjPanel3.Size = new System.Drawing.Size(47, 48);
+            this.rjPanel3.Size = new System.Drawing.Size(63, 59);
             this.rjPanel3.TabIndex = 12;
             this.rjPanel3.UseGradient = false;
             // 
@@ -537,9 +558,10 @@
             this.pnlReadyToRelease.GradientColor1 = System.Drawing.Color.Empty;
             this.pnlReadyToRelease.GradientColor2 = System.Drawing.Color.Empty;
             this.pnlReadyToRelease.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlReadyToRelease.Location = new System.Drawing.Point(16, 20);
+            this.pnlReadyToRelease.Location = new System.Drawing.Point(21, 25);
+            this.pnlReadyToRelease.Margin = new System.Windows.Forms.Padding(4);
             this.pnlReadyToRelease.Name = "pnlReadyToRelease";
-            this.pnlReadyToRelease.Size = new System.Drawing.Size(196, 98);
+            this.pnlReadyToRelease.Size = new System.Drawing.Size(261, 121);
             this.pnlReadyToRelease.TabIndex = 11;
             this.pnlReadyToRelease.UseGradient = false;
             this.pnlReadyToRelease.Click += new System.EventHandler(this.pnlReadyToRelease_Click);
@@ -554,19 +576,20 @@
             this.panel5.Controls.Add(this.lblPendingPayment);
             this.panel5.Controls.Add(this.rjPanel1);
             this.panel5.Controls.Add(this.pnlPendingPayment);
-            this.panel5.Location = new System.Drawing.Point(228, 0);
+            this.panel5.Location = new System.Drawing.Point(304, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(228, 138);
+            this.panel5.Size = new System.Drawing.Size(304, 170);
             this.panel5.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(252)))), ((int)(((byte)(232)))));
             this.pictureBox1.Image = global::DocuFlow_Reg.Properties.Resources.credit_card;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 56);
+            this.pictureBox1.Location = new System.Drawing.Point(51, 69);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(49, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -580,9 +603,10 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(86, 71);
+            this.label3.Location = new System.Drawing.Point(115, 87);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 17);
+            this.label3.Size = new System.Drawing.Size(136, 21);
             this.label3.TabIndex = 14;
             this.label3.Text = "Pending Payment";
             // 
@@ -595,9 +619,10 @@
             this.lblPendingPayment.BackColor = System.Drawing.Color.White;
             this.lblPendingPayment.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPendingPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
-            this.lblPendingPayment.Location = new System.Drawing.Point(86, 31);
+            this.lblPendingPayment.Location = new System.Drawing.Point(115, 38);
+            this.lblPendingPayment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPendingPayment.Name = "lblPendingPayment";
-            this.lblPendingPayment.Size = new System.Drawing.Size(0, 40);
+            this.lblPendingPayment.Size = new System.Drawing.Size(0, 48);
             this.lblPendingPayment.TabIndex = 13;
             // 
             // rjPanel1
@@ -618,9 +643,10 @@
             this.rjPanel1.GradientColor1 = System.Drawing.Color.Empty;
             this.rjPanel1.GradientColor2 = System.Drawing.Color.Empty;
             this.rjPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.rjPanel1.Location = new System.Drawing.Point(33, 46);
+            this.rjPanel1.Location = new System.Drawing.Point(44, 57);
+            this.rjPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(47, 48);
+            this.rjPanel1.Size = new System.Drawing.Size(63, 59);
             this.rjPanel1.TabIndex = 12;
             this.rjPanel1.UseGradient = false;
             // 
@@ -643,9 +669,10 @@
             this.pnlPendingPayment.GradientColor1 = System.Drawing.Color.Empty;
             this.pnlPendingPayment.GradientColor2 = System.Drawing.Color.Empty;
             this.pnlPendingPayment.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlPendingPayment.Location = new System.Drawing.Point(16, 20);
+            this.pnlPendingPayment.Location = new System.Drawing.Point(21, 25);
+            this.pnlPendingPayment.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPendingPayment.Name = "pnlPendingPayment";
-            this.pnlPendingPayment.Size = new System.Drawing.Size(196, 98);
+            this.pnlPendingPayment.Size = new System.Drawing.Size(261, 121);
             this.pnlPendingPayment.TabIndex = 11;
             this.pnlPendingPayment.UseGradient = false;
             this.pnlPendingPayment.Click += new System.EventHandler(this.pnlPendingPayment_Click);
@@ -663,16 +690,17 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(228, 138);
+            this.panel4.Size = new System.Drawing.Size(304, 170);
             this.panel4.TabIndex = 0;
             // 
             // pbPendingRequestIcon
             // 
             this.pbPendingRequestIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.pbPendingRequestIcon.Image = global::DocuFlow_Reg.Properties.Resources.hourglass1;
-            this.pbPendingRequestIcon.Location = new System.Drawing.Point(38, 56);
+            this.pbPendingRequestIcon.Location = new System.Drawing.Point(51, 69);
+            this.pbPendingRequestIcon.Margin = new System.Windows.Forms.Padding(4);
             this.pbPendingRequestIcon.Name = "pbPendingRequestIcon";
-            this.pbPendingRequestIcon.Size = new System.Drawing.Size(37, 32);
+            this.pbPendingRequestIcon.Size = new System.Drawing.Size(49, 39);
             this.pbPendingRequestIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPendingRequestIcon.TabIndex = 15;
             this.pbPendingRequestIcon.TabStop = false;
@@ -686,9 +714,10 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(86, 71);
+            this.label2.Location = new System.Drawing.Point(115, 87);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(133, 21);
             this.label2.TabIndex = 14;
             this.label2.Text = "Pending Request";
             // 
@@ -701,9 +730,10 @@
             this.lblPendingRequest.BackColor = System.Drawing.Color.White;
             this.lblPendingRequest.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPendingRequest.ForeColor = System.Drawing.Color.Red;
-            this.lblPendingRequest.Location = new System.Drawing.Point(86, 31);
+            this.lblPendingRequest.Location = new System.Drawing.Point(115, 38);
+            this.lblPendingRequest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPendingRequest.Name = "lblPendingRequest";
-            this.lblPendingRequest.Size = new System.Drawing.Size(0, 40);
+            this.lblPendingRequest.Size = new System.Drawing.Size(0, 48);
             this.lblPendingRequest.TabIndex = 13;
             // 
             // pnlPendingRequestIcon
@@ -724,9 +754,10 @@
             this.pnlPendingRequestIcon.GradientColor1 = System.Drawing.Color.Empty;
             this.pnlPendingRequestIcon.GradientColor2 = System.Drawing.Color.Empty;
             this.pnlPendingRequestIcon.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlPendingRequestIcon.Location = new System.Drawing.Point(33, 46);
+            this.pnlPendingRequestIcon.Location = new System.Drawing.Point(44, 57);
+            this.pnlPendingRequestIcon.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPendingRequestIcon.Name = "pnlPendingRequestIcon";
-            this.pnlPendingRequestIcon.Size = new System.Drawing.Size(47, 48);
+            this.pnlPendingRequestIcon.Size = new System.Drawing.Size(63, 59);
             this.pnlPendingRequestIcon.TabIndex = 12;
             this.pnlPendingRequestIcon.UseGradient = false;
             // 
@@ -749,9 +780,10 @@
             this.pnlPendingRequest.GradientColor1 = System.Drawing.Color.Empty;
             this.pnlPendingRequest.GradientColor2 = System.Drawing.Color.Empty;
             this.pnlPendingRequest.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlPendingRequest.Location = new System.Drawing.Point(16, 20);
+            this.pnlPendingRequest.Location = new System.Drawing.Point(21, 25);
+            this.pnlPendingRequest.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPendingRequest.Name = "pnlPendingRequest";
-            this.pnlPendingRequest.Size = new System.Drawing.Size(196, 98);
+            this.pnlPendingRequest.Size = new System.Drawing.Size(261, 121);
             this.pnlPendingRequest.TabIndex = 11;
             this.pnlPendingRequest.UseGradient = false;
             this.pnlPendingRequest.Click += new System.EventHandler(this.pnlPendingRequest_Click);
@@ -761,9 +793,10 @@
             this.panel2.Controls.Add(this.lblOverview);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.ForeColor = System.Drawing.Color.Coral;
-            this.panel2.Location = new System.Drawing.Point(0, 75);
+            this.panel2.Location = new System.Drawing.Point(0, 92);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(912, 23);
+            this.panel2.Size = new System.Drawing.Size(1216, 28);
             this.panel2.TabIndex = 1;
             // 
             // lblOverview
@@ -771,9 +804,10 @@
             this.lblOverview.AutoSize = true;
             this.lblOverview.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOverview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblOverview.Location = new System.Drawing.Point(35, 3);
+            this.lblOverview.Location = new System.Drawing.Point(47, 4);
+            this.lblOverview.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOverview.Name = "lblOverview";
-            this.lblOverview.Size = new System.Drawing.Size(79, 21);
+            this.lblOverview.Size = new System.Drawing.Size(97, 28);
             this.lblOverview.TabIndex = 2;
             this.lblOverview.Text = "Overview";
             // 
@@ -783,18 +817,19 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(912, 75);
+            this.panel1.Size = new System.Drawing.Size(1216, 92);
             this.panel1.TabIndex = 0;
             // 
             // pnlDropDownFilter
             // 
             this.pnlDropDownFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDropDownFilter.Controls.Add(this.cbWidgetFilter);
-            this.pnlDropDownFilter.Location = new System.Drawing.Point(684, 31);
-            this.pnlDropDownFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDropDownFilter.Location = new System.Drawing.Point(912, 38);
+            this.pnlDropDownFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDropDownFilter.Name = "pnlDropDownFilter";
-            this.pnlDropDownFilter.Size = new System.Drawing.Size(150, 30);
+            this.pnlDropDownFilter.Size = new System.Drawing.Size(199, 36);
             this.pnlDropDownFilter.TabIndex = 3;
             // 
             // cbWidgetFilter
@@ -809,8 +844,9 @@
             "Monthly",
             "Yearly"});
             this.cbWidgetFilter.Location = new System.Drawing.Point(0, 0);
+            this.cbWidgetFilter.Margin = new System.Windows.Forms.Padding(4);
             this.cbWidgetFilter.Name = "cbWidgetFilter";
-            this.cbWidgetFilter.Size = new System.Drawing.Size(148, 29);
+            this.cbWidgetFilter.Size = new System.Drawing.Size(197, 36);
             this.cbWidgetFilter.TabIndex = 2;
             this.cbWidgetFilter.SelectedIndexChanged += new System.EventHandler(this.cbWidgetFilter_SelectedIndexChanged);
             // 
@@ -818,20 +854,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 34);
+            this.label1.Location = new System.Drawing.Point(45, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 25);
+            this.label1.Size = new System.Drawing.Size(132, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Dashboard";
             // 
             // DashboardUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.s);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DashboardUC";
-            this.Size = new System.Drawing.Size(912, 639);
+            this.Size = new System.Drawing.Size(1216, 786);
             this.s.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

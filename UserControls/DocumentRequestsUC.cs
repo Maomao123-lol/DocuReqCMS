@@ -45,7 +45,7 @@ namespace DocuFlow_Reg.UserControls
                     r.request_number    AS 'Request Number',
                     r.student_number    AS 'Student Number',
                     r.name              AS 'Name',
-                    r.service_type      AS 'Document Type',
+                    r.document_name     AS 'Document Type',
                     r.status            AS 'Status'
                 FROM Request r
                 WHERE r.status NOT IN ('Pending', 'Released')
