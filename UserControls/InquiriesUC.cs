@@ -123,8 +123,11 @@ namespace DocuFlow_Reg.UserControls
             string studentNumber = dgvInquiries.Rows[e.RowIndex].Cells["Student Number"].Value.ToString();
             string queueNo = dgvInquiries.Rows[e.RowIndex].Cells["Queue No"].Value.ToString();
 
-            RequestDetails detailsForm = new RequestDetails(studentNumber, queueNo);
-            LoadInquiries();
+            RequestDetails detailsForm = new RequestDetails(studentNumber, queueNo, () =>
+            {
+                LoadInquiries();
+            });
+
             detailsForm.Show();
         }
     }

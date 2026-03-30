@@ -62,6 +62,7 @@
             this.btnReleased.Text = "Released";
             this.btnReleased.TextColor = System.Drawing.Color.Black;
             this.btnReleased.UseVisualStyleBackColor = false;
+            this.btnReleased.Click += new System.EventHandler(this.btnReleased_Click);
             // 
             // btnReady
             // 
@@ -101,6 +102,7 @@
             this.btnProcessing.Text = "Processing";
             this.btnProcessing.TextColor = System.Drawing.Color.Black;
             this.btnProcessing.UseVisualStyleBackColor = false;
+            this.btnProcessing.Click += new System.EventHandler(this.btnProcessing_Click);
             // 
             // ChangeStatus
             // 
