@@ -12,6 +12,7 @@ namespace DocuFlow_Reg.Forms
         private string _studentNumber;
         private string _queueNo;
         private Action _onClose;
+        private string _serviceType = "";
 
         public RequestDetails(string studentNumber, string queueNo, Action onClose = null)
         {
@@ -20,11 +21,13 @@ namespace DocuFlow_Reg.Forms
             _queueNo = queueNo;
             _onClose = onClose;
             this.Load += RequestDetails_Load;
+          
+            // Fire refresh AFTER form is fully closed
+            this.FormClosed += (s, e) => _onClose?.Invoke();
         }
 
         private void CloseAndRefresh()
         {
-            _onClose?.Invoke();
             this.Close();
         }
 
@@ -70,7 +73,7 @@ namespace DocuFlow_Reg.Forms
         private void LoadDocumentType()
         {
             DataTable dt = db.ExecuteQuery(@"
-                SELECT qt.type, qt.queue_no
+                SELECT qt.type, qt.queue_no, qt.service_type
                 FROM queue_tickets qt
                 WHERE qt.queue_no = @queueNo",
                 new Dictionary<string, object>
@@ -82,6 +85,7 @@ namespace DocuFlow_Reg.Forms
             {
                 lblDocumentType.Text = dt.Rows[0]["type"].ToString();
                 lblRequestCode.Text = dt.Rows[0]["queue_no"].ToString();
+                _serviceType = dt.Rows[0]["service_type"].ToString();
             }
         }
 
@@ -131,7 +135,6 @@ namespace DocuFlow_Reg.Forms
                 string requirementName = cblRequirements.Items[i].ToString();
                 bool isChecked = cblRequirements.GetItemChecked(i);
 
-                // Get requirement_id
                 DataTable dt = db.ExecuteQuery(@"
                     SELECT requirement_id 
                     FROM Document_Requirements 
@@ -145,7 +148,6 @@ namespace DocuFlow_Reg.Forms
 
                 int requirementId = Convert.ToInt32(dt.Rows[0]["requirement_id"]);
 
-                // Check if record already exists
                 DataTable existing = db.ExecuteQuery(@"
                     SELECT record_id 
                     FROM Student_Documents 
@@ -159,7 +161,6 @@ namespace DocuFlow_Reg.Forms
 
                 if (existing.Rows.Count > 0)
                 {
-                    // Update existing
                     db.ExecuteNonQuery(@"
                         UPDATE Student_Documents 
                         SET is_complete = @isComplete
@@ -174,7 +175,6 @@ namespace DocuFlow_Reg.Forms
                 }
                 else
                 {
-                    // Insert new
                     db.ExecuteNonQuery(@"
                         INSERT INTO Student_Documents 
                         (student_number, requirement_id, date_submitted, is_complete)
@@ -207,21 +207,21 @@ namespace DocuFlow_Reg.Forms
             string[] parts = last.Split('-');
 
             if (parts.Length == 2 && int.TryParse(parts[1], out int number))
-            {
                 return "REQ-" + (number + 1).ToString("D3");
-            }
 
             return "REQ-001";
         }
 
         private void DeleteFromQueue()
         {
+            string queueNo = lblRequestCode.Text.Trim();
+
             DataTable dt = db.ExecuteQuery(@"
                 SELECT id FROM queue_tickets 
                 WHERE queue_no = @queueNo",
                 new Dictionary<string, object>
                 {
-                    { "@queueNo", _queueNo }
+                    { "@queueNo", queueNo }
                 });
 
             if (dt.Rows.Count == 0) return;
@@ -245,10 +245,23 @@ namespace DocuFlow_Reg.Forms
                 });
         }
 
-        private void btnMarkAsReady_Click(object sender, EventArgs e)
+        private void btnProceed_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < cblRequirements.Items.Count; i++)
+            {
+                if (!cblRequirements.GetItemChecked(i))
+                {
+                    MessageBox.Show(
+                        "All requirements must be submitted before proceeding.\n\nMissing: " + cblRequirements.Items[i].ToString(),
+                        "Incomplete Requirements",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
             DialogResult confirm = MessageBox.Show(
-                "Are you sure you want to approve this request?",
+                "All requirements are complete. Proceed with this request?",
                 "Confirm Approval",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
@@ -258,41 +271,68 @@ namespace DocuFlow_Reg.Forms
             try
             {
                 string requestNumber = GenerateRequestNumber();
+                string documentType = lblDocumentType.Text.Trim();
 
+                // Map service_type to correct ENUM value
+                string mappedServiceType;
+                switch (_serviceType.ToLower().Trim())
+                {
+                    case "request document":
+                    case "document request":
+                        mappedServiceType = "Document Request";
+                        break;
+                    case "evaluation":
+                        mappedServiceType = "Evaluation";
+                        break;
+                    case "payment confirmation":
+                    case "submit ticket":
+                        mappedServiceType = "Payment Confirmation";
+                        break;
+                    default:
+                        mappedServiceType = "Others";
+                        break;
+                }
+
+                // Get document_id from Document_Requirements
                 DataTable docDt = db.ExecuteQuery(@"
-                    SELECT id FROM kiosk_documents 
-                    WHERE document_name = @documentName",
+                    SELECT DISTINCT document_id 
+                    FROM Document_Requirements 
+                    WHERE requirement_name = @firstRequirement
+                    LIMIT 1",
                     new Dictionary<string, object>
                     {
-                        { "@documentName", lblDocumentType.Text.Trim() }
+                        { "@firstRequirement", DocumentRequirements.Requirements[documentType][0] }
                     });
 
                 if (docDt.Rows.Count == 0)
                 {
-                    MessageBox.Show("Document type not found.", "Error");
+                    MessageBox.Show("Document ID not found.", "Error");
                     return;
                 }
 
-                int documentId = Convert.ToInt32(docDt.Rows[0]["id"]);
+                int documentId = Convert.ToInt32(docDt.Rows[0]["document_id"]);
+                bool requiresPayment = DocumentRequirements.PaidDocuments.Contains(documentType);
+                string status = requiresPayment ? "Waiting for Payment" : "Pending";
 
                 db.ExecuteNonQuery(@"
                     INSERT INTO Request 
-                    (request_number, student_number, document_id, inquiry_id, name, inquiry_type, status, or_number, pickup_deadline, created_at)
+                    (request_number, student_number, document_id, name, service_type, status, or_number, pickup_deadline, created_at)
                     VALUES 
-                    (@requestNumber, @studentNumber, @documentId, NULL, @name, @inquiryType, 'Pending', NULL, NULL, NOW())",
+                    (@requestNumber, @studentNumber, @documentId, @name, @serviceType, @status, NULL, NULL, NOW())",
                     new Dictionary<string, object>
                     {
                         { "@requestNumber", requestNumber },
                         { "@studentNumber", _studentNumber },
                         { "@documentId",    documentId },
                         { "@name",          lblName.Text.Trim() },
-                        { "@inquiryType",   lblDocumentType.Text.Trim() }
+                        { "@serviceType",   mappedServiceType },
+                        { "@status",        status }
                     });
 
                 DeleteFromQueue();
 
                 MessageBox.Show(
-                    "Request " + requestNumber + " created successfully!",
+                    "Request " + requestNumber + " created!\nStatus: " + status,
                     "Success",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -302,28 +342,6 @@ namespace DocuFlow_Reg.Forms
             catch (Exception ex)
             {
                 MessageBox.Show("Error creating request:\n" + ex.Message, "Error");
-            }
-        }
-
-        private void btnDismiss_Click(object sender, EventArgs e)
-        {
-            DialogResult confirm = MessageBox.Show(
-                "Are you sure you want to dismiss this inquiry?",
-                "Confirm Dismiss",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-            if (confirm == DialogResult.No) return;
-
-            try
-            {
-                DeleteFromQueue();
-                MessageBox.Show("Inquiry dismissed successfully.", "Success");
-                CloseAndRefresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error dismissing inquiry:\n" + ex.Message, "Error");
             }
         }
 

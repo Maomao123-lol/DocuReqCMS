@@ -10,7 +10,6 @@ namespace DocuFlow_Reg.UserControls
     public partial class DocumentRequestsUC : UserControl
     {
         DatabaseHelper db = new DatabaseHelper();
-        private RequestDetails _detailsForm;
 
         private string searchText = "";
         private Timer searchTimer = new Timer();
@@ -39,12 +38,6 @@ namespace DocuFlow_Reg.UserControls
             LoadRequests();
         }
 
-        private void txtSearch__TextChanged(object sender, EventArgs e)
-        {
-            searchTimer.Stop();
-            searchTimer.Start();
-        }
-
         private void LoadRequests()
         {
             DataTable dt = db.ExecuteQuery(@"
@@ -52,7 +45,7 @@ namespace DocuFlow_Reg.UserControls
                     r.request_number    AS 'Request Number',
                     r.student_number    AS 'Student Number',
                     r.name              AS 'Name',
-                    r.inquiry_type      AS 'Inquiry Type',
+                    r.service_type      AS 'Document Type',
                     r.status            AS 'Status'
                 FROM Request r
                 WHERE r.status NOT IN ('Pending', 'Released')
@@ -60,7 +53,7 @@ namespace DocuFlow_Reg.UserControls
                     r.request_number LIKE @search
                     OR r.student_number LIKE @search
                     OR r.name LIKE @search
-                    OR r.inquiry_type LIKE @search
+                    OR r.service_type LIKE @search
                     OR r.status LIKE @search
                 )
                 ORDER BY r.created_at ASC",
@@ -80,6 +73,12 @@ namespace DocuFlow_Reg.UserControls
             dgvReq.AllowUserToAddRows = false;
             dgvReq.ReadOnly = true;
             dgvReq.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            searchTimer.Stop();
+            searchTimer.Start();
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -128,30 +127,28 @@ namespace DocuFlow_Reg.UserControls
                 dgvReq.CommitEdit(DataGridViewDataErrorContexts.Commit);
             }
         }
+
         private void dgvReq_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
-            DataGridViewRow row = dgvReq.Rows[e.RowIndex];
+            string status = dgvReq.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+            string requestNumber = dgvReq.Rows[e.RowIndex].Cells["Request Number"].Value.ToString();
 
-            // Get status from selected row
-            string status = row.Cells["Status"].Value.ToString();
-
-            // Close existing form if open
-            if (_detailsForm != null && !_detailsForm.IsDisposed)
-            {
-                _detailsForm.Close();
-            }
-
-            // Show different form based on status
             if (status == "Waiting for Payment")
             {
-                PaymentConfirmation paymentForm = new PaymentConfirmation();
+                PaymentConfirmation paymentForm = new PaymentConfirmation(requestNumber, () =>
+                {
+                    LoadRequests();
+                });
                 paymentForm.ShowDialog();
             }
             else
             {
-                ChangeStatus changeForm = new ChangeStatus();
+                ChangeStatus changeForm = new ChangeStatus(requestNumber, () =>
+                {
+                    LoadRequests();
+                });
                 changeForm.ShowDialog();
             }
         }

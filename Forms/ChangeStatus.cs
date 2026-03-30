@@ -23,5 +23,15 @@ namespace DocuFlow_Reg.Forms
             emailReport.ShowDialog();
             this.Close();
         }
+
+        private void btnReleased_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProcessing_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

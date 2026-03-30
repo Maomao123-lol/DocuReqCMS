@@ -54,5 +54,14 @@ namespace DocuFlow_Reg
                 }
             }
         };
+
+        // Add this to your DocumentRequirements static class
+        public static List<string> PaidDocuments = new List<string>
+        {
+            "TOR 1ST COPY",
+            "TOR 2ND COPY",
+            "TOR HONORABLE DISMISSAL",
+            "CAV"
+        };
     }
 }

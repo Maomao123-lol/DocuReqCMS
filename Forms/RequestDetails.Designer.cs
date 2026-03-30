@@ -36,18 +36,12 @@
             this.pnlStudentInfo = new System.Windows.Forms.Panel();
             this.cblRequirements = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSaveRequirements = new DocuFlow_Reg.RJControls.RJButton();
-            this.btnDismiss = new DocuFlow_Reg.RJControls.RJButton();
-            this.btnClose = new DocuFlow_Reg.RJControls.RJButton();
-            this.btnMarkAsReady = new DocuFlow_Reg.RJControls.RJButton();
-            this.btnAccomplish = new DocuFlow_Reg.RJControls.RJButton();
             this.lblStatus = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lblDocumentType = new System.Windows.Forms.Label();
-            this.pnlTypeOfDoc = new DocuFlow_Reg.RJControls.RJPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,6 +54,11 @@
             this.lblName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSaveRequirements = new DocuFlow_Reg.RJControls.RJButton();
+            this.btnClose = new DocuFlow_Reg.RJControls.RJButton();
+            this.btnProceed = new DocuFlow_Reg.RJControls.RJButton();
+            this.btnAccomplish = new DocuFlow_Reg.RJControls.RJButton();
+            this.pnlTypeOfDoc = new DocuFlow_Reg.RJControls.RJPanel();
             this.tlpReqDetails.SuspendLayout();
             this.pnlReqID.SuspendLayout();
             this.pnlBody.SuspendLayout();
@@ -156,7 +155,7 @@
             this.pnlStudentInfo.Controls.Add(this.lblName);
             this.pnlStudentInfo.Controls.Add(this.label2);
             this.pnlStudentInfo.Controls.Add(this.label1);
-            this.pnlStudentInfo.Location = new System.Drawing.Point(23, 2);
+            this.pnlStudentInfo.Location = new System.Drawing.Point(11, 734);
             this.pnlStudentInfo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlStudentInfo.Name = "pnlStudentInfo";
             this.pnlStudentInfo.Size = new System.Drawing.Size(655, 683);
@@ -174,120 +173,14 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnSaveRequirements);
-            this.panel1.Controls.Add(this.btnDismiss);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.btnMarkAsReady);
+            this.panel1.Controls.Add(this.btnProceed);
             this.panel1.Controls.Add(this.btnAccomplish);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 579);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(655, 104);
             this.panel1.TabIndex = 23;
-            // 
-            // btnSaveRequirements
-            // 
-            this.btnSaveRequirements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSaveRequirements.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSaveRequirements.BorderColor = System.Drawing.Color.Gray;
-            this.btnSaveRequirements.BorderRadius = 18;
-            this.btnSaveRequirements.BorderSize = 1;
-            this.btnSaveRequirements.FlatAppearance.BorderSize = 0;
-            this.btnSaveRequirements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveRequirements.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRequirements.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveRequirements.Location = new System.Drawing.Point(398, 23);
-            this.btnSaveRequirements.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSaveRequirements.Name = "btnSaveRequirements";
-            this.btnSaveRequirements.Size = new System.Drawing.Size(112, 58);
-            this.btnSaveRequirements.TabIndex = 24;
-            this.btnSaveRequirements.Text = "Save";
-            this.btnSaveRequirements.TextColor = System.Drawing.Color.Black;
-            this.btnSaveRequirements.UseVisualStyleBackColor = false;
-            this.btnSaveRequirements.Click += new System.EventHandler(this.btnSaveRequirements_Click_1);
-            // 
-            // btnDismiss
-            // 
-            this.btnDismiss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDismiss.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDismiss.BorderColor = System.Drawing.Color.Gray;
-            this.btnDismiss.BorderRadius = 18;
-            this.btnDismiss.BorderSize = 1;
-            this.btnDismiss.FlatAppearance.BorderSize = 0;
-            this.btnDismiss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDismiss.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDismiss.ForeColor = System.Drawing.Color.Black;
-            this.btnDismiss.Location = new System.Drawing.Point(151, 23);
-            this.btnDismiss.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDismiss.Name = "btnDismiss";
-            this.btnDismiss.Size = new System.Drawing.Size(112, 58);
-            this.btnDismiss.TabIndex = 23;
-            this.btnDismiss.Text = "Dismiss";
-            this.btnDismiss.TextColor = System.Drawing.Color.Black;
-            this.btnDismiss.UseVisualStyleBackColor = false;
-            this.btnDismiss.Click += new System.EventHandler(this.btnDismiss_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnClose.BorderColor = System.Drawing.Color.Gray;
-            this.btnClose.BorderRadius = 18;
-            this.btnClose.BorderSize = 1;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(35, 23);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(112, 58);
-            this.btnClose.TabIndex = 22;
-            this.btnClose.Text = "Close";
-            this.btnClose.TextColor = System.Drawing.Color.Black;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMarkAsReady
-            // 
-            this.btnMarkAsReady.BackColor = System.Drawing.Color.Green;
-            this.btnMarkAsReady.BackgroundColor = System.Drawing.Color.Green;
-            this.btnMarkAsReady.BorderColor = System.Drawing.Color.Gray;
-            this.btnMarkAsReady.BorderRadius = 18;
-            this.btnMarkAsReady.BorderSize = 1;
-            this.btnMarkAsReady.FlatAppearance.BorderSize = 0;
-            this.btnMarkAsReady.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarkAsReady.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMarkAsReady.ForeColor = System.Drawing.Color.White;
-            this.btnMarkAsReady.Location = new System.Drawing.Point(514, 23);
-            this.btnMarkAsReady.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMarkAsReady.Name = "btnMarkAsReady";
-            this.btnMarkAsReady.Size = new System.Drawing.Size(112, 58);
-            this.btnMarkAsReady.TabIndex = 21;
-            this.btnMarkAsReady.Text = "Proceed";
-            this.btnMarkAsReady.TextColor = System.Drawing.Color.White;
-            this.btnMarkAsReady.UseVisualStyleBackColor = false;
-            this.btnMarkAsReady.Click += new System.EventHandler(this.btnMarkAsReady_Click);
-            // 
-            // btnAccomplish
-            // 
-            this.btnAccomplish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnAccomplish.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnAccomplish.BorderColor = System.Drawing.Color.Gray;
-            this.btnAccomplish.BorderRadius = 18;
-            this.btnAccomplish.BorderSize = 1;
-            this.btnAccomplish.FlatAppearance.BorderSize = 0;
-            this.btnAccomplish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccomplish.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccomplish.ForeColor = System.Drawing.Color.Black;
-            this.btnAccomplish.Location = new System.Drawing.Point(279, 23);
-            this.btnAccomplish.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAccomplish.Name = "btnAccomplish";
-            this.btnAccomplish.Size = new System.Drawing.Size(112, 58);
-            this.btnAccomplish.TabIndex = 19;
-            this.btnAccomplish.Text = "Accomplish";
-            this.btnAccomplish.TextColor = System.Drawing.Color.Black;
-            this.btnAccomplish.UseVisualStyleBackColor = false;
-            this.btnAccomplish.Click += new System.EventHandler(this.btnAccomplish_Click);
             // 
             // lblStatus
             // 
@@ -361,31 +254,6 @@
             this.lblDocumentType.Size = new System.Drawing.Size(190, 25);
             this.lblDocumentType.TabIndex = 13;
             this.lblDocumentType.Text = "Transcript of Records";
-            // 
-            // pnlTypeOfDoc
-            // 
-            this.pnlTypeOfDoc.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTypeOfDoc.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlTypeOfDoc.BorderBottomColor = System.Drawing.Color.Empty;
-            this.pnlTypeOfDoc.BorderColor = System.Drawing.Color.Gray;
-            this.pnlTypeOfDoc.BorderLeftColor = System.Drawing.Color.Empty;
-            this.pnlTypeOfDoc.BorderRadius = 18;
-            this.pnlTypeOfDoc.BorderRightColor = System.Drawing.Color.Empty;
-            this.pnlTypeOfDoc.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
-            | DocuFlow_Reg.RJControls.BorderSides.Right) 
-            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
-            this.pnlTypeOfDoc.BorderSize = 0;
-            this.pnlTypeOfDoc.BorderTopColor = System.Drawing.Color.Empty;
-            this.pnlTypeOfDoc.ForeColor = System.Drawing.Color.Black;
-            this.pnlTypeOfDoc.GradientColor1 = System.Drawing.Color.Empty;
-            this.pnlTypeOfDoc.GradientColor2 = System.Drawing.Color.Empty;
-            this.pnlTypeOfDoc.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlTypeOfDoc.Location = new System.Drawing.Point(23, 358);
-            this.pnlTypeOfDoc.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlTypeOfDoc.Name = "pnlTypeOfDoc";
-            this.pnlTypeOfDoc.Size = new System.Drawing.Size(583, 77);
-            this.pnlTypeOfDoc.TabIndex = 12;
-            this.pnlTypeOfDoc.UseGradient = false;
             // 
             // label12
             // 
@@ -531,6 +399,115 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Student Information";
             // 
+            // btnSaveRequirements
+            // 
+            this.btnSaveRequirements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSaveRequirements.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSaveRequirements.BorderColor = System.Drawing.Color.Gray;
+            this.btnSaveRequirements.BorderRadius = 18;
+            this.btnSaveRequirements.BorderSize = 1;
+            this.btnSaveRequirements.FlatAppearance.BorderSize = 0;
+            this.btnSaveRequirements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveRequirements.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRequirements.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveRequirements.Location = new System.Drawing.Point(356, 23);
+            this.btnSaveRequirements.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSaveRequirements.Name = "btnSaveRequirements";
+            this.btnSaveRequirements.Size = new System.Drawing.Size(112, 58);
+            this.btnSaveRequirements.TabIndex = 24;
+            this.btnSaveRequirements.Text = "Save";
+            this.btnSaveRequirements.TextColor = System.Drawing.Color.Black;
+            this.btnSaveRequirements.UseVisualStyleBackColor = false;
+            this.btnSaveRequirements.Click += new System.EventHandler(this.btnSaveRequirements_Click_1);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClose.BorderColor = System.Drawing.Color.Gray;
+            this.btnClose.BorderRadius = 18;
+            this.btnClose.BorderSize = 1;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.Black;
+            this.btnClose.Location = new System.Drawing.Point(25, 23);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(112, 58);
+            this.btnClose.TabIndex = 22;
+            this.btnClose.Text = "Close";
+            this.btnClose.TextColor = System.Drawing.Color.Black;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnProceed
+            // 
+            this.btnProceed.BackColor = System.Drawing.Color.Green;
+            this.btnProceed.BackgroundColor = System.Drawing.Color.Green;
+            this.btnProceed.BorderColor = System.Drawing.Color.Gray;
+            this.btnProceed.BorderRadius = 18;
+            this.btnProceed.BorderSize = 1;
+            this.btnProceed.FlatAppearance.BorderSize = 0;
+            this.btnProceed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProceed.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProceed.ForeColor = System.Drawing.Color.White;
+            this.btnProceed.Location = new System.Drawing.Point(519, 23);
+            this.btnProceed.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProceed.Name = "btnProceed";
+            this.btnProceed.Size = new System.Drawing.Size(112, 58);
+            this.btnProceed.TabIndex = 21;
+            this.btnProceed.Text = "Proceed";
+            this.btnProceed.TextColor = System.Drawing.Color.White;
+            this.btnProceed.UseVisualStyleBackColor = false;
+            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
+            // 
+            // btnAccomplish
+            // 
+            this.btnAccomplish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAccomplish.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAccomplish.BorderColor = System.Drawing.Color.Gray;
+            this.btnAccomplish.BorderRadius = 18;
+            this.btnAccomplish.BorderSize = 1;
+            this.btnAccomplish.FlatAppearance.BorderSize = 0;
+            this.btnAccomplish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccomplish.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccomplish.ForeColor = System.Drawing.Color.Black;
+            this.btnAccomplish.Location = new System.Drawing.Point(201, 23);
+            this.btnAccomplish.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAccomplish.Name = "btnAccomplish";
+            this.btnAccomplish.Size = new System.Drawing.Size(112, 58);
+            this.btnAccomplish.TabIndex = 19;
+            this.btnAccomplish.Text = "Accomplish";
+            this.btnAccomplish.TextColor = System.Drawing.Color.Black;
+            this.btnAccomplish.UseVisualStyleBackColor = false;
+            this.btnAccomplish.Click += new System.EventHandler(this.btnAccomplish_Click);
+            // 
+            // pnlTypeOfDoc
+            // 
+            this.pnlTypeOfDoc.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTypeOfDoc.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlTypeOfDoc.BorderBottomColor = System.Drawing.Color.Empty;
+            this.pnlTypeOfDoc.BorderColor = System.Drawing.Color.Gray;
+            this.pnlTypeOfDoc.BorderLeftColor = System.Drawing.Color.Empty;
+            this.pnlTypeOfDoc.BorderRadius = 18;
+            this.pnlTypeOfDoc.BorderRightColor = System.Drawing.Color.Empty;
+            this.pnlTypeOfDoc.BorderSides = ((DocuFlow_Reg.RJControls.BorderSides)((((DocuFlow_Reg.RJControls.BorderSides.Left | DocuFlow_Reg.RJControls.BorderSides.Top) 
+            | DocuFlow_Reg.RJControls.BorderSides.Right) 
+            | DocuFlow_Reg.RJControls.BorderSides.Bottom)));
+            this.pnlTypeOfDoc.BorderSize = 0;
+            this.pnlTypeOfDoc.BorderTopColor = System.Drawing.Color.Empty;
+            this.pnlTypeOfDoc.ForeColor = System.Drawing.Color.Black;
+            this.pnlTypeOfDoc.GradientColor1 = System.Drawing.Color.Empty;
+            this.pnlTypeOfDoc.GradientColor2 = System.Drawing.Color.Empty;
+            this.pnlTypeOfDoc.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlTypeOfDoc.Location = new System.Drawing.Point(23, 358);
+            this.pnlTypeOfDoc.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTypeOfDoc.Name = "pnlTypeOfDoc";
+            this.pnlTypeOfDoc.Size = new System.Drawing.Size(583, 77);
+            this.pnlTypeOfDoc.TabIndex = 12;
+            this.pnlTypeOfDoc.UseGradient = false;
+            // 
             // RequestDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,10 +561,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private RJControls.RJButton btnClose;
-        private RJControls.RJButton btnMarkAsReady;
+        private RJControls.RJButton btnProceed;
         private RJControls.RJButton btnAccomplish;
         private System.Windows.Forms.CheckedListBox cblRequirements;
-        private RJControls.RJButton btnDismiss;
         private RJControls.RJButton btnSaveRequirements;
     }
 }
