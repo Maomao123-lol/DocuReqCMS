@@ -22,7 +22,7 @@ namespace DocuFlow_Reg.Forms
 
         private bool ValidateConfirmationRequest()
         {
-            string input = txtConfirmationRequest.Text.Trim();
+            string input = txtConfirmationRequest.Texts.Trim();
 
             if (string.IsNullOrEmpty(input))
             {

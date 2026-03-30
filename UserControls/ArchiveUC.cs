@@ -40,21 +40,23 @@ namespace DocuFlow_Reg.UserControls
         private void LoadArchive()
         {
             DataTable dt = db.ExecuteQuery(@"
-                SELECT
-                    a.student_number    AS 'Student Number',
-                    a.name              AS 'Name',
-                    a.final_status      AS 'Final Status',
-                    a.archived_at       AS 'Archived At'
-                FROM Archive a
-                WHERE (
-                    a.student_number LIKE @search
-                    OR a.name LIKE @search
-                    OR a.final_status LIKE @search
-                )
-                ORDER BY a.archived_at DESC",
+        SELECT
+            a.student_number    AS 'Student Number',
+            a.name              AS 'Name',
+            a.document_name     AS 'Document Type',
+            a.final_status      AS 'Final Status',
+            a.archived_at       AS 'Archived At'
+        FROM Archive a
+        WHERE (
+            a.student_number LIKE @search
+            OR a.name LIKE @search
+            OR a.document_name LIKE @search
+            OR a.final_status LIKE @search
+        )
+        ORDER BY a.archived_at DESC",
                 new Dictionary<string, object>
                 {
-                    { "@search", "%" + searchText + "%" }
+            { "@search", "%" + searchText + "%" }
                 });
 
             dgvArchive.DataSource = dt;
