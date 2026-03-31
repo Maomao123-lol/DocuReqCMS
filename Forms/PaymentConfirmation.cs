@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using DocuFlow_Reg.Models;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -8,7 +7,6 @@ namespace DocuFlow_Reg.Forms
 {
     public partial class PaymentConfirmation : Form
     {
-        DatabaseHelper db = new DatabaseHelper();
         private string _requestNumber;
         private Action _onClose;
 
@@ -26,21 +24,28 @@ namespace DocuFlow_Reg.Forms
 
             if (string.IsNullOrEmpty(input))
             {
-                MessageBox.Show("Confirmation request cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("OR number cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtConfirmationRequest.Focus();
                 return false;
             }
 
-            if (input.Length < 5)
+            if (!System.Text.RegularExpressions.Regex.IsMatch(input, @"^\d+$"))
             {
-                MessageBox.Show("Confirmation request must be at least 5 characters long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("OR number must contain numbers only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtConfirmationRequest.Focus();
                 return false;
             }
 
-            if (!System.Text.RegularExpressions.Regex.IsMatch(input, @"^[a-zA-Z0-9\- ]+$"))
+            if (input.Length < 6)
             {
-                MessageBox.Show("Confirmation request contains invalid characters.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("OR number must be at least 6 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtConfirmationRequest.Focus();
+                return false;
+            }
+
+            if (input.Length > 15)
+            {
+                MessageBox.Show("OR number must not exceed 15 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtConfirmationRequest.Focus();
                 return false;
             }
@@ -54,17 +59,8 @@ namespace DocuFlow_Reg.Forms
 
             try
             {
-                // Save OR number and update status to Processing
-                db.ExecuteNonQuery(@"
-                    UPDATE Request 
-                    SET or_number = @orNumber,
-                        status = 'Processing'
-                    WHERE request_number = @requestNumber",
-                    new Dictionary<string, object>
-                    {
-                        { "@orNumber",       txtConfirmationRequest.Text.Trim() },
-                        { "@requestNumber",  _requestNumber }
-                    });
+                // Using Request model class
+                Request.UpdatePayment(_requestNumber, txtConfirmationRequest.Texts.Trim());
 
                 MessageBox.Show("Payment confirmed! Status updated to Processing.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

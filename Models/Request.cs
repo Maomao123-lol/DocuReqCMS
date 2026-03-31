@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DocuFlow_Reg.Models
 {
@@ -126,7 +127,7 @@ namespace DocuFlow_Reg.Models
                 });
         }
 
-        public static void UpdateStatus(string requestNumber, string status) // use to update status of the request mama
+        public static void UpdateStatus(string requestNumber, string status) // use to update status of the request in document request UC and change status form
         {
             DatabaseHelper db = new DatabaseHelper();
             db.ExecuteNonQuery(@"

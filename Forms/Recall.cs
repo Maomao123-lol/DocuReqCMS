@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DocuFlow_Reg.Models;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -8,8 +8,6 @@ namespace DocuFlow_Reg.Forms
 {
     public partial class Recall : Form
     {
-        DatabaseHelper db = new DatabaseHelper();
-
         public Recall()
         {
             InitializeComponent();
@@ -23,14 +21,8 @@ namespace DocuFlow_Reg.Forms
 
         private void LoadSkippedQueues()
         {
-            DataTable dt = db.ExecuteQuery(@"
-                SELECT 
-                    ql.QueueNo      AS 'Queue No',
-                    ql.Is_Skipped   AS 'Skipped'
-                FROM Queue_List ql
-                WHERE ql.Is_Skipped = 1
-                ORDER BY ql.QueueNo ASC");
-
+            // Using QueueList model
+            DataTable dt = QueueList.GetSkippedQueues();
             dgvRecall.DataSource = dt;
             StyleDataGridView();
         }
@@ -56,15 +48,8 @@ namespace DocuFlow_Reg.Forms
             {
                 string queueNo = dgvRecall.SelectedRows[0].Cells["Queue No"].Value.ToString();
 
-                // Mark as not skipped
-                db.ExecuteNonQuery(@"
-                    UPDATE Queue_List 
-                    SET Is_Skipped = 0
-                    WHERE QueueNo = @queueNo",
-                    new Dictionary<string, object>
-                    {
-                        { "@queueNo", queueNo }
-                    });
+                // Using QueueList model
+                QueueList.RecallQueue(queueNo);
 
                 MessageBox.Show("Queue " + queueNo + " has been recalled.", "Recalled");
                 LoadSkippedQueues();

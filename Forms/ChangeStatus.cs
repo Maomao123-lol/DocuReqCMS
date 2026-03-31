@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocuFlow_Reg.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -22,33 +23,10 @@ namespace DocuFlow_Reg.Forms
             this.FormClosed += (s, e) => _onClose?.Invoke();
         }
 
-        private void UpdateStatus(string status)
-        {
-            try
-            {
-                db.ExecuteNonQuery(@"
-                    UPDATE Request 
-                    SET status = @status
-                    WHERE request_number = @requestNumber",
-                    new Dictionary<string, object>
-                    {
-                        { "@status",        status },
-                        { "@requestNumber", _requestNumber }
-                    });
-
-                MessageBox.Show("Status updated to " + status + ".", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error updating status:\n" + ex.Message, "Error");
-            }
-        }
-
         private void btnReady_Click(object sender, EventArgs e)
         {
             // Update status to Ready then send email
-            UpdateStatus("Ready");
+            Request.UpdateStatus("Ready", _requestNumber);
             emailReport.ShowDialog();
         }
 
@@ -62,12 +40,12 @@ namespace DocuFlow_Reg.Forms
 
             if (confirm == DialogResult.No) return;
 
-            UpdateStatus("Released");
+            Request.UpdateStatus("Released", _requestNumber);
         }
 
         private void btnProcessing_Click(object sender, EventArgs e)
         {
-            UpdateStatus("Processing");
+            Request.UpdateStatus("Processing", _requestNumber);
         }
     }
 }

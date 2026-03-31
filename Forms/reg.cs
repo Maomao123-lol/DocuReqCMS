@@ -1,108 +1,89 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Media;
+﻿using DocuFlow_Reg.Forms;
 using DocuFlow_Reg.UserControls;
-using DocuFlow_Reg.Forms;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace DocuFlow_Reg
 {
     public partial class Reg : Form
     {
         SharedMethods methods = new SharedMethods();
+
         public Reg()
         {
             InitializeComponent();
         }
 
-        public void buttonClick(RadioButton btn)
+
+        // NAVIGATION HELPER
+
+        private void Navigate(UserControl uc, RadioButton activeBtn)
         {
-            btn.ForeColor = Color.FromArgb(0, 64, 64);
+            // Reset all buttons
+            btnDashboard.ForeColor = Color.Black;
+            btnDocReq.ForeColor = Color.Black;
+            btnArchive.ForeColor = Color.Black;
+            btnInquiry.ForeColor = Color.Black;
+
+            // Reset all images to inactive
+            btnDashboard.Image = Properties.Resources.dashboard;
+            btnDocReq.Image = Properties.Resources.google_docs;
+            btnArchive.Image = Properties.Resources.archive;
+            btnInquiry.Image = Properties.Resources.wall_clock;
+
+            // Set active button
+            activeBtn.ForeColor = Color.FromArgb(0, 64, 64);
+
+            // Set active image
+            if (activeBtn == btnDashboard) btnDashboard.Image = Properties.Resources.dashboard__1_;
+            if (activeBtn == btnDocReq) btnDocReq.Image = Properties.Resources.google_docs__1_;
+            if (activeBtn == btnArchive) btnArchive.Image = Properties.Resources.archive__1_;
+            if (activeBtn == btnInquiry) btnInquiry.Image = Properties.Resources.wall_clock__1_;
+
+            // Load user control
+            methods.LoadUserControl(uc, panel5);
         }
+
+
+        // NAVIGATION EVENTS
 
         private void btnDashboard_CheckedChanged(object sender, EventArgs e)
         {
-            if (btnDashboard.Checked)
-            {
-                buttonClick(btnDashboard);
-                btnDashboard.Image = Properties.Resources.dashboard__1_;
-                btnDocReq.Image = Properties.Resources.google_docs;
-                btnInquiry.Image = Properties.Resources.wall_clock;
-                btnDocReq.ForeColor = Color.Black;
-                btnArchive.Image = Properties.Resources.archive;
-                btnArchive.ForeColor = Color.Black;
-            }
-            methods.LoadUserControl(new DashboardUC(),panel5);
+            if (btnDashboard.Checked) Navigate(new DashboardUC(), btnDashboard);
         }
 
         private void btnDocReq_CheckedChanged(object sender, EventArgs e)
         {
-            if (btnDocReq.Checked)
-            {
-                buttonClick(btnDocReq);
-                btnDocReq.Image = Properties.Resources.google_docs__1_;
-                btnArchive.Image = Properties.Resources.archive;
-                btnDashboard.Image = Properties.Resources.dashboard;
-                btnInquiry.Image = Properties.Resources.wall_clock;
-                btnDashboard.ForeColor = Color.Black;
-                btnArchive.ForeColor = Color.Black;
-            }
-            methods.LoadUserControl(new DocumentRequestsUC(), panel5);
+            if (btnDocReq.Checked) Navigate(new DocumentRequestsUC(), btnDocReq);
         }
 
         private void btnArchive_CheckedChanged(object sender, EventArgs e)
         {
-            if (btnArchive.Checked)
-            {
-                buttonClick(btnArchive);
-                btnArchive.Image = Properties.Resources.archive__1_;
-                btnDocReq.Image = Properties.Resources.google_docs;
-                btnDashboard.Image = Properties.Resources.dashboard;
-                btnInquiry.Image = Properties.Resources.wall_clock;
-                btnDashboard.ForeColor = Color.Black;
-                btnDocReq.ForeColor = Color.Black;
-            }
-
-            methods.LoadUserControl(new ArchiveUC(), panel5);
+            if (btnArchive.Checked) Navigate(new ArchiveUC(), btnArchive);
         }
 
         private void btnInquiry_CheckedChanged(object sender, EventArgs e)
         {
-            if(btnInquiry.Checked)
-            {
-                buttonClick(btnInquiry);
-                btnInquiry.Image = Properties.Resources.wall_clock__1_;
-                btnDocReq.Image = Properties.Resources.google_docs;
-                btnDashboard.Image = Properties.Resources.dashboard;
-                btnArchive.Image = Properties.Resources.archive;
-                btnDashboard.ForeColor = Color.Black;
-                btnDocReq.ForeColor = Color.Black;
-                btnArchive.ForeColor = Color.Black;
-            }
-
-            methods.LoadUserControl(new InquiriesUC(), panel5);
+            if (btnInquiry.Checked) Navigate(new InquiriesUC(), btnInquiry);
         }
+
+
+        // FORM LOAD
 
         private void Reg_Load_1(object sender, EventArgs e)
         {
-            methods.LoadUserControl(new DashboardUC(), panel5);
+            Navigate(new DashboardUC(), btnDashboard);
             btnDashboard.Checked = true;
             this.WindowState = FormWindowState.Maximized;
         }
 
+        // LOGOUT
+
         private void rjButton1_Click(object sender, EventArgs e)
         {
             frmLogin login = new frmLogin();
-
             login.FormClosed += (s, args) => this.Close();
-
             login.Show();
             this.Hide();
         }
