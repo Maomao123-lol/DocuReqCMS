@@ -1,20 +1,78 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DocuFlow_Reg.Forms
 {
     public partial class Recall : Form
     {
+        DatabaseHelper db = new DatabaseHelper();
+
         public Recall()
         {
             InitializeComponent();
+            this.Load += Recall_Load;
+        }
+
+        private void Recall_Load(object sender, EventArgs e)
+        {
+            LoadSkippedQueues();
+        }
+
+        private void LoadSkippedQueues()
+        {
+            DataTable dt = db.ExecuteQuery(@"
+                SELECT 
+                    ql.QueueNo      AS 'Queue No',
+                    ql.Is_Skipped   AS 'Skipped'
+                FROM Queue_List ql
+                WHERE ql.Is_Skipped = 1
+                ORDER BY ql.QueueNo ASC");
+
+            dgvRecall.DataSource = dt;
+            StyleDataGridView();
+        }
+
+        private void StyleDataGridView()
+        {
+            dgvRecall.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRecall.RowHeadersVisible = false;
+            dgvRecall.AllowUserToAddRows = false;
+            dgvRecall.ReadOnly = true;
+            dgvRecall.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void btnRecall_Click(object sender, EventArgs e)
+        {
+            if (dgvRecall.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a queue number to recall.", "Warning");
+                return;
+            }
+
+            try
+            {
+                string queueNo = dgvRecall.SelectedRows[0].Cells["Queue No"].Value.ToString();
+
+                // Mark as not skipped
+                db.ExecuteNonQuery(@"
+                    UPDATE Queue_List 
+                    SET Is_Skipped = 0
+                    WHERE QueueNo = @queueNo",
+                    new Dictionary<string, object>
+                    {
+                        { "@queueNo", queueNo }
+                    });
+
+                MessageBox.Show("Queue " + queueNo + " has been recalled.", "Recalled");
+                LoadSkippedQueues();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error recalling queue:\n" + ex.Message, "Error");
+            }
         }
 
         private void btnDrop_Click(object sender, EventArgs e)

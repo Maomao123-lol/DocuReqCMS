@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSkip = new DocuFlow_Reg.RJControls.RJButton();
             this.btnRecall = new DocuFlow_Reg.RJControls.RJButton();
@@ -73,8 +73,9 @@
             this.panel1.Controls.Add(this.rjPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1001, 96);
+            this.panel1.Size = new System.Drawing.Size(1335, 118);
             this.panel1.TabIndex = 0;
             // 
             // btnSkip
@@ -89,14 +90,15 @@
             this.btnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSkip.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSkip.ForeColor = System.Drawing.Color.Black;
-            this.btnSkip.Location = new System.Drawing.Point(752, 30);
-            this.btnSkip.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSkip.Location = new System.Drawing.Point(1003, 37);
+            this.btnSkip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSkip.Name = "btnSkip";
-            this.btnSkip.Size = new System.Drawing.Size(100, 40);
+            this.btnSkip.Size = new System.Drawing.Size(133, 49);
             this.btnSkip.TabIndex = 17;
             this.btnSkip.Text = "Skip";
             this.btnSkip.TextColor = System.Drawing.Color.Black;
             this.btnSkip.UseVisualStyleBackColor = false;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
             // btnRecall
             // 
@@ -110,10 +112,10 @@
             this.btnRecall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecall.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecall.ForeColor = System.Drawing.Color.Black;
-            this.btnRecall.Location = new System.Drawing.Point(856, 30);
-            this.btnRecall.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRecall.Location = new System.Drawing.Point(1141, 37);
+            this.btnRecall.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRecall.Name = "btnRecall";
-            this.btnRecall.Size = new System.Drawing.Size(100, 40);
+            this.btnRecall.Size = new System.Drawing.Size(133, 49);
             this.btnRecall.TabIndex = 16;
             this.btnRecall.Text = "Recall";
             this.btnRecall.TextColor = System.Drawing.Color.Black;
@@ -132,14 +134,15 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
-            this.btnNext.Location = new System.Drawing.Point(648, 30);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNext.Location = new System.Drawing.Point(864, 37);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(100, 40);
+            this.btnNext.Size = new System.Drawing.Size(133, 49);
             this.btnNext.TabIndex = 15;
             this.btnNext.Text = "Next";
             this.btnNext.TextColor = System.Drawing.Color.Black;
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lblServing
             // 
@@ -148,10 +151,9 @@
             this.lblServing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(58)))), ((int)(((byte)(12)))));
             this.lblServing.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServing.ForeColor = System.Drawing.Color.White;
-            this.lblServing.Location = new System.Drawing.Point(173, 45);
-            this.lblServing.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblServing.Location = new System.Drawing.Point(231, 55);
             this.lblServing.Name = "lblServing";
-            this.lblServing.Size = new System.Drawing.Size(49, 30);
+            this.lblServing.Size = new System.Drawing.Size(61, 37);
             this.lblServing.TabIndex = 12;
             this.lblServing.Text = "A01";
             // 
@@ -162,10 +164,9 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(58)))), ((int)(((byte)(12)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(154, 22);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(205, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 21);
+            this.label2.Size = new System.Drawing.Size(124, 28);
             this.label2.TabIndex = 11;
             this.label2.Text = "Now Serving";
             // 
@@ -178,10 +179,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(58)))), ((int)(((byte)(12)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(101, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(135, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.Size = new System.Drawing.Size(115, 31);
             this.label1.TabIndex = 10;
             this.label1.Text = "Window 1";
             // 
@@ -206,10 +206,10 @@
             this.rjPanel1.GradientColor1 = System.Drawing.Color.Empty;
             this.rjPanel1.GradientColor2 = System.Drawing.Color.Empty;
             this.rjPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.rjPanel1.Location = new System.Drawing.Point(16, 12);
+            this.rjPanel1.Location = new System.Drawing.Point(21, 15);
             this.rjPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(968, 72);
+            this.rjPanel1.Size = new System.Drawing.Size(1291, 89);
             this.rjPanel1.TabIndex = 3;
             this.rjPanel1.UseGradient = false;
             // 
@@ -224,9 +224,10 @@
             this.panel2.Controls.Add(this.pnlSearchFil);
             this.panel2.Controls.Add(this.pnlInquiryDgv);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 96);
+            this.panel2.Location = new System.Drawing.Point(0, 118);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1001, 683);
+            this.panel2.Size = new System.Drawing.Size(1335, 841);
             this.panel2.TabIndex = 1;
             // 
             // label3
@@ -234,9 +235,10 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(514, 625);
+            this.label3.Location = new System.Drawing.Point(685, 769);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 21);
+            this.label3.Size = new System.Drawing.Size(33, 28);
             this.label3.TabIndex = 20;
             this.label3.Text = "Of";
             // 
@@ -245,9 +247,10 @@
             this.lblLastPage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLastPage.AutoSize = true;
             this.lblLastPage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastPage.Location = new System.Drawing.Point(552, 625);
+            this.lblLastPage.Location = new System.Drawing.Point(736, 769);
+            this.lblLastPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastPage.Name = "lblLastPage";
-            this.lblLastPage.Size = new System.Drawing.Size(63, 25);
+            this.lblLastPage.Size = new System.Drawing.Size(78, 32);
             this.lblLastPage.TabIndex = 19;
             this.lblLastPage.Text = "label4";
             // 
@@ -256,9 +259,10 @@
             this.lblCurrentPage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCurrentPage.AutoSize = true;
             this.lblCurrentPage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentPage.Location = new System.Drawing.Point(435, 625);
+            this.lblCurrentPage.Location = new System.Drawing.Point(580, 769);
+            this.lblCurrentPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPage.Name = "lblCurrentPage";
-            this.lblCurrentPage.Size = new System.Drawing.Size(63, 25);
+            this.lblCurrentPage.Size = new System.Drawing.Size(78, 32);
             this.lblCurrentPage.TabIndex = 18;
             this.lblCurrentPage.Text = "label3";
             // 
@@ -274,9 +278,10 @@
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextPage.ForeColor = System.Drawing.Color.White;
-            this.btnNextPage.Location = new System.Drawing.Point(634, 618);
+            this.btnNextPage.Location = new System.Drawing.Point(845, 761);
+            this.btnNextPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(150, 41);
+            this.btnNextPage.Size = new System.Drawing.Size(200, 50);
             this.btnNextPage.TabIndex = 17;
             this.btnNextPage.Text = "Next Page";
             this.btnNextPage.TextColor = System.Drawing.Color.White;
@@ -294,9 +299,10 @@
             this.btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPreviousPage.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreviousPage.ForeColor = System.Drawing.Color.White;
-            this.btnPreviousPage.Location = new System.Drawing.Point(261, 618);
+            this.btnPreviousPage.Location = new System.Drawing.Point(348, 761);
+            this.btnPreviousPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPreviousPage.Name = "btnPreviousPage";
-            this.btnPreviousPage.Size = new System.Drawing.Size(150, 40);
+            this.btnPreviousPage.Size = new System.Drawing.Size(200, 49);
             this.btnPreviousPage.TabIndex = 16;
             this.btnPreviousPage.Text = "Previous Page";
             this.btnPreviousPage.TextColor = System.Drawing.Color.White;
@@ -308,9 +314,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.dgvInquiries);
-            this.panel3.Location = new System.Drawing.Point(30, 83);
+            this.panel3.Location = new System.Drawing.Point(40, 102);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(943, 501);
+            this.panel3.Size = new System.Drawing.Size(1257, 617);
             this.panel3.TabIndex = 15;
             // 
             // dgvInquiries
@@ -318,23 +325,23 @@
             this.dgvInquiries.AllowUserToAddRows = false;
             this.dgvInquiries.AllowUserToResizeColumns = false;
             this.dgvInquiries.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvInquiries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dgvInquiries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInquiries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInquiries.BackgroundColor = System.Drawing.Color.White;
             this.dgvInquiries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInquiries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvInquiries.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInquiries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInquiries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInquiries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInquiries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInquiries.EnableHeadersVisualStyles = false;
@@ -343,28 +350,28 @@
             this.dgvInquiries.Margin = new System.Windows.Forms.Padding(0);
             this.dgvInquiries.MultiSelect = false;
             this.dgvInquiries.Name = "dgvInquiries";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInquiries.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInquiries.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvInquiries.RowHeadersVisible = false;
             this.dgvInquiries.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInquiries.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInquiries.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvInquiries.RowTemplate.Height = 40;
             this.dgvInquiries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInquiries.Size = new System.Drawing.Size(943, 501);
+            this.dgvInquiries.Size = new System.Drawing.Size(1257, 617);
             this.dgvInquiries.TabIndex = 2;
             this.dgvInquiries.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInquiries_CellDoubleClick);
             // 
@@ -377,19 +384,20 @@
             this.pnlSearchFil.Controls.Add(this.txtSearch);
             this.pnlSearchFil.Controls.Add(this.pnlSearch);
             this.pnlSearchFil.Controls.Add(this.lblTypeOfUc);
-            this.pnlSearchFil.Location = new System.Drawing.Point(30, 25);
+            this.pnlSearchFil.Location = new System.Drawing.Point(40, 31);
             this.pnlSearchFil.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearchFil.Name = "pnlSearchFil";
-            this.pnlSearchFil.Size = new System.Drawing.Size(943, 58);
+            this.pnlSearchFil.Size = new System.Drawing.Size(1257, 71);
             this.pnlSearchFil.TabIndex = 14;
             // 
             // pbSearch
             // 
             this.pbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbSearch.Image = global::DocuFlow_Reg.Properties.Resources.glass__1_;
-            this.pbSearch.Location = new System.Drawing.Point(629, 12);
+            this.pbSearch.Location = new System.Drawing.Point(839, 15);
+            this.pbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(34, 33);
+            this.pbSearch.Size = new System.Drawing.Size(45, 41);
             this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbSearch.TabIndex = 5;
             this.pbSearch.TabStop = false;
@@ -404,15 +412,15 @@
             this.txtSearch.BorderSize = 2;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.Location = new System.Drawing.Point(658, 9);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Location = new System.Drawing.Point(877, 11);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtSearch.Multiline = false;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtSearch.PlaceholderText = "Search by Name, ID, or Requests";
-            this.txtSearch.Size = new System.Drawing.Size(249, 36);
+            this.txtSearch.Size = new System.Drawing.Size(332, 47);
             this.txtSearch.TabIndex = 4;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
@@ -439,9 +447,10 @@
             this.pnlSearch.GradientColor1 = System.Drawing.Color.Empty;
             this.pnlSearch.GradientColor2 = System.Drawing.Color.Empty;
             this.pnlSearch.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlSearch.Location = new System.Drawing.Point(626, 6);
+            this.pnlSearch.Location = new System.Drawing.Point(835, 7);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(284, 46);
+            this.pnlSearch.Size = new System.Drawing.Size(379, 57);
             this.pnlSearch.TabIndex = 1;
             this.pnlSearch.UseGradient = false;
             // 
@@ -450,9 +459,10 @@
             this.lblTypeOfUc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTypeOfUc.AutoSize = true;
             this.lblTypeOfUc.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeOfUc.Location = new System.Drawing.Point(36, 15);
+            this.lblTypeOfUc.Location = new System.Drawing.Point(48, 18);
+            this.lblTypeOfUc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTypeOfUc.Name = "lblTypeOfUc";
-            this.lblTypeOfUc.Size = new System.Drawing.Size(94, 30);
+            this.lblTypeOfUc.Size = new System.Drawing.Size(118, 36);
             this.lblTypeOfUc.TabIndex = 0;
             this.lblTypeOfUc.Text = "Inquiries";
             // 
@@ -477,20 +487,22 @@
             this.pnlInquiryDgv.GradientColor1 = System.Drawing.Color.Empty;
             this.pnlInquiryDgv.GradientColor2 = System.Drawing.Color.Empty;
             this.pnlInquiryDgv.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlInquiryDgv.Location = new System.Drawing.Point(16, 6);
+            this.pnlInquiryDgv.Location = new System.Drawing.Point(21, 7);
+            this.pnlInquiryDgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlInquiryDgv.Name = "pnlInquiryDgv";
-            this.pnlInquiryDgv.Size = new System.Drawing.Size(968, 596);
+            this.pnlInquiryDgv.Size = new System.Drawing.Size(1291, 734);
             this.pnlInquiryDgv.TabIndex = 13;
             this.pnlInquiryDgv.UseGradient = false;
             // 
             // InquiriesUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InquiriesUC";
-            this.Size = new System.Drawing.Size(1001, 779);
+            this.Size = new System.Drawing.Size(1335, 959);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

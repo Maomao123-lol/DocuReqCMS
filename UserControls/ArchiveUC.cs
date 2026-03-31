@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocuFlow_Reg.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -8,7 +9,6 @@ namespace DocuFlow_Reg.UserControls
 {
     public partial class ArchiveUC : UserControl
     {
-        DatabaseHelper db = new DatabaseHelper();
 
         private string searchText = "";
         private Timer searchTimer = new Timer();
@@ -39,25 +39,27 @@ namespace DocuFlow_Reg.UserControls
 
         private void LoadArchive()
         {
-            DataTable dt = db.ExecuteQuery(@"
-        SELECT
-            a.student_number    AS 'Student Number',
-            a.name              AS 'Name',
-            a.document_name     AS 'Document Type',
-            a.final_status      AS 'Final Status',
-            a.archived_at       AS 'Archived At'
-        FROM Archive a
-        WHERE (
-            a.student_number LIKE @search
-            OR a.name LIKE @search
-            OR a.document_name LIKE @search
-            OR a.final_status LIKE @search
-        )
-        ORDER BY a.archived_at DESC",
-                new Dictionary<string, object>
-                {
-            { "@search", "%" + searchText + "%" }
-                });
+            // Get data from Archive model class
+            List<Archive> archives = Archive.GetArchives(searchText);
+
+            // Convert to DataTable for the DataGridView
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Student Number");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Document Type");
+            dt.Columns.Add("Final Status");
+            dt.Columns.Add("Archived At");
+
+            foreach (Archive archive in archives)
+            {
+                dt.Rows.Add(
+                    archive.StudentNumber,
+                    archive.Name,
+                    archive.DocumentName,
+                    archive.FinalStatus,
+                    archive.ArchivedAt.ToString("yyyy-MM-dd HH:mm")
+                );
+            }
 
             dgvArchive.DataSource = dt;
             StyleDataGridView();
