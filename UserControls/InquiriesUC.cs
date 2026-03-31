@@ -1,6 +1,6 @@
 ﻿using DocuFlow_Reg.Forms;
+using DocuFlow_Reg.Models;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,7 +9,6 @@ namespace DocuFlow_Reg.UserControls
 {
     public partial class InquiriesUC : UserControl
     {
-        DatabaseHelper db = new DatabaseHelper();
         Recall recall = new Recall();
         SharedMethods.Pagination pagination;
 
@@ -37,50 +36,12 @@ namespace DocuFlow_Reg.UserControls
 
         private void LoadInquiries()
         {
-            string countQuery = @"
-    SELECT COUNT(*) 
-    FROM queue_tickets qt
-    LEFT JOIN Student s ON s.student_number = qt.student_number
-    WHERE qt.status != 'done'
-    AND (qt.student_number LIKE @search
-    OR s.name              LIKE @search
-    OR qt.queue_no         LIKE @search
-    OR qt.student_classification LIKE @search
-    OR qt.type             LIKE @search
-    OR qt.status           LIKE @search)";
-
-            int totalRecords = db.getDashboardCount(
-                countQuery.Replace("@search", "'%" + searchText + "%'")
-            );
-
+            // Count using QueueTicket model
+            int totalRecords = QueueTickets.GetInquiryCount(searchText);
             pagination.SetTotalRecords(totalRecords);
 
-            DataTable dt = db.ExecuteQuery(@"
-    SELECT 
-        qt.queue_no             AS 'Queue No',
-        qt.student_number       AS 'Student Number',
-        s.name                  AS 'Student Name',
-        qt.student_classification AS 'Inquiry Type',
-        qt.type                 AS 'Document Requested',
-        qt.status               AS 'Status'
-    FROM queue_tickets qt
-    LEFT JOIN Student s ON s.student_number = qt.student_number
-    WHERE qt.status != 'done'
-    AND (qt.student_number      LIKE @search
-    OR s.name                   LIKE @search
-    OR qt.queue_no              LIKE @search
-    OR qt.student_classification LIKE @search
-    OR qt.type                  LIKE @search
-    OR qt.status                LIKE @search)
-    ORDER BY qt.created_at ASC
-    LIMIT @pageSize OFFSET @offset",
-    new Dictionary<string, object>
-    {
-        { "@search", "%" + searchText + "%" },
-        { "@pageSize", pagination.PageSize },
-        { "@offset", pagination.Offset }
-    });
-
+            // Data using QueueTicket model
+            DataTable dt = QueueTickets.GetInquiries(searchText, pagination.PageSize, pagination.Offset);
             dgvInquiries.DataSource = dt;
             StyleDataGridView();
         }
@@ -129,6 +90,53 @@ namespace DocuFlow_Reg.UserControls
             });
 
             detailsForm.Show();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Using QueueList model
+                DataTable dt = QueueList.GetNextQueue();
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("No more queue numbers to serve.", "Queue Empty");
+                    return;
+                }
+
+                string queueNo = dt.Rows[0]["QueueNo"].ToString();
+                lblServing.Text = queueNo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error getting next queue:\n" + ex.Message, "Error");
+            }
+        }
+
+        private void btnSkip_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string currentQueue = lblServing.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(currentQueue) || currentQueue == "0" || currentQueue == "-")
+                {
+                    MessageBox.Show("No queue number is currently being served.", "Warning");
+                    return;
+                }
+
+                // Using QueueList model
+                QueueList.SkipQueue(currentQueue);
+                MessageBox.Show("Queue " + currentQueue + " has been skipped.", "Skipped");
+
+                // Auto call next
+                btnNext_Click(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error skipping queue:\n" + ex.Message, "Error");
+            }
         }
     }
 }

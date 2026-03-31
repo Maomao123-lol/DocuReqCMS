@@ -1,6 +1,6 @@
 ﻿using DocuFlow_Reg.Forms;
+using DocuFlow_Reg.Models;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,8 +9,6 @@ namespace DocuFlow_Reg.UserControls
 {
     public partial class DocumentRequestsUC : UserControl
     {
-        DatabaseHelper db = new DatabaseHelper();
-
         private string searchText = "";
         private Timer searchTimer = new Timer();
 
@@ -40,28 +38,8 @@ namespace DocuFlow_Reg.UserControls
 
         private void LoadRequests()
         {
-            DataTable dt = db.ExecuteQuery(@"
-                SELECT
-                    r.request_number    AS 'Request Number',
-                    r.student_number    AS 'Student Number',
-                    r.name              AS 'Name',
-                    r.document_name     AS 'Document Type',
-                    r.status            AS 'Status'
-                FROM Request r
-                WHERE r.status NOT IN ('Pending', 'Released')
-                AND (
-                    r.request_number LIKE @search
-                    OR r.student_number LIKE @search
-                    OR r.name LIKE @search
-                    OR r.service_type LIKE @search
-                    OR r.status LIKE @search
-                )
-                ORDER BY r.created_at ASC",
-                new Dictionary<string, object>
-                {
-                    { "@search", "%" + searchText + "%" }
-                });
-
+            // Now using Request model class
+            DataTable dt = Request.GetActiveRequests(searchText);
             dgvReq.DataSource = dt;
             StyleDataGridView();
         }
@@ -123,9 +101,7 @@ namespace DocuFlow_Reg.UserControls
         private void dgvReq_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             if (dgvReq.IsCurrentCellDirty)
-            {
                 dgvReq.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            }
         }
 
         private void dgvReq_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)

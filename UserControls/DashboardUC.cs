@@ -6,13 +6,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using System.Windows.Media;
+using DocuFlow_Reg.Models;
 
 namespace DocuFlow_Reg.UserControls
 {
     public partial class DashboardUC : UserControl
     {
-        DatabaseHelper db = new DatabaseHelper();
-
         public DashboardUC()
         {
             InitializeComponent();
@@ -28,24 +27,15 @@ namespace DocuFlow_Reg.UserControls
 
         private void LoadWidgetCounts()
         {
-            lblPendingRequest.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Pending'").ToString();
-            lblPendingPayment.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Waiting for Payment'").ToString();
-            lblReadyToRelease.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Ready'").ToString();
-            lblReleased.Text = db.getDashboardCount("SELECT COUNT(*) FROM Request WHERE status = 'Released'").ToString();
+            lblPendingRequest.Text = Request.GetCountByStatus("Pending").ToString();
+            lblPendingPayment.Text = Request.GetCountByStatus("Waiting for Payment").ToString();
+            lblReadyToRelease.Text = Request.GetCountByStatus("Ready").ToString();
+            lblReleased.Text = Request.GetCountByStatus("Released").ToString();
         }
 
         private void SetDocumentTypeChart()
         {
-            // Use document_name from Request table since Document_Data no longer exists
-            DataTable dt = db.ExecuteQuery(@"
-                SELECT 
-                    r.document_name     AS document_name,
-                    COUNT(*)            AS request_count
-                FROM Request r
-                WHERE r.document_name IS NOT NULL
-                AND r.document_name != ''
-                GROUP BY r.document_name
-                ORDER BY request_count DESC");
+            DataTable dt = Request.GetDocumentTypeDistribution();
 
             var documentTypes = new List<string>();
             var requestCounts = new ChartValues<int>();
@@ -66,11 +56,11 @@ namespace DocuFlow_Reg.UserControls
             {
                 new Axis
                 {
-                    Title = "Document Type",
-                    Labels = documentTypes,
-                    FontSize = 11,
+                    Title          = "Document Type",
+                    Labels         = documentTypes,
+                    FontSize       = 11,
                     LabelsRotation = 45,
-                    Separator = new Separator { StrokeThickness = 0 }
+                    Separator      = new Separator { StrokeThickness = 0 }
                 }
             };
 
@@ -78,7 +68,7 @@ namespace DocuFlow_Reg.UserControls
             {
                 new Axis
                 {
-                    Title = "No. of Requests",
+                    Title    = "No. of Requests",
                     MinValue = 0,
                     FontSize = 11,
                     Separator = new Separator
@@ -93,11 +83,11 @@ namespace DocuFlow_Reg.UserControls
             {
                 new ColumnSeries
                 {
-                    Title = "Requests",
-                    Values = requestCounts,
-                    DataLabels = true,
-                    FontSize = 11,
-                    Fill = new SolidColorBrush(Color.FromRgb(26, 122, 26)),
+                    Title          = "Requests",
+                    Values         = requestCounts,
+                    DataLabels     = true,
+                    FontSize       = 11,
+                    Fill           = new SolidColorBrush(Color.FromRgb(26, 122, 26)),
                     StrokeThickness = 0,
                     MaxColumnWidth = 40
                 }
@@ -109,62 +99,17 @@ namespace DocuFlow_Reg.UserControls
 
         private void LoadRequestTrend(string filter)
         {
-            string query = "";
-            string xAxisTitle = "";
+            DataTable dt = Request.GetRequestTrend(filter);
 
+            string xAxisTitle = "";
             switch (filter)
             {
-                case "Daily":
-                    query = @"
-                        SELECT CONCAT(HOUR(MIN(created_at)), ':00') as period, 
-                               COUNT(*) as request_count
-                        FROM Request
-                        WHERE DATE(created_at) = CURDATE()
-                        GROUP BY HOUR(created_at)
-                        ORDER BY HOUR(created_at)";
-                    xAxisTitle = "Hour of Day";
-                    break;
-
-                case "Weekly":
-                    query = @"
-                        SELECT DAYNAME(MIN(created_at)) as period, 
-                               COUNT(*) as request_count
-                        FROM Request
-                        WHERE WEEK(created_at) = WEEK(CURDATE())
-                        AND YEAR(created_at) = YEAR(CURDATE())
-                        GROUP BY DAYOFWEEK(created_at)
-                        ORDER BY DAYOFWEEK(created_at)";
-                    xAxisTitle = "Day of Week";
-                    break;
-
-                case "Monthly":
-                    query = @"
-                        SELECT DAY(created_at) as period, 
-                               COUNT(*) as request_count
-                        FROM Request
-                        WHERE MONTH(created_at) = MONTH(CURDATE())
-                        AND YEAR(created_at) = YEAR(CURDATE())
-                        GROUP BY DAY(created_at)
-                        ORDER BY DAY(created_at)";
-                    xAxisTitle = "Day of Month";
-                    break;
-
-                case "Yearly":
-                    query = @"
-                        SELECT MONTHNAME(MIN(created_at)) as period, 
-                               COUNT(*) as request_count
-                        FROM Request
-                        WHERE YEAR(created_at) = YEAR(CURDATE())
-                        GROUP BY MONTH(created_at)
-                        ORDER BY MONTH(created_at)";
-                    xAxisTitle = "Month";
-                    break;
-
-                default:
-                    return;
+                case "Daily": xAxisTitle = "Hour of Day"; break;
+                case "Weekly": xAxisTitle = "Day of Week"; break;
+                case "Monthly": xAxisTitle = "Day of Month"; break;
+                case "Yearly": xAxisTitle = "Month"; break;
+                default: return;
             }
-
-            DataTable dt = db.ExecuteQuery(query);
 
             var periodLabels = new List<string>();
             var requestCounts = new ChartValues<int>();
